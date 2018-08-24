@@ -1,6 +1,6 @@
 # Docker asennus
 
-*Install using the repository*
+## Install using the repository
 
 1. Update apt package index:  
 ```
@@ -9,7 +9,7 @@ sudo apt-get update
 
 2. Install packages  
 ```
-    sudo apt-get install \
+sudo apt-get install \
     apt-transport-https \
     ca-certificates \
     curl \
@@ -31,6 +31,34 @@ pub   4096R/0EBFCD88 2017-02-22
 uid                  Docker Release (CE deb) <docker@docker.com>
 sub   4096R/F273FCD8 2017-02-22
 ``` 
+
+4. Use the following command to set up the stable repository:
+```
+sudo add-apt-repository \
+   "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+   $(lsb_release -cs) \
+   stable"
+```
+
+## Install Docker CE
+
+1. Update the apt package index:
+```
+sudo apt-get update
+```
+
+2. Install the *latest version* of Docker CE:
+```
+sudo apt-get install -y docker-ce
+```
+The docker daemon should start automatically.
+
+3. Verify that Docker CE is installed correctly by running the ```hello-world``` image.
+```
+sudo docker run hello-world
+```
+This command downloads a test image and runs it in a container, after not being able to find it locally.
+
 
 
 
