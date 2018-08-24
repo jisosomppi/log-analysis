@@ -3,18 +3,18 @@
 *Install using the repository*
 
 1. Update apt package index:  
-'''
+´´´
 sudo apt-get update
-'''
+´´´
 
 2. Install packages  
-'''
+´´´
     sudo apt-get install \
     apt-transport-https \
     ca-certificates \
     curl \
     software-properties-common
-'''  
+´´´ 
 
 3. Add Docker's official GPG key:  
 '''
