@@ -1,5 +1,7 @@
 # Docker asennus
 
+*! This guide appears to have some problems when running on live-usb. We're looking into a solution.*
+
 ## Install using the repository
 
 1. Update apt package index:  
