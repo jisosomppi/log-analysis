@@ -4,16 +4,19 @@
 
 
 # Tietoturvalokien analysointi
+Tavoitteena kerätä lokitietoja alustavasti yhdeltä järjestelmältä ja kerätä yhteen palvelimelle, jossa suoritetaan niiden analysointia.
 
-1. Tavoitteena kerätä lokitietoja alustavasti yhdeltä järjestelmältä ja kerätä yhteen palvelimelle, jossa suoritetaan niiden analysointia.
-
-2. Asennuksen automatisointi Saltilla
-
-3. Useiden yhtäaikaisten järjestelmien toiminta
+### Milestonet
+1. Lokipalvelimen käyttöönotto ja testaus yhdellä clientilla  
+2. Asennuksen automatisointi Saltilla  
+3. Useiden yhtäaikaisten järjestelmien toiminta  
+* Bonus: Reitittimen konfigurointi toimittamaan lokeja  
+* Bonus: Korvataan Logstash syslogilla (kevyempi)  
 
 # Työkaluja
 * ELK stack  
-  * Bonus: Korvataan logsBash syslogilla
-* Bonus: Reitittimen konfigurointi toimittamaan lokeja
 * Grafana: Lokitietojen visualisointi eri näkymään
 * Salt: Työasemien asetusten automatisointi
+
+
+
