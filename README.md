@@ -18,4 +18,7 @@ Lopputuloksena haetaan palvelua, jonka kautta PK-yrityksen henkiökunta saisi he
 * Salt: Työasemien asetusten automatisointi
 
 
-
+# Luettavana
+ELK stackista:  
+https://app.logz.io/#/dashboard/data-sources/rsyslog  
+https://logz.io/learn/complete-guide-elk-stack/#installing-elk
