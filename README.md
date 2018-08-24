@@ -16,3 +16,8 @@ Lopputuloksena haetaan palvelua, jonka kautta PK-yrityksen henkiökunta saisi he
 * ELK stack  
 * Grafana: Lokitietojen visualisointi eri näkymään
 * Salt: Työasemien asetusten automatisointi
+* Docker: nopeaan prototyyppaukseen
+  * Portainer: konttien graafiseen hallintaan
+
+#### Viikko 1
+ELK Stack asennettu onnistuneesti Dockerin kautta. Datan välittämistä Kibanalle testailtu Metricbeatilla ja Filebeatilla, joista molemmista saatu toimitettua tiedot suoraan host-koneen käyttöjärjestelmästä Dockerin sisään ja Kibanaan näkyviin. 
