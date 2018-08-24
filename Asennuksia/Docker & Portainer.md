@@ -59,6 +59,28 @@ sudo docker run hello-world
 ```
 This command downloads a test image and runs it in a container, after not being able to find it locally.
 
+## Source:
+https://docs.docker.com/install/linux/docker-ce/ubuntu/#install-docker-ce-1
+
+
+# Portainer.io installation
+
+Use the following docker commands to deploy portainer:
+```
+docker volume create portainer_data
+```
+and
+```
+$ docker run -d -p 9000:9000 -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer
+```
+
+You can test your Portainer by accessing your browser
+```
+localhost:9000
+```
+You should now be able to create your account and access Portainer locally.
+
+
 
 
 
