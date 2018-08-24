@@ -12,8 +12,8 @@
 3. Useiden yhtäaikaisten järjestelmien toiminta
 
 # Työkaluja
-*ELK stack*
--Korvataan logstash syslogilla
+*ELK stack*  
+-Bonus: Korvataan logstash syslogilla
 
 Grafana
 
