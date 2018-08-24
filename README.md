@@ -12,8 +12,8 @@
 3. Useiden yhtäaikaisten järjestelmien toiminta
 
 # Työkaluja
-*ELK stack*  
--Bonus: Korvataan logstash syslogilla
-
-Grafana
-
+* ELK stack  
+  * Bonus: Korvataan logsBash syslogilla
+* Bonus: Reitittimen konfigurointi toimittamaan lokeja
+* Grafana: Lokitietojen visualisointi eri näkymään
+* Salt: Työasemien asetusten automatisointi
