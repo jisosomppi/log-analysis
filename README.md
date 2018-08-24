@@ -1,24 +1,31 @@
-# Tietoturvalokien analysointi
-***Haaga-Helian monialaprojekti syksyllä 2018***  
+# Logging and analysis of security data in a network
+***Multidisciplinary Software Project, fall 2018***  
+***Haaga-Helia University of Applied Sciences***  
 *Jussi Isosomppi, Eino Kupias, Saku Kähäri*
 
-Projektin tavoitteena on luoda keskitetty ratkaisu, joka analysoi verkossa olevien laitteiden lokitietoja keskitetysti, ja pyrkii tunnistamaan niistä tietoturvauhkia. Lokitiedot toimitetaan työasemilta ja/tai muilta laitteilta palvelimelle, jossa suoritetaan niiden käsittely, analysointi ja suodatus.  
-Lopputuloksena haetaan palvelua, jonka kautta PK-yrityksen henkiökunta saisi helposti ja selkeästi kuvan yrityksen tietoturvatilanteesta. Tämä edellyttää helppoa käyttöönottoa (Salt) ja ylläpitoa (Elkstack), sekä tietojen helppolukuisuutta (Grafana?).
+Our goal for this project is to create a solution that analyzes multiple kinds of data sent from multiple devices to a centralized server. The server processes, filters and stores the data in a form that is suitable for further analysis using graphical tools such as Kibana or Grafana. This solution should be suitable for use in small to medium companies, being sophisticated enough to offer valuable data while still being clear enough to also be usable for others than system administrators. 
 
-## Milestonet
-1. Lokipalvelimen käyttöönotto ja testaus yhdellä clientilla  
-2. Asennuksen automatisointi Saltilla  
-3. Useiden yhtäaikaisten järjestelmien toiminta  
-* Bonus: Reitittimen konfigurointi toimittamaan lokeja  
-* Bonus: Korvataan Logstash syslogilla (kevyempi)  
+Part of the tools and methods we're planning to use to achieve these goals are:
+* Using a centralized management solution (such as Salt) to ensure all workstations and others devices have the correct software setup for reporting
+* Using graphical tools (Kibana, Grafana) to allow data to avoid handling data in the CLI
+* Using open source code to ensure availability and low-to-zero cost for the solution
 
-### Työkaluja
+## Existing solutions
+### ELK Stack
+
+## Milestones
+1. Setting up a logging server and passing data to it from one client  
+2. Passing data from several (distinguishable) clients  
+3. Automating client setup via Salt  
+* Extra: Setting up a router to send log data  
+* Extra: Replacing Logstash with syslog to reduce resource use  
+
+### Tools
 * ELK stack  
-* Grafana: Lokitietojen visualisointi eri näkymään
-* Salt: Työasemien asetusten automatisointi
-* Docker: nopeaan prototyyppaukseen
-  * Portainer: konttien graafiseen hallintaan
+* Grafana: Setting up a simple dashboard for preset data
+* Salt: Automating client setup
+* Docker: For quick testing and failing
+  * Portainer: For easier control over Docker containers
 
-### Viikko 1
-ELK Stack asennettu onnistuneesti Dockerin kautta. Datan välittämistä Kibanalle testailtu Metricbeatilla ja Filebeatilla, joista molemmista saatu toimitettua tiedot suoraan host-koneen käyttöjärjestelmästä Dockerin sisään ja Kibanaan näkyviin. 
-
+### Week 1
+We installed ELK Stack succesfully through docker, and managed to pass data from the host computer to ElasticSearch running inside the container. This data was sent with MetricBeat and viewed through Kibana's GUI.
