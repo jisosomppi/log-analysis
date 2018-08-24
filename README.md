@@ -3,4 +3,17 @@
 *Jussi Isosomppi, Eino Kupias, Saku Kähäri*
 
 
-Most placeholder
+# Tietoturvalokien analysointi
+
+1. Tavoitteena kerätä lokitietoja alustavasti yhdeltä järjestelmältä ja kerätä yhteen palvelimelle, jossa suoritetaan niiden analysointia.
+
+2. Asennuksen automatisointi Saltilla
+
+3. Useiden yhtäaikaisten järjestelmien toiminta
+
+# Työkaluja
+*ELK stack*
+-Korvataan logstash syslogilla
+
+Grafana
+
