@@ -1,4 +1,4 @@
-# Docker asennus
+# Docker installation
 
 *! This guide appears to have some problems when running on live-usb. We're looking into a solution.*
 
