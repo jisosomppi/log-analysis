@@ -29,3 +29,6 @@ Part of the tools and methods we're planning to use to achieve these goals are:
 
 ### Week 1
 We installed ELK Stack succesfully through docker, and managed to pass data from the host computer to ElasticSearch running inside the container. This data was sent with MetricBeat and viewed through Kibana's GUI.
+
+### Week 2
+Possible logstash alternative: https://www.elastic.co/blog/logstash-forwarder-0-4-0-released
