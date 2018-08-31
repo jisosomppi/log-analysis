@@ -1,0 +1,7 @@
+#!/bin/bash
+
+#Jussi Isosomppi, 2017
+#Simple script for syncing changes to git, use while inside a git folder
+#Place script in /usr/local/bin/ and give proper rights (755)
+
+git add . && git commit; git pull && git push
