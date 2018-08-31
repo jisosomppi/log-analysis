@@ -17,5 +17,5 @@ git config --global push.default simple
 
 # Make Git commit script usable
 
-sudo cp log-analysis/gitup /usr/local/bin/
+sudo cp log-analysis/Scripts/gitup /usr/local/bin/
 sudo chmod 755 /usr/local/bin/gitup
