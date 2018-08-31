@@ -34,3 +34,5 @@ We installed ELK Stack succesfully through docker, and managed to pass data from
 
 ### Week 2
 We formed our project plan, and created other required documents for the course. We created scripts to automate installation of services, hopefully reducing downtime in the coming weeks. 
+
+On the technical side: we tested the setup scripts and got them to work. We passed data from a few different beats to ElasticSearch and managed to get some nice visualizations with Kibana.
