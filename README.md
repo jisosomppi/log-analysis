@@ -18,7 +18,9 @@ Part of the tools and methods we're planning to use to achieve these goals are:
 2. Passing data from several (distinguishable) clients  
 3. Automating client setup via Salt  
 * Extra: Setting up a router to send log data  
-* Extra: Replacing Logstash with syslog to reduce resource use  
+* Extra: Replacing Logstash with syslog to reduce resource use
+ Possible logstash alternative: https://www.elastic.co/blog/logstash-forwarder-0-4-0-released
+
 
 ### Tools
 * ELK stack  
@@ -31,4 +33,3 @@ Part of the tools and methods we're planning to use to achieve these goals are:
 We installed ELK Stack succesfully through docker, and managed to pass data from the host computer to ElasticSearch running inside the container. This data was sent with MetricBeat and viewed through Kibana's GUI.
 
 ### Week 2
-Possible logstash alternative: https://www.elastic.co/blog/logstash-forwarder-0-4-0-released
