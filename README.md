@@ -33,3 +33,4 @@ Part of the tools and methods we're planning to use to achieve these goals are:
 We installed ELK Stack succesfully through docker, and managed to pass data from the host computer to ElasticSearch running inside the container. This data was sent with MetricBeat and viewed through Kibana's GUI.
 
 ### Week 2
+We formed our project plan, and created other required documents for the course. We created scripts to automate installation of services, hopefully reducing downtime in the coming weeks. 
