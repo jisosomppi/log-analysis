@@ -1,7 +1,7 @@
 # Logging and analysis of security data in a network
 ***Multidisciplinary Software Project, fall 2018***  
 ***Haaga-Helia University of Applied Sciences***  
-*Jussi Isosomppi, Eino Kupias, Saku Kähäri*
+*[Jussi Isosomppi](https://github.com/jisosomppi), [Eino Kupias](https://github.com/einokupias), [Saku Kähäri](https://github.com/nauskis)*
 
 Our goal for this project is to create a solution that analyzes multiple kinds of data sent from multiple devices to a centralized server. The server processes, filters and stores the data in a form that is suitable for further analysis using graphical tools such as Kibana or Grafana. This solution should be suitable for use in small to medium companies, being sophisticated enough to offer valuable data while still being clear enough to also be usable for others than system administrators. 
 
