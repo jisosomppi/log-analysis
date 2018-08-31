@@ -19,8 +19,7 @@ Part of the tools and methods we're planning to use to achieve these goals are:
 3. Automating client setup via Salt  
 * Extra: Setting up a router to send log data  
 * Extra: Replacing Logstash with syslog to reduce resource use
-
-: Possible logstash alternative: https://www.elastic.co/blog/logstash-forwarder-0-4-0-released
+1. Possible logstash alternative: https://www.elastic.co/blog/logstash-forwarder-0-4-0-released
 
 
 ### Tools
