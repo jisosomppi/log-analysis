@@ -10,7 +10,7 @@ git clone https://github.com/deviantony/docker-elk
 
 ## Start the stack (-d to detach the containers and free up the terminal)
 cd docker-elk
-sudo docker-compose up -
+sudo docker-compose up -d
 
 ## Test functionality
 curl -I localhost:5601
