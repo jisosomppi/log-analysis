@@ -1,9 +1,7 @@
-# Lokitietojen analysointi
+# Logging and analysis of security data in a network
 
 **Jussi Isosomppi, Eino Kupias, Saku Kähäri**  
-**Haaga-Helian monialaprojekti syksyllä 2018**  
-
-## Projektimääritys 
+**Multidisciplinary Software Project, fall 2018**  
 
 ### Project background
 
@@ -57,17 +55,11 @@ Manhours included in the budget:
 Requirements: Access to Servula hardware, scheduling, communication between group members.  
 Risks: Unforeseen technical difficulties, members falling sick, too ambitious goals.  
 
-## Työsuunnitelma 
-### Kokonaistyön vaiheistus ja ajoitus 
+### Work plan  
 
-Katso liite 1 Projektiaikataulu 
+Look schedule in github.com/jisosomppi/log-analysis/blob/master/schedule.md
 
-    Muut projektissa käytettävät menetelmät 
+### Communication
+We'll be mostly using the "from mouth to ear" -system. To comply this we've a WhatsApp group to agree on meetings and inform of possible delays or absence from meetings.
 
-Viestintä tulee tapahtumaan pääsääntöisesti suusta-korvaan –menetelmällä, johtuen siitä että projektiryhmän jäsenet tapaavat lähes päivittäin muissa merkeissä. Tätä tukemaan käytämme lisäksi WhatsApp –pikaviesti sovellusta. 
-
-Projektiryhmälle on lisäksi perustettu työtilat sekä OneDriveen että GitHubiin. 
-
-OneDrivessä säilytetään Projektisuunnitelmaa sekä projektiryhmän jäsenet päivittävät työajanseurantaa tänne.  
-
-GitHubissa blogia projektin etenemisestä sekä dokumentaatio. 
+Documentation can be found on https://github.com/jisosomppi/log-analysis.
