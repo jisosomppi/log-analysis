@@ -18,13 +18,16 @@ Our purpose is to create a complete product, that utilizes the Elastic -software
 3) Recognition of exceptions and anomalies in the data.  
 4) Representing data in easily understandable form.  
 
-### Projektin tavoite ja lopputulokset 
+### Project steps and milestones
 
-Projektin ensimmäinen tavoitteena on ELK-stackin asennus ja lokitietojen käsittely yhdeltä koneelta. Seuraavat virstapylväät ovat usean koneen lokitietojen hallinta keskitetysti ja asiakaskoneiden käyttöönotto automatisoidusti SALTin avulla. 
+The first step of our project is the installation of ELK-stack and processing of log data on a single computer.  
+The following milestones are:  
+1) Centralized control of multiple computers' log data.  
+2) Automated setup of client computers via SALT.  
+3) Replacing components that are either non-open source (Beats) or use large quantities of recources (such as Logstash).  
 
-Koulun labraverkkoa hyödyntämällä voimme simuloida normaalia käyttöympäristöä. Tavoitteena on, että projektista syntyy ELK-stackia kevyempi versio ja selkeä dokumentaatio, jonka pohjalta kuka tahansa osaa asentaa ja käyttöönottaa paketin. 
-
-Projektin parissa työskenneltyämme opimme erottelemaan ja keräämään relevanttia lokitietoa ja tuntemaan käytettävien työkalujen toimintaperiaatteita. Projektimme edellyttää myös tarkkaa aikataulutusta ja dokumentaatiota. Projektiryhmämme on työn kokoon nähden pienempi kuin yleensä, joten tehtävien jako tuo oman hyötynsä ja haasteensa. 
+By using the school's lab network, we can simulate a normal working enviroment. On a personal level, our aim is to learn to identify relevant log data and get familiar with the tools we're using.  
+Our project requires requires strict scheduling and documentation. The latter of which is achieved by uploading everything to Github. Our team is slightly smaller than what we're used to, and this will bring it's own advantages and challenges.
 
 ### Projektin organisaatio ja kumppanit 
  
