@@ -29,32 +29,30 @@ The following milestones are:
 By using the school's lab network, we can simulate a normal working enviroment. On a personal level, our aim is to learn to identify relevant log data and get familiar with the tools we're using.  
 Our project requires requires strict scheduling and documentation. The latter of which is achieved by uploading everything to Github. Our team is slightly smaller than what we're used to, and this will bring it's own advantages and challenges.
 
-### Projektin organisaatio ja kumppanit 
+### Project organization and stakeholders 
  
-Projektin omistavat projektiryhmän jäsenet.
+The project is owned by our team.  
+The project manager and secretary are yet to be appointed (Saku and Eino most likely).  
+Project supervisors: Harto Holmström and Tero Karvinen.  
 
-Ketään ei ole vielä nimitetty projektipäällikön tai sihteerin asemaan. Kyseenalaistamme nimitysten merkittävyyden tällä hetkellä. 
+At this point in time the stakeholders consist of other project groups and our supervisors. At later stages of the production we wish to work with some companies that would pilot our project.
 
-Projektien ohjaajina toimivat Haaga-Helian opettajat Harto Holmström ja Tero Karvinen. 
+### Budget and schedule
 
-Sidosryhmiin voidaan lukea tällä hetkellä muut projektiryhmät, joiden kanssa saatamme työskennellä yhdessä myöhemmin. Lisäksi tavoitteena on löytää oikeita yrityksiä, jotka voisivat testata pakettiamme, kunhan saamme projektin tarpeeksi pitkälle. 
+Working hours previously updated in Onedrive Sharepoint. We're relocation said task to Github.  
 
-### Projektin budjetti ja aikataulu 
+**Week**|**Task**
+--------|-------------
+Week 34|Project kick off
+Week 37|Presenting project plan
+Week 49|Completetion of final report.
+Week 50|Presenting project
 
-Työtuntien seuranta luotu Sharepointtiin. 
+Manhours included in the budget: 
 
-**Ajanjakso**|**Työtehtävät**
----------|-----------
-Viikko 34|Projektin aloitus 
-Viikko 37|Projektisuunnitelman esittely
-Viikko 49|Loppuraportti valmis
-Viikko 50|Projektin esittely 
+-17h/week/person = 817h (Project management 20%) 
 
-Budjettiin kuuluvat työtunnit: 
-
--17h / viikko per henkilö = 817h (Projektinhallintaan 20%) 
-
-### Projektin riskit ja projektin onnistumisen edellytykset 
+### Risks 
 
 Edellytykset: Avaimet Servulaan, aikataulutus, ryhmän yhteydenpito. 
 
