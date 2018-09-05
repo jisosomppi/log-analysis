@@ -1,6 +1,6 @@
 # Logging and analysis of security data in a network
 
-**Jussi Isosomppi, Eino Kupias, Saku Kähäri**  
+**Jussi Isosomppi, Eino Kupias, Saku Kœhœri**  
 **Multidisciplinary Software Project, fall 2018**  
 
 ### Project background
