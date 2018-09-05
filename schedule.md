@@ -8,7 +8,7 @@
 |2.1|Teoriataustan koostaminen|Teoriatausta koostettu| |14|
 |2.2|Loki-serverin asennus yhdelle päätteelle|Palvelun toimivuus testattu|Teoriatausta kirjoitettu|14|
 |3|Palvelun laajentaminen|Palvelu saa lokitietoja useilta päätteiltä|Palvelu testattu|42|
-|3.1|Lokitietojen lähetys linux-päätteeltä|Lokitietojen lähetys linux-päätteeltä|14|
+|3.1|Lokitietojen lähetys linux-päätteeltä|Lokitietojen lähetys linux-päätteeltä| |14|
 |3.2|Lokitietojen lähetys windows-päätteeltä|Loki-tietojen lähetys windows-päätteeltä|Loki-tietojen lähetys linux-päätteeltä|14|
 |3.3|Lokititetojen analysointi usesasta lähteestä|Lokititetojen analysointi useasta lähteestä|Lokitietojen lähetys windows-päätteeltä|14|
 |4|Palvelun laajentaminen automatisoitu SALTilla|Palvelun laajennus automatisoitu SALTilla|Palvelu saa lokitietoja useilta päätteiltä|70|
