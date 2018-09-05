@@ -1,10 +1,10 @@
 |Task #|Task|Goal|Hours|Planned timeframe|
 |------|----|----|-----|-----------------|
-|1|Starting the project|Finding out the requirements for the course|28| |
+|1|Starting the project|Finding out the requirements for the course|28|
 |1.1|Forming the project group|Project group formed|7|wk 34|
 |1.2|Selecting a project|Subject for project decided|14|wk 34-35|
 |1.3|Writing the project plan|Project plan written and accepted|7|wk 35|
-|2|Testing of existing components/solutions|Premade solutions tested|28| |
+|2|Testing of existing components/solutions|Premade solutions tested|28|
 |2.1|Getting to grips with the components|Preliminary theory for the solution formed|14|wk 35-36|
 |2.2|Identifying issues in pre-existing solutions|List of improvements compiled|14|wk 35-36|
 |3|Building a working service|Centralized logs available|42|
@@ -23,4 +23,4 @@
 |6|Presentation of results| |14|
 |6.1|Writing the final report| |12|wk 48-49|
 |6.2|Presenting the project| |2|wk 49-50|
-|6.3|Final meeting, reflecting on project|Learned lessons|0|wk 50|
+|6.3|Final meeting, reflecting on project||0|wk 50|
