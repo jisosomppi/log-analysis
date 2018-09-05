@@ -37,7 +37,7 @@ We formed our project plan, and created other required documents for the course.
 
 On the technical side: we tested the setup scripts and got them to work. We passed data from a few different beats to ElasticSearch and managed to get some nice visualizations with Kibana.
 
-![Image1](https://github.com/jisosomppi/log-analysis/blob/master/Screenshot_2018-08-31_15-19-31.png)
+![Image1](https://github.com/jisosomppi/log-analysis/blob/master/images/Screenshot_2018-08-31_15-19-31.png)
 
 ### Week 3
 We started researching the use of purely open source components, replacing the Beats and Logstash with rsyslog. Rsyslog can be configured to run as both a client and a server, and accepts configuration files to shape the log outputs into a form that is readable in Elasticsearch. We had some progress with setting up rsyslog, but didn't yet manage to display results in Elasticsearch/Kibana.
