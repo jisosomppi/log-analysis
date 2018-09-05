@@ -39,3 +39,26 @@ On the technical side: we tested the setup scripts and got them to work. We pass
 
 ### Week 3
 We started researching the use of purely open source components, replacing the Beats and Logstash with rsyslog. Rsyslog can be configured to run as both a client and a server, and accepts configuration files to shape the log outputs into a form that is readable in Elasticsearch. We had some progress with setting up rsyslog, but didn't yet manage to display results in Elasticsearch/Kibana.
+
+We were assigned a server from Servula and started setting it up for use. We decided to use Ubuntu Server 18.04.1 LTS, as the LTS gave us confidence it would be supported. We started immediately running into issues with the OS installation:
+* Hostname would change into `localhost.localdomain` with the first startup
+* User account created during install could not be used to log in  
+
+We managed to gain access to the system by booting it into single user mode (Hold ESC after BIOS and add `single` to launch parameters. From the root shell we could identify some problems:
+* No network connectivity
+* No user account present
+* Network interface settings missing (/etc/network/interfaces empty, ifconfig only showing loopback)
+
+Some solutions to the problems:
+* Creating user account again from within the single user root shell
+* Ubuntu 18.04 uses Netplan to configure interfaces, so we needed to write a `.yaml` file for the default interface. This _should_ have been generated with the install but for some reason the `/etc/netplan` folder was completely empty.
+``` yaml
+network:
+ version: 2
+ renderer: networkd
+ ethernets:
+   eno1:
+     dhcp4: yes
+     dhcp6: yes
+```
+This file and `sudo netplan apply` gave us internet connectivity.
