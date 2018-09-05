@@ -1,6 +1,6 @@
-Task #|Task|Goal|	Aloituskriteeri	Tuntia
-------|----|----|
-1|Projektin käynnistys	Hyväksytty projektisuunnitelma	Ohjaaja on nimitetty	28
+Task #|Task|Goal|Start criteria|Hours
+------|----|----|--------------|-----
+1|Projektin käynnistys|Hyväksytty projektisuunnitelma|Ohjaaja on nimitetty|28
 1.1|Projektiryhmän muodostus	Projektiryhmä muodostettu	Kurssi järjestetään	7
 1.2|Aiheen ideointi	Aihe valittu	Ryhmä perustettu	14
 1.3|Projektisuunnitelman laatiminen	Projektisuunnitelman hyväksyntä	Aihe valittu	7
