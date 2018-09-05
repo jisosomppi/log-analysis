@@ -1,5 +1,5 @@
 # Lokitietojen analysointi
-# Projektisuunnitelma
+
 **Jussi Isosomppi, Eino Kupias, Saku Kähäri**  
 **Haaga-Helian monialaprojekti syksyllä 2018**  
 
