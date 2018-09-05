@@ -5,11 +5,11 @@
 
 ## Projektimääritys 
 
-### Projektin tausta 
+### Project background
 
-Monialaprojektin aiheeksi valittiin lokitietojen kerääminen ja analysointi lähiverkossa. Tarkoituksena on automatisoida ja keskittää hallintaa, sekä luoda kattavat ohjeet kokemattomankin käyttäjän seurattavaksi. Koemme projektin aiheen tukevan muita kursseja ja ICT-infrastruktuuriprofiilin opintoja. Kaikki ryhmänjäsenet ovat kiinnostuneita tietoturvasta, joten aiheella on myös vahva yhteys työelämään ja työllistymiseen. 
+The subject of our multidisciplinary software project is the collection and analysis of log data in a local network. The goal is to automate and centralize control, and to create a comprehensive view of security for the uninitiated users. We believe the project supports our other courses and the ICT-infrastructure oriented studies. Out team is also interested in cyber security, so the project has a direct link to working life and future employment.
 
-Tarkoitus on luoda valmis Elastic -ohjelmistopinoa hyödyntävä keskitetyn hallinnan ratkaisu PK -yrityksille, jonka asentaminen ja käyttäminen on vaivatonta. Lisätavoitteena korvata ohjelmistopinon raskaita komponentteja vähemmän resursseja vaativilla osilla. Mahdollisena hyötynä myyntikelpoinen paketti ja kokemusta aiheesta. 
+Our purpose is to create a complete product, that utilizes the Elastic -software stack, for the small and medium sized companies. Additionally, the installation and usage of said package is to be  easy and effortless. Our additional milestone is to replace some heavy components of the stack with lighter counterparts. There is also the potential benefit of creating a package to be sold to companies.
 
 ### Projektin tehtävä 
 
