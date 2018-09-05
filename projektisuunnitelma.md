@@ -11,9 +11,12 @@ The subject of our multidisciplinary software project is the collection and anal
 
 Our purpose is to create a complete product, that utilizes the Elastic -software stack, for the small and medium sized companies. Additionally, the installation and usage of said package is to be  easy and effortless. Our additional milestone is to replace some heavy components of the stack with lighter counterparts. There is also the potential benefit of creating a package to be sold to companies.
 
-### Projektin tehtävä 
+### Project goals 
 
-Lokitietojen kerääminen, hallinta ja analysointi pienessä verkossa. Lisäksi poikkeavuuksien tunnistaminen ja tiedostojen esittäminen helposti luettavassa muodossa. 
+1) Log data collection, control ja analysis in a small network.  
+2) Encrypted traffic between clients and host.
+3) Recognition of exceptions and anomalies in the data.  
+4) Representing data in easily understandable form.  
 
 ### Projektin tavoite ja lopputulokset 
 
