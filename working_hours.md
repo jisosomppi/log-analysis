@@ -1,8 +1,8 @@
 |Week |Jussi | Eino | Saku | Tasks |
 |-----|------|-----|------|------|
-|wk 34|12|12|12||
-|wk 35|6|10|10||
-|wk 36|10|10|10|| 
+|wk 34|12|12|12|Formed the group, decided subject|
+|wk 35|6|10|10|Worked on project plan, tested ELK-stack|
+|wk 36|10|10|10|Finalized project plan, got server running, looked into alternative open source modules, migrated all documentation to Github|
 |wk 37|||||
 |wk 38|||||
 |wk 39|||||
