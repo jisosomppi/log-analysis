@@ -23,7 +23,7 @@ sudo chmod 755 /usr/local/bin/gitup
 ## Add Dockers official GPG key
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 
-## Add docker ropository
+## Add docker repository
 sudo add-apt-repository \
    "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
    $(lsb_release -cs) \
@@ -37,7 +37,7 @@ sudo apt-get install -y docker-ce
 sudo docker volume create portainer_data
 sudo docker run -d -p 9000:9000 -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer
 
-## Clone git repository
+## Clone git repository for ELK Stack containers
 cd
 git clone https://github.com/deviantony/docker-elk
 
