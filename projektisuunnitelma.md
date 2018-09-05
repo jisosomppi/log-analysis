@@ -1,4 +1,7 @@
-# Lokitietojen analysointi, projektisuunnitelma
+# Lokitietojen analysointi
+# Projektisuunnitelma
+**Jussi Isosomppi, Eino Kupias, Saku Kähäri**  
+**Haaga-Helian monialaprojekti syksyllä 2018**  
 
 ## Projektimääritys 
 
@@ -20,13 +23,9 @@ Koulun labraverkkoa hyödyntämällä voimme simuloida normaalia käyttöympäri
 
 Projektin parissa työskenneltyämme opimme erottelemaan ja keräämään relevanttia lokitietoa ja tuntemaan käytettävien työkalujen toimintaperiaatteita. Projektimme edellyttää myös tarkkaa aikataulutusta ja dokumentaatiota. Projektiryhmämme on työn kokoon nähden pienempi kuin yleensä, joten tehtävien jako tuo oman hyötynsä ja haasteensa. 
 
+### Projektin organisaatio ja kumppanit 
  
-
-    Projektin organisaatio ja kumppanit 
-
- 
-
-Projektin omistavat Projektiryhmän jäsenet: Jussi Isosomppi, Eino Kupias ja Saku Kähäri. 
+Projektin omistavat projektiryhmän jäsenet.
 
 Ketään ei ole vielä nimitetty projektipäällikön tai sihteerin asemaan. Kyseenalaistamme nimitysten merkittävyyden tällä hetkellä. 
 
@@ -34,61 +33,31 @@ Projektien ohjaajina toimivat Haaga-Helian opettajat Harto Holmström ja Tero Ka
 
 Sidosryhmiin voidaan lukea tällä hetkellä muut projektiryhmät, joiden kanssa saatamme työskennellä yhdessä myöhemmin. Lisäksi tavoitteena on löytää oikeita yrityksiä, jotka voisivat testata pakettiamme, kunhan saamme projektin tarpeeksi pitkälle. 
 
- 
-
- 
-
- 
-
- 
-
-    Projektin budjetti ja aikataulu 
-
- 
+### Projektin budjetti ja aikataulu 
 
 Työtuntien seuranta luotu Sharepointtiin. 
 
-Projektin aloitus: Viikko 34 
-
-Projektisuunnitelman esittely:Viikko 37 
-
-Loppuraportti valmis:Viikko 49 
-
-Projektin esittely: Viikko 50 
-
- 
-
- 
+**Ajanjakso**|**Työtehtävät**
+---------|-----------
+Viikko 34|Projektin aloitus 
+Viikko 37|Projektisuunnitelman esittely
+Viikko 49|Loppuraportti valmis
+Viikko 50|Projektin esittely 
 
 Budjettiin kuuluvat työtunnit: 
 
 -17h / viikko per henkilö = 817h (Projektinhallintaan 20%) 
 
- 
-
-    Projektin riskit ja projektin onnistumisen edellytykset 
-
- 
+### Projektin riskit ja projektin onnistumisen edellytykset 
 
 Edellytykset: Avaimet Servulaan, aikataulutus, ryhmän yhteydenpito. 
 
 Riskit: Odottamattomat tekniset vaikeudet, ryhmänjäsenten jaksaminen, sairastumiset, sekä liian kunnianhimoiset tavoitteet. 
 
- 
-
-    Page BreakTyösuunnitelma 
-
- 
-
-    Kokonaistyön vaiheistus ja ajoitus 
-
- 
+## Työsuunnitelma 
+### Kokonaistyön vaiheistus ja ajoitus 
 
 Katso liite 1 Projektiaikataulu 
-
- 
-
- 
 
     Muut projektissa käytettävät menetelmät 
 
@@ -99,5 +68,3 @@ Projektiryhmälle on lisäksi perustettu työtilat sekä OneDriveen että GitHub
 OneDrivessä säilytetään Projektisuunnitelmaa sekä projektiryhmän jäsenet päivittävät työajanseurantaa tänne.  
 
 GitHubissa blogia projektin etenemisestä sekä dokumentaatio. 
-
- 
