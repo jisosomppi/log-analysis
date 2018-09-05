@@ -50,13 +50,12 @@ Week 50|Presenting project
 
 Manhours included in the budget: 
 
--17h/week/person = 817h (Project management 20%) 
+-17h / week / person = 817h (Project management 20%) 
 
-### Risks 
+### Risks and requirements
 
-Edellytykset: Avaimet Servulaan, aikataulutus, ryhmän yhteydenpito. 
-
-Riskit: Odottamattomat tekniset vaikeudet, ryhmänjäsenten jaksaminen, sairastumiset, sekä liian kunnianhimoiset tavoitteet. 
+Requirements: Access to Servula hardware, scheduling, communication between group members.  
+Risks: Unforeseen technical difficulties, members falling sick, too ambitious goals.  
 
 ## Työsuunnitelma 
 ### Kokonaistyön vaiheistus ja ajoitus 
