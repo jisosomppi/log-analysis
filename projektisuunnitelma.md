@@ -1,6 +1,6 @@
 # Logging and analysis of security data in a network
 
-**Jussi Isosomppi, Eino Kupias, Saku Kähäri**  
+**Jussi Isosomppi, Eino Kupias, Saku Kaehaeri**  
 **Multidisciplinary Software Project, fall 2018**  
 
 ### Project background
@@ -60,6 +60,6 @@ Risks: Unforeseen technical difficulties, members falling sick, too ambitious go
 Look schedule in github.com/jisosomppi/log-analysis/blob/master/schedule.md
 
 ### Communication
-We'll be mostly using the "from mouth to ear" -system. To comply this we've a WhatsApp group to agree on meetings and inform of possible delays or absence from meetings.
+We'll be mostly using ye olde good MtE-system (mouth to ear). To comply this we've a WhatsApp group to agree on meetings and inform of possible delays or absence from meetings.
 
 Documentation can be found on https://github.com/jisosomppi/log-analysis.
