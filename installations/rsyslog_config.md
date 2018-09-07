@@ -19,6 +19,17 @@ and
 #module(load="imtcp")  
 #input(type="imtcp" port="514")  
 ```
+Create a template file under the /etc/rsyslog.d directory  
+`sudoedit /etc/rsyslog.d/tmpl.conf`  
+
+Add the following lines:  
+```
+$template TmplAuth, "/var/log/client_logs/%HOSTNAME%/%PROGRAMNAME%.log"  
+$template TmplMsg, "/var/log/client_logs/%HOSTNAME%/%PROGRAMNAME%.log"  
+
+authpriv.* ?TmplAuth  
+*.info;mail.none;authpriv.none;cron.none ?TmplMsg  
+```
 
 Restart rsyslog service  
 `sudo systemctl restart rsyslog` 
