@@ -5,7 +5,7 @@
 setxkbmap fi
 sudo timedatectl set-timezone Europe/Helsinki
 sudo apt-get update
-sudo apt-get install -y git tree htop curl docker-compose apt-transport-https ca-certificates software-properties-common
+sudo apt-get install -y git tree htop curl salt-master salt-minion docker-compose apt-transport-https ca-certificates software-properties-common
 cd
 
 # Setup Git and clone this repository
@@ -44,3 +44,9 @@ git clone https://github.com/deviantony/docker-elk
 ## Start the stack (-d to detach the containers and free up the terminal)
 cd docker-elk
 sudo docker-compose up -d
+
+## Salt setup
+echo "file_ignore_glob: []" | sudo tee -a /etc/salt/master
+echo "master: localhost" | sudo tee -a /etc/salt/minion
+sudo service salt-master restart
+sudo service salt-minion restart
