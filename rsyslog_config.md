@@ -51,7 +51,7 @@ Restart rsyslog
 Test connection to server by generating some log data:  
 `sudo logger -s " This is my Rsyslog client "`
 
-Go to /var/log/Client_logs on **Rsyslog Server**.There should be a new folder named with the hostname of your Rsyslog client.  
+Go to /var/log/Client_logs on **Rsyslog Server**. There should be a new folder named with the hostname of your Rsyslog client.  
 
 
 
