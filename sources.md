@@ -5,6 +5,8 @@ https://app.logz.io/#/dashboard/data-sources/rsyslog
 https://logz.io/learn/complete-guide-elk-stack/#installing-elk  
 https://logz.io/blog/elk-stack-on-docker/  
 https://portainer.io/install.html  
-https://www.elastic.co/guide/en/kibana/current/tutorial-discovering.html  
-https://www.elastic.co/blog/timelion-tutorial-from-zero-to-hero
-http://yallalabs.com/linux/how-to-setup-a-centralized-log-server-using-rsyslog-on-ubuntu-16-04-lts/
+https://www.elastic.co/guide/en/kibana/current/tutorial-discovering.html    
+https://www.elastic.co/blog/timelion-tutorial-from-zero-to-hero  
+http://yallalabs.com/linux/how-to-setup-a-centralized-log-server-using-rsyslog-on-ubuntu-16-04-lts/  
+https://www.techrepublic.com/article/how-to-install-and-configure-rsyslog-for-a-centralized-linux-log-server/  
+
