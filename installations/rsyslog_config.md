@@ -46,7 +46,7 @@ Save & close. Create a new file
 add the line `*.* @@ADDRESS:514` where "ADDRESS" is the Ip address of server.  
 
 Restart rsyslog  
-`sudo systemctl rsyslog restart`
+`sudo service rsyslog restart`
 
 Test connection to server by generating some log data:  
 `sudo logger -s " This is my Rsyslog client "`
