@@ -33,7 +33,7 @@ sudo ufw reload
 ## Client configuration ##  
 
 Backup rsyslog.conf file  
-`sudo cp /etc/rsyslog /etc/rsyslog.conf.orig`  
+`sudo cp /etc/rsyslog.conf /etc/rsyslog.conf.orig`  
 
 Open said file  
 `sudoedit /etc/rsyslog.conf`  
