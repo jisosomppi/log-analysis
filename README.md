@@ -62,3 +62,9 @@ network:
      dhcp6: yes
 ```
 This file and `sudo netplan apply` gave us internet connectivity.
+
+We configured a client computer and sent identifiable log data to server via Rsyslog. Next we find out how to pass log data from Rsyslog to ElasticSearch and Kibana.
+
+
+
+
