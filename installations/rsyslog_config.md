@@ -26,7 +26,7 @@ Restart rsyslog service
 Allow Rsyslog default port 514 on firewall and restart UFW. 
 ```
 sudo ufw allow 514/tcp  
-sudo ufw allow 514/tcp  
+sudo ufw allow 514/udp  
 sudo ufw reload  
 ```
 
