@@ -73,3 +73,9 @@ We started our server setup from scratch, this time with Ubuntu Server 16.04 (pr
 We spent a couple of hours building our configuration files, but did not have success in making the data available on Kibana. However, we managed to get our log forwarding to work on clients. Our clients are now sending select log entries to our Rsyslog server, where the entries are grouped under a comprehensive folder structure. We managed to input monitoring data from the server into Elasticsearch, and were able to view graphs of it on Kibana.
 
 At this point in the project, Kibana and Elasticsearch seem to be functioning properly, while Rsyslog has currently unidentified issues. 
+
+### Week 4
+#### Monday
+More work on the logging setup. Rsyslog is still causing trouble, not forwarding logs like it should. We spent hours reading guides and documentation, but had no luck making the information accessible.
+
+On the upside: service monitoring works! We enabled monitoring services in both Elasticsearch and Kibana, and we can now view data on amount of queries processed, response times etc.
