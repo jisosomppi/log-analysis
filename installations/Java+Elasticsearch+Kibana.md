@@ -10,17 +10,17 @@ sudo apt-get -y install oracle-java8-installer
 
 # Install Elasticsearch #
 
-**Add Elastic's package source list.**  
-`sudo wget -qO - https://packages.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -`  
+**Download The elasticsearch 6.4.0 tar**  
+`curl -L -O https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-6.4.0.tar.gz`  
 
-**Create the Elasticsearch source list:**  
-```
-echo "deb http://packages.elastic.co/elasticsearch/2.x/debian stable main" | sudo tee -a /etc/apt/sources.list.d/elasticsearch-2.x.list  
-sudo apt-get update  
-```
+**Then extract it as follows:**  
+`tar -xvf elasticsearch-6.4.0.tar.gz`
 
-**Install Elasticsearch with command:**  
-`sudo apt-get install -y elasticsearch`  
+**Go into the bin directory:**
+`cd elasticsearch-6.4.0/bin`
+
+**Install Elasticsearch by running the script:**  
+`./elasticsearch`  
   
 # Install Kibana #
 
