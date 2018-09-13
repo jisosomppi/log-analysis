@@ -16,7 +16,7 @@ sudo apt-get -y install oracle-java8-installer
 **Then extract it as follows:**  
 `tar -xvf elasticsearch-6.4.0.tar.gz`
 
-**Go into the bin directory:**
+**Go into the bin directory:**  
 `cd elasticsearch-6.4.0/bin`
 
 **Install Elasticsearch by running the script:**  
@@ -24,13 +24,18 @@ sudo apt-get -y install oracle-java8-installer
   
 # Install Kibana #
 
-**Add the Kibana to your source list:**  
-`echo "deb http://packages.elastic.co/kibana/4.5/debian stable main" | sudo tee -a /etc/apt/sources.list`
+**Download Kibana 6.4.0 tar:**  
+`wget https://artifacts.elastic.co/downloads/kibana/kibana-6.4.0-linux-x86_64.tar.gz`
 
-**Update `apt` package database:**  
-`sudo apt-get update`
+**Check the integrity of the packet:**  
+`shasum -a 512 kibana-6.4.0-linux-x86_64.tar.gz `
+
+**Open the tar:**  
+`tar -xzf kibana-6.4.0-linux-x86_64.tar.gz`
+
+**Move to the correct directory:**  
+`cd kibana-6.4.0-linux-x86_64/ `
 
 **Install Kibana with:**  
-`sudo apt-get install -y kibana`  
-
+`./
 
