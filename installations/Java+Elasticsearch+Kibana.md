@@ -27,7 +27,7 @@ sudo apt-get update
 **Add the Kibana to your source list:**  
 `echo "deb http://packages.elastic.co/kibana/4.5/debian stable main" | sudo tee -a /etc/apt/sources.list`
 
-**Update `àpt` package database:**  
+**Update `apt` package database:**  
 `sudo apt-get update`
 
 **Install Kibana with:**  
