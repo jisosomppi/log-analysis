@@ -34,8 +34,8 @@ sudo apt-get -y install oracle-java8-installer
 `tar -xzf kibana-6.4.0-linux-x86_64.tar.gz`
 
 **Move to the correct directory:**  
-`cd kibana-6.4.0-linux-x86_64/ `
+`cd kibana-6.4.0-linux-x86_64/bin `
 
 **Install Kibana with:**  
-`./
+`./kibana`
 
