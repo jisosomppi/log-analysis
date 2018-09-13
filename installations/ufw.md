@@ -5,9 +5,7 @@ Rsyslog|514|TCP
 Rsyslog|514|UDP
 Salt|4505|TCP
 Salt|4506|TCP
-Logstash|5000|TCP
 Kibana|5601|TCP
-Portainer|9000|TCP
 Elasticsearch|9200|TCP
 Elasticsearch|9300|TCP
 Logstash|5600|TCP
