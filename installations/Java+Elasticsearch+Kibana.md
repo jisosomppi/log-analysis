@@ -39,3 +39,8 @@ sudo apt-get -y install oracle-java8-installer
 **Install Kibana with:**  
 `./kibana`
 
+# Install rsyslog-elasticsearch
+Elasticsearch output plugin for rsyslog
+
+`sudo apt-get install rsyslog-elasticsearch`
+
