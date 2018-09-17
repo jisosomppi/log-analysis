@@ -79,3 +79,22 @@ At this point in the project, Kibana and Elasticsearch seem to be functioning pr
 More work on the logging setup. Rsyslog is still causing trouble, not forwarding logs like it should. We spent hours reading guides and documentation, but had no luck making the information accessible.
 
 On the upside: service monitoring works! We enabled monitoring services in both Elasticsearch and Kibana, and we can now view data on amount of queries processed, response times etc.
+
+### Week 5
+#### Monday
+We did indeed generate more log data over the weekend, however our Rsyslog settings seemed to be a bit off. the `/var/log/client_logs` folder was over 200Gb in size, while other files in `/var/log/` (all 80Gb+ of it) were affected too. It seems our problem is handling input and output on the same machine, with Rsyslog forwarding each incoming message to itself in an infinite loop.
+
+Here are the clearly affected files in `/var/log`:
+```
+jussi@logmaster:/var/log$ ls -lah
+total 83G
+-rw-r-----  1 syslog        adm           9.2G Sep 17 12:36 auth.log
+-rw-r-----  1 syslog        adm            15G Sep 16 06:38 auth.log.1
+-rw-r-----  1 syslog        adm           732M Sep 17 12:11 kern.log
+-rw-r-----  1 syslog        adm           932M Sep 16 06:38 kern.log.1
+-rw-r-----  1 syslog        adm            12G Sep 17 12:36 syslog
+-rw-r-----  1 syslog        adm            45G Sep 17 06:33 syslog.1
+-rw-r-----  1 syslog        adm           506M Sep 16 06:38 syslog.2.gz
+-rw-r-----  1 syslog        adm           844M Sep 15 06:25 syslog.3.gz
+```
+
