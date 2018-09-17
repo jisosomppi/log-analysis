@@ -80,9 +80,15 @@ More work on the logging setup. Rsyslog is still causing trouble, not forwarding
 
 On the upside: service monitoring works! We enabled monitoring services in both Elasticsearch and Kibana, and we can now view data on amount of queries processed, response times etc.
 
+#### Wednesday
+Project presentations
+
+#### Thursday
+We rebuilt the logging server. Due to numerous issues with our previous setup, we decided to start with a clean slate. A fresh install of Ubuntu Server 16.04.5 and our necessary components solved most of our issues, which were likely caused by tired tinkering of system settings and file/directory permissions.
+
 ### Week 5
 #### Monday
-We did indeed generate more log data over the weekend, however our Rsyslog settings seemed to be a bit off. the `/var/log/client_logs` folder was over 200Gb in size, while other files in `/var/log/` (all 80Gb+ of it) were affected too. It seems our problem is handling input and output on the same machine, with Rsyslog forwarding each incoming message to itself in an infinite loop.
+We did indeed generate more log data over the weekend, however our Rsyslog settings seemed to be a bit off. the `/var/log/client_logs` folder was over 200Gb in size, while other files in `/var/log/` (all 80Gb+ of it) were affected too. It seems our problem is handling input and output on the same machine, with Rsyslog forwarding each incoming message to itself in an infinite loop. All of this data exists, despite the fact we had enabled rate limitation, which seemed to work as planned (confirmed by log messages of tens of thousands of messages being blocked by rate limitations)
 
 Here are the clearly affected files in `/var/log`:
 ```
