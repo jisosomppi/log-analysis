@@ -104,3 +104,4 @@ total 83G
 -rw-r-----  1 syslog        adm           844M Sep 15 06:25 syslog.3.gz
 ```
 
+Changing back to our earlier setup (with Docker containers running the ELK components) and sending data with FileBeat resulted in a working setup. In our minds, this confirms that our problems lie within Rsyslogs configuration. 
