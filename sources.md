@@ -11,3 +11,5 @@ http://yallalabs.com/linux/how-to-setup-a-centralized-log-server-using-rsyslog-o
 https://www.techrepublic.com/article/how-to-install-and-configure-rsyslog-for-a-centralized-linux-log-server/  
 https://www.rsyslog.com/tag/elasticsearch/  
 https://www.experts-exchange.com/questions/28408576/Setting-up-rsyslog-to-send-to-Elasticsearch-and-Kibana.html  
+
+https://sematext.com/blog/recipe-rsyslog-elasticsearch-kibana/
