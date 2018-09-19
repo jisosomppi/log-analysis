@@ -2,7 +2,7 @@
 #
 #			For more information see rsyslog.conf(5) and /etc/rsyslog.conf
 
-*.*				@172.28.175.21:514;elasticsearch.conf
+*.*				@:514;elasticsearch.conf
 
 #
 # First some standard log files.  Log by facility.
