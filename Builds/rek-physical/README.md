@@ -1,6 +1,8 @@
 # Rsyslog, Elasticsearch, Kibana
 # Full apt-get install, no containers
 
+![REK_dataflow.jpg](https://github.com/jisosomppi/log-analysis/blob/master/Builds/rek-physical/REK_dataflow.jpg)
+
 	This build is based on the following articles:
 	https://www.rsyslog.com/rsyslog-and-elasticsearch/
 	https://sematext.com/blog/recipe-rsyslog-elasticsearch-kibana/
