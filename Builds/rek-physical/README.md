@@ -1,7 +1,14 @@
 # Rsyslog, Elasticsearch, Kibana
 # Full apt-get install, no containers
 
-*This build based mostly on [this article](https://sematext.com/blog/recipe-rsyslog-elasticsearch-kibana/), with some updates as the article is slightly outdated (published July, 2013). Elasticsearch and Kibana installed by following https://www.elastic.co/guide/en/elasticsearch/reference/current/deb.html.*
+	This build is based on the following articles:
+	https://www.rsyslog.com/rsyslog-and-elasticsearch/
+	https://sematext.com/blog/recipe-rsyslog-elasticsearch-kibana/
+	https://sematext.com/blog/recipe-apache-logs-rsyslog-parsing-elasticsearch/
+	https://www.tecmint.com/create-centralized-log-server-with-rsyslog-in-centos-7/
+	https://www.howtoforge.com/tutorial/rsyslog-centralized-log-server-in-debian-9/
+	https://launchpad.net/~adiscon/+archive/ubuntu/v8-stable
+
 
 Server setup:
 
