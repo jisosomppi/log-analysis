@@ -8,3 +8,4 @@ Salt|4506|TCP
 Kibana|5601|TCP
 Elasticsearch|9200|TCP
 Elasticsearch|9300|TCP
+Logstash|10514|TCP
