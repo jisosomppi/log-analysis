@@ -23,5 +23,5 @@ https://www.elastic.co/blog/how-to-centralize-logs-with-rsyslog-logstash-and-ela
 **REK Stack**  
 https://www.experts-exchange.com/questions/28408576/Setting-up-rsyslog-to-send-to-Elasticsearch-and-Kibana.html  
 
-**Docker**
+**Docker**  
 https://portainer.io/install.html  
