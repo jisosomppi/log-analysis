@@ -104,5 +104,5 @@ and restarted rsyslog `sudo service rsyslog restart`
 
 On Graylog web interface configured System -> Inputs -> Syslog UDP
 
-![kuve1](https://github.com/einokupias/rsyslog_greylog/blob/master/kuve1.png?raw=true)
+![kuve1](https://github.com/jisosomppi/log-analysis/blob/master/builds/rsyslog-graylog/kuve1.png)
 
