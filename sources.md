@@ -25,3 +25,6 @@ https://www.experts-exchange.com/questions/28408576/Setting-up-rsyslog-to-send-t
 
 **Docker**  
 https://portainer.io/install.html  
+
+**Other**
+https://www.draw.io/ `flowcharts/data_flow_01.xml` for prototype visualization
