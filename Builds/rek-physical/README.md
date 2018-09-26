@@ -16,9 +16,9 @@ Server setup:
 
 ```
 wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -
-sudo apt-get install apt-transport-https default-jdk
+sudo apt-get install -y apt-transport-https default-jdk
 echo "deb https://artifacts.elastic.co/packages/6.x/apt stable main" | sudo tee -a /etc/apt/sources.list.d/elastic-6.x.list
-sudo apt-get update && sudo apt-get install elasticsearch kibana rsyslog rsyslog-elasticsearch
+sudo apt-get update && sudo apt-get install -y elasticsearch kibana rsyslog rsyslog-elasticsearch
 ```
 
 * Install Java
