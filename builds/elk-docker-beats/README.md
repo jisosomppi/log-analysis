@@ -39,10 +39,10 @@ This setup is working, albeit with suboptimal components. We're getting data fro
 With the current setup, using Logstash is not necessary! This eliminates one step of the already complicated setup, and reduces resource use on the server.
 
 ## Refining the build
-* We got Filebeat and Metricbeat working correctly on two different clients, both sending data to the same Dockerized ElasticSearch. 
-* We got the dashboards from both Beats to work correctly, displaying data in real time.
+* We got Filebeat and Metricbeat working correctly on two different clients, both sending data to the same Dockerized ElasticSearch
+* We got the dashboards from both Beats to work correctly, displaying data in real time
 * We found the correct JSON syntax by studying Kibana and Beats, and by analyzing the traffic with Wireshark
-
+* We enabled the Docker module in MetricBeat, gaining usage data for Docker containers
 
 ## Next steps
 * Study the setup, copy working settings to full installs of Elasticsearch and Kibana, get rid of Docker
