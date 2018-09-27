@@ -1,5 +1,7 @@
 # this version is messy and not working. This was written on 5th week and immediately improved upon. #
-New [version](https://github.com/jisosomppi/log-analysis/blob/master/builds/rsyslog-logstash-es-kibana/Installations.md):
+New [version](https://github.com/jisosomppi/log-analysis/blob/master/builds/rsyslog-logstash-es-kibana/Installations.md) in the same folder.
+
+---------------------------------------
 
 Install Java 8
 
