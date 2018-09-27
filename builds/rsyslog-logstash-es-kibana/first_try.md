@@ -1,3 +1,5 @@
+# this version is messy and not working. This was written on 5th week and immediately improved upon. #
+
 Install Java 8
 
 sudo add-apt-repository -y ppa:webupd8team/java
