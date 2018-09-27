@@ -4,8 +4,8 @@
 |wk 35|6|10|10|Worked on project plan, tested ELK-stack|
 |wk 36|18|18|18|Finalized project plan, got server running, looked into alternative open source modules, migrated all documentation to Github|
 |wk 37|14|14|14|Removed Logstash and Beats. Started troubleshooting Rsyslog, presented projectplan. Troubleshot Rsyslog, but broke Elasticsearch. Reinstalled server and components seem to work. Still unable to pass data from Rsyslog to Elasticsearch properly|
-|wk 38|5|5|5|Found out that Rsyslog has generated over 200Gb of data during the weekend, let the troubleshooting be joined|
-|wk 39|||||
+|wk 38|17|17|17|Found out that Rsyslog has generated over 200Gb of data during the weekend, let the troubleshooting be joined. We couldn't get Rsyslog-elasticsearch-kibana setup to work properly. We started our individual setups with different components. Jussi took the original Elk-stack, Eino started working with Graylog and Saku took Rsyslog-logstash-Elasticsearch-Kibana|
+|wk 39|8|5|8|Monday was a sickday all around, not much got done. On wednesday we had a meeting with Tero and continued our work. Jussi passed data to Kibana with and without Logstash! Eino got Graylog working to some degree and Saku got everything running, but Logstash didn't pass data to Elasticsearch. Trying to capture the proper JSON format used by Beats with Wireshark.|
 |wk 40|||||
 |wk 41|||||
 |wk 42|||||
