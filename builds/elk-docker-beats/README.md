@@ -34,12 +34,17 @@ sudo apt-get update && sudo apt-get install -y metricbeat
 I edited the main configuration file `/etc/metricbeat/metricbeat.yml`, adding the correct address and port for my Kibana and Elasticsearch instances. Then I ran the Metricbeat setup `sudo metricbeat setup`, which adds preconfigured dashboards for different log sources to Kibana. I also did the same for Filebeat (`sudo apt-get install -y filebeat`, settings and `sudo filebeat setup`), which allowed me to send log data directly.
 
 ## Success!
-This setup is working, albeit with suboptimal components. We're getting data from the client machine onto the server, and the data is completely readable, searchable and analyzable. The 
+This setup is working, albeit with suboptimal components. We're getting data from the client machine onto the server, and the data is completely readable, searchable and analyzable.
 
 With the current setup, using Logstash is not necessary! This eliminates one step of the already complicated setup, and reduces resource use on the server.
 
+## Refining the build
+* We got Filebeat and Metricbeat working correctly on two different clients, both sending data to the same Dockerized ElasticSearch. 
+* We got the dashboards from both Beats to work correctly, displaying data in real time.
+* We found the correct JSON syntax by studying Kibana and Beats, and by analyzing the traffic with Wireshark
+
+
 ## Next steps
 * Study the setup, copy working settings to full installs of Elasticsearch and Kibana, get rid of Docker
-* Study the output of Metricbeat and Filebeat to get the correct syntax for requests (Wireshark)
 * Build a custom format to send info from Rsyslog to Elasticsearch
 * Filter sent logs to reduce load on client, server and network
