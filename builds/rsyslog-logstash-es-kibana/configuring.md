@@ -151,3 +151,6 @@ One more thing. Restart Kibana to apply configuration changes:
 
 Browse your Kibana. If it doesn't complain about not connecting to elasticsearch, these configurations are fine to some degree. We are still unable to pass data to Kibana, so something is still missing or misconfigured. If your Kibana does connect to Elasticsearch, but there is no data, then the fault should lie in Logstash.  
 Browsing http://elasticsearch_IP:9200/_cat/indices?v should give you a hint. Whetever is listed there, should work properly.
+
+Kokeiluun:  
+https://www.rsyslog.com/coupling-with-logstash-via-redis/#more-2356
