@@ -65,18 +65,24 @@ add `*.*  @@10.x.x.x:514`
 `sudoedit /etc/rsyslog.d/01-json-template.conf`
 Copy the following into the file:  
 ```
-template(name="json-template"
-  type="list") {
-    constant(value="{")
-      constant(value="\"@timestamp\":\"")     property(name="timereported" dateFormat="rfc3339")
+template(name="json_lines" type="list" option.json="on") {
+      constant(value="{")
+      constant(value="\"@timestamp\":\"")
+      property(name="timereported" dateFormat="rfc3339")
       constant(value="\",\"@version\":\"1")
-      constant(value="\",\"message\":\"")     property(name="msg" format="json")
-      constant(value="\",\"sysloghost\":\"")  property(name="hostname")
-      constant(value="\",\"severity\":\"")    property(name="syslogseverity-text")
-      constant(value="\",\"facility\":\"")    property(name="syslogfacility-text")
-      constant(value="\",\"programname\":\"") property(name="programname")
-      constant(value="\",\"procid\":\"")      property(name="procid")
-    constant(value="\"}\n")
+      constant(value="\",\"message\":\"")
+      property(name="msg" format="json")
+      constant(value="\",\"sysloghost\":\"")
+      property(name="hostname")
+      constant(value="\",\"severity\":\"")
+      property(name="syslogseverity-text")
+      constant(value="\",\"facility\":\"")
+      property(name="syslogfacility-text")
+      constant(value="\",\"programname\":\"")
+      property(name="programname")
+      constant(value="\",\"syslog-tag\":\"")
+      property(name="syslogtag")
+      constant(value="\"}\n")
 }
 ```
 
