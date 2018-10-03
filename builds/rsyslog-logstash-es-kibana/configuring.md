@@ -164,5 +164,5 @@ That file can be found under [log-analysis/etc/rsyslog.d](https://github.com/jis
 
 What jussi found out, was that we were previously missing a part in the configuration file. The missing part was `*.*`.  
 
-
+**This build is now obsolete. We have no reason to use a build with logstash, because it consumes much more resources than a stack with just Rsyslog, Elasticsearch and Bibana.**
 
