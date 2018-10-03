@@ -1,3 +1,5 @@
+
+
 # 1) Bind Elasticsearch to IP address #
 
 Open *elasticsearch.yml* configuration file  
@@ -86,8 +88,6 @@ template(name="json_lines" type="list" option.json="on") {
 }
 ```
 
-[Rsyslog.com documents](http://www.rsyslog.com/doc/v8-stable/configuration/properties.html) show variables for customizing data.
-
 
 # 5) Configure server to send data to logstash #  
 
@@ -95,6 +95,7 @@ template(name="json_lines" type="list" option.json="on") {
 ```
 *.*                         @private_ip_logstash:10514;json-template
 ```
+
 
 # 6) Configure Logstash to receive JSON messages. #
 
@@ -158,11 +159,84 @@ https://www.rsyslog.com/coupling-with-logstash-via-redis/#more-2356
 # What I was missing #  
 
 **Jussi got his Rsyslog-to-elasticsearch-to-kibana build working!**
+ 
 
-I can fairly safely assume, that the problem in this build was the missing *elasticsearch.conf* file under */etc/rsyslog.conf/*.
-That file can be found under [log-analysis/etc/rsyslog.d](https://github.com/jisosomppi/log-analysis/blob/master/etc/rsyslog.d/elasticsearch.conf).  
+**This build is now obsolete. We have no reason to use a build with logstash, because it consumes much more resources than a stack with just Rsyslog, Elasticsearch and Kibana. I will however try to complete this build.**
 
-What jussi found out, was that we were previously missing a part in the configuration file. The missing part was `*.*`.  
 
-**This build is now obsolete. We have no reason to use a build with logstash, because it consumes much more resources than a stack with just Rsyslog, Elasticsearch and Bibana.**
+I'm fairly sure that the problem lies in either rsyslog or logstash configuration. I tried to make few different kind of *logstash.conf* files.  
+
+Try 1:  
+```
+# Pull in syslog & rsyslog data
+input {
+  file {
+    path => [
+      "/var/log/syslog",
+      "/var/log/auth.log"
+    ]
+    type => [
+      "syslog",
+      "rsyslog"
+    ]
+  }
+}
+
+# This input block will listen on port 10514 for logs to come in.
+
+input {
+  udp {
+    host  => "172.28.172.231"
+    port  => 10514
+    codec => "json"
+    type  => [
+      "syslog",
+      "rsyslog"
+    ]
+  }
+  tcp {
+    host  => "172.28.172.231"
+    port  => 10514
+    codec => "json"
+    type  => [
+      "syslog",
+      "rsyslog"
+    ]
+  }
+}
+
+# Lets leave this empty for now. The filter plugins are used to enrich and transform data.
+filter { }
+
+# This output block will send all events of type "syslog" or "rsyslog" to Elasticsearch at the configured host and port
+output {
+  if [type] =="rsyslog" {
+    elasticsearch {
+      hosts => [ "172.28.172.231:9200" ]
+    }
+  }
+  if [type] == "syslog" {
+    elasticsearch {
+      hosts => [ "172.28.172.231:9200" ]
+    }
+  }
+}
+```
+source: https://opensource.com/article/17/10/logstash-fundamentals
+
+Try 2 (this should be little more simple approach):  
+```
+output {
+  elasticsearch { host => localhost }
+  stdout {
+    codec    => rubydebug
+    protocol => http
+  }
+}
+```
+I must continue this another day. This file is still missing input (and filter) block. source: https://discuss.elastic.co/t/error-on-logstash-cant-connect-to-elasticsearch/28674/3  
+If the file doesn't work, I will follow my next lead: https://deviantony.wordpress.com/2014/09/23/how-to-setup-an-elasticsearch-cluster-with-logstash-on-ubuntu-12-04/  
+
+
+
 
