@@ -105,3 +105,20 @@ total 83G
 ```
 
 Changing back to our earlier setup (with Docker containers running the ELK components) and sending data with FileBeat resulted in a working setup. In our minds, this confirms that our problems lie within Rsyslogs configuration. 
+#### Wednesday
+We started work on our own sub-projects, dividing our research and workload into different builds. The builds aim to reach the same end result with different setups. The builds can be found in their own folder.
+### Week 6
+We continued work on the builds
+### Week 7
+Breakthrough! Combining previous config files and a crucial new piece of information, we got our Rsyslog clients sending data directly to the Elasticsearch server! Of course, this isn't the ideal setup (thanks to weak security), but the satisfaction of seeing Rsyslog messages on Kibana was immense!
+
+The critical piece we missed was adding `*.*  ` to our `elasticsearch.conf` file (used to define Rsyslog's ouput to Elasticsearch). We found this error by analyzing outbound traffic from an Rsyslog client with Wireshark. This revealed that despite an error-free debug check of Rsyslog, no data was leaving the client system. `*.*  ` was added to the "action" part of the configuration, which defines which logs should be affected by the action. This addition was not documented in any of our third-party source materials, and was a discovery from a few different official documents from Rsyslog.
+
+Next steps for this configuration:
+* Changing the dataflow to utilize a centralized Rsyslog server
+  * Reduces security risks
+  * Saves logs in case of incidents
+* Securing the log data between client and server
+* Moving Elasticsearch and Kibana out of Docker containers
+
+In our minds, this solved the single biggest problem we had with the project, getting Rsyslog to talk to Elasticsearch.
