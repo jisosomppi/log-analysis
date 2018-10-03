@@ -226,11 +226,31 @@ source: https://opensource.com/article/17/10/logstash-fundamentals
 
 Try 2 (this should be little more simple approach):  
 ```
+input {
+  udp {
+    host  => "172.28.172.231"
+    port  => 10514
+    codec => "json"
+    type  => [
+      "syslog",
+      "rsyslog"
+    ]
+  }
+  tcp {
+    host  => "172.28.172.231"
+    port  => 10514
+    codec => "json"
+    type  => [
+      "syslog",
+      "rsyslog"
+    ]
+  }
+}
 output {
-  elasticsearch { host => localhost }
+  elasticsearch { host => "172.28.172.231:9200" }
   stdout {
-    codec    => rubydebug
-    protocol => http
+    codec    => "json"
+    protocol => "http"
   }
 }
 ```
