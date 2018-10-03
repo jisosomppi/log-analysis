@@ -153,4 +153,16 @@ Browse your Kibana. If it doesn't complain about not connecting to elasticsearch
 Browsing http://elasticsearch_IP:9200/_cat/indices?v should give you a hint. Whetever is listed there, should work properly.
 
 Kokeiluun:  
-https://www.rsyslog.com/coupling-with-logstash-via-redis/#more-2356
+https://www.rsyslog.com/coupling-with-logstash-via-redis/#more-2356 
+
+# What I was missing #  
+
+**Jussi got his Rsyslog-to-elasticsearch-to-kibana build working!**
+
+I can fairly safely assume, that the problem in this build was the missing *elasticsearch.conf* file under */etc/rsyslog.conf/*.
+That file can be found under [log-analysis/etc/rsyslog.d](https://github.com/jisosomppi/log-analysis/blob/master/etc/rsyslog.d/elasticsearch.conf).  
+
+What jussi found out, was that we were previously missing a part in the configuration file. The missing part was `*.*`.  
+
+
+
