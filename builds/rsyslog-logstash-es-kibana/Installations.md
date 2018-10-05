@@ -1,10 +1,10 @@
-# Update & upgrade #
+# Updating & upgrading #
 ```
 sudo apt-get update
 sudo apt-get upgrade
 ```
 
-# Install Java 8 # 
+# Installing Java 8 # 
 ```
 sudo add-apt-repository -y ppa:webupd8team/java
 sudo apt-get update
@@ -16,7 +16,7 @@ sudo apt-get install -y default-jre
 sudo apt-get install -y openjdk-8-jdk
 ```
 
-# Install Elasticsearch #
+# Installing Elasticsearch #
 ```
 wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -
 sudo apt-get install apt-transport-https
@@ -26,7 +26,7 @@ sudo apt-get update && sudo apt-get install elasticsearch
 source: https://www.elastic.co/guide/en/elasticsearch/reference/current/deb.html
 
 
-# Install Kibana #
+# Installing Kibana #
 ```
 wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -
 echo "deb https://artifacts.elastic.co/packages/6.x/apt stable main" | sudo tee -a /etc/apt/sources.list.d/elastic-6.x.list
@@ -41,7 +41,7 @@ sudo /bin/systemctl enable kibana.service
 sudo systemctl start kibana.service
 ```
 
-# Install Logstash #
+# Installing Logstash #
 ```
 wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -
 echo "deb https://artifacts.elastic.co/packages/6.x/apt stable main" | sudo tee -a /etc/apt/sources.list.d/elastic-6.x.list
