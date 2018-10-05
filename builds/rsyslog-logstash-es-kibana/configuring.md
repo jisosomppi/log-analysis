@@ -372,7 +372,7 @@ type  => [
       "rsyslog"
     ]
 ```
-doesn't pass the configuration check, so at the ablosute least we can say the test actually does something. Fixing and testing again. 
+doesn't pass the configuration check, so at the absolute least we can say the test actually does something. Fixing and testing again. 
 
 Also had to remove the line with `protocol => "http"` and the configuration test passed.
 
