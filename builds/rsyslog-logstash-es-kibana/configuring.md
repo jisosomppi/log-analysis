@@ -159,7 +159,7 @@ Browsing `http://elasticsearch_IP:9200/_cat/indices?v` should give you a hint. W
 Kokeiluun:  
 https://www.rsyslog.com/coupling-with-logstash-via-redis/#more-2356 
 
-# What I was missing #  
+# Troubleshooting #  
 
 **Jussi got his Rsyslog-to-elasticsearch-to-kibana build working!**
  
