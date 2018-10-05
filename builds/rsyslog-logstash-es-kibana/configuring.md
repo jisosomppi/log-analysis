@@ -318,7 +318,48 @@ output {
 
 Previous logstash.conf files didn't seem to work. This leads me to believe one of the following things:  
 1) Logstash configuration file is working  
-2) Fault is most likely in files under rsyslog.d
-3)
+2) If 1) is true, then the fault is most likely in files under rsyslog.d
+
+
+I tested Logstash configuration with command:  
+`sudo -u logstash /usr/share/logstash/bin/logstash --path.settings /etc/logstash -t`  
+and the test came out saying "*Configuration OK*". However, there is no data in the directory where logstash.yml directs us (/var/log/logstash/). Seems like something is still off.
+
+Trying different configuration again and running the tests.  
+```
+input {
+  udp {
+    host  => "172.28.171.230"
+    port  => 10514
+    codec => "json"
+    type  => [
+      "syslog",
+      "rsyslog"
+    ]
+  }
+  tcp {
+    host  => "172.28.171.230"
+    port  => 10514
+    codec => "json"
+    type  => [
+      "syslog",
+      "rsyslog"
+    ]
+  }
+}
+
+# Lets leave this empty for now. The filter plugins are used to enrich and transform data.
+filter { }
+
+# This output block will send all events of type "syslog" or "rsyslog" to Elasticsearch at the configured host and port
+output {
+  elasticsearch { host => "172.28.171.230:9200" }
+  stdout {
+    codec    => "json"
+    protocol => "http"
+  }
+}
+
+```
 
 
