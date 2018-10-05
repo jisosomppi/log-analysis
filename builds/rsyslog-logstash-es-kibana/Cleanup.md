@@ -2,12 +2,12 @@
 
 **This is a working solution on ubuntu 18.04. I doupt it would work on a live-usb. This documents becomes partially invalid once I add a proper client and server structure.**
 
-1) [Install](https://github.com/jisosomppi/log-analysis/blob/master/builds/rsyslog-logstash-es-kibana/Installations.md) Java, Logstash, Elasticsearch and Kibana  
-2) Uncomment lines regarding IP and port in *elasticsearch.yml*. Also replace "localhost" with your proper IP.  
-3) Activate TCP and UDP modules in rsyslog.conf  
-4) Tell Rsyslog to send data to Logstash in /etc/rsyslog.d/60-output.conf by adding line with `*.* @Your_IP:10514;json-template`.    
-5) Prepare JSON template and add it to Rsyslog.d (I named it 01-json-template.conf)  
-6) Add logstash.conf to /etc/logstash/conf.d/  
+1) [Installing](https://github.com/jisosomppi/log-analysis/blob/master/builds/rsyslog-logstash-es-kibana/Installations.md) Java, Logstash, Elasticsearch and Kibana was the first step for me.  
+2) Uncommenting and replacing lines regarding IP address and port in *elasticsearch.yml* lets you connect to Elasticsearch remotely.  
+3) At this point I uncommented *imudp* and *imtcp* modules to activate tcp & udp reception in rsyslog.conf under */etc*  
+4) I enabled Rsyslog to send data to Logstash in /etc/rsyslog.d/60-output.conf by adding line with `*.* @Your_IP:10514;json-template`.  
+5) Next I prepare my JSON template and added it to Rsyslog.d (I named it 01-json-template.conf).  
+6) I created my logstash.conf to /etc/logstash/conf.d/. This directory shoud be empty by default.  
 ```
 input {
   udp {
@@ -27,8 +27,14 @@ output {
   }
 }
 ```
-7) Verify your logstash configuration with
+7) I verified my logstash configuration with the following command:  
 `sudo -u logstash /usr/share/logstash/bin/logstash --path.settings /etc/logstash -t`
-8) Run logstash from /usr/share/logstash/bin and use the configuration file we just made.
-9) Ensure logstash is running properly in the right port. `netstat -na | grep 10514` or `sudo netstat -ntlpu` should do the trick.  
-10) Configure Kibana with proper IP addresses and ports for itself and connecting to Elasticsearch.
+8) Next I started logstash from /usr/share/logstash/bin using the configuration file I just made.
+9) At this point I wanted to ensure logstash is running properly in the right port. `netstat -na | grep 10514` or `sudo netstat -ntlpu` should both do the trick.  
+10) Lastly, I configured Kibana with proper IP addresses and ports for itself and connecting to Elasticsearch. If I remember correctly, starting Kibana required more than just `sudo service kibana restart`. I ran 3 commands:  
+```
+sudo /bin/systemctl daemon-reload
+sudo /bin/systemctl enable kibana.service
+sudo systemctl start kibana.service
+
+```
