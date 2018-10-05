@@ -128,6 +128,9 @@ output {
 Ensure that Logstash is running in port 10514:  
 `netstat -na | grep 10514`  
 
+Test Logstash configuration with command:  
+`sudo -u logstash /usr/share/logstash/bin/logstash --path.settings /etc/logstash -t`
+
 https://www.elastic.co/guide/en/logstash/current/config-setting-files.html
 
 
@@ -257,6 +260,65 @@ output {
 I must continue this another day. This file is still missing input (and filter) block. source: https://discuss.elastic.co/t/error-on-logstash-cant-connect-to-elasticsearch/28674/3  
 If the file doesn't work, I will follow my next lead: https://deviantony.wordpress.com/2014/09/23/how-to-setup-an-elasticsearch-cluster-with-logstash-on-ubuntu-12-04/  
 
+Overly simplified *logstash.conf* file:  
+```
+input { stdin { } }
 
+filter { }
+
+output {
+  elasticsearch { hosts => ["172.28.171.230:9200"] }
+  stdout { codec => json }
+}
+
+```
+According to some sources (I actually lost the source) I should split the configuration file into 3 parts: input, output and filter. I gave this an attempt, but to no avail.
+
+*02-syslog-input.conf*  
+```
+input {
+  file {
+    path => ["/var/log/syslog"]
+    type => "syslog"
+  }
+}
+
+```
+
+*10-syslog-filter.conf*  
+```
+filter {
+  if [type] == "syslog" {
+    grok {
+      match => { "message" => "%{SYSLOGTIMESTAMP:syslog_timestamp} %{SYSLOGHOST:syslog_hostname} %{DATA:syslog_program}(?:\[%{POSINT:$
+      add_field => [ "received_at", "%{@timestamp}" ]
+      add_field => [ "received_from", "%{host}" ]
+    }
+    syslog_pri { }
+    date {
+      match => [ "syslog_timestamp", "MMM  d HH:mm:ss", "MMM dd HH:mm:ss" ]
+    }
+  }
+}
+
+```
+
+*30-elasticsearch-output.conf*  
+```
+output {
+  elasticsearch {
+      hosts => ["https://172.28.171.230:9200"]
+      index => "syslog-%{+YYYY.MM.dd}"
+      document_type => "system_logs"
+  }
+  stdout { codec => rubydebug }
+}
+
+```
+
+Previous logstash.conf files didn't seem to work. This leads me to believe one of the following things:  
+1) Logstash configuration file is working  
+2) Fault is most likely in files under rsyslog.d
+3)
 
 
