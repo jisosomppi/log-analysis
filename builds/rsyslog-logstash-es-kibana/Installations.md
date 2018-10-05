@@ -12,8 +12,8 @@ sudo apt-get -y install oracle-java8-installer
 ```
 and  
 ```
-apt install default-jre
-sudo apt-get install openjdk-8-jdk
+sudo apt-get install -y default-jre
+sudo apt-get install -y openjdk-8-jdk
 ```
 
 # Install Elasticsearch #
