@@ -1,31 +1,3 @@
-
-# Encrypting Rsyslog traffic in a networkserveri@rserveri:/var$ sudoedit /etc/rsyslog.d/50-default.conf 
-sudoedit: /etc/rsyslog.d/50-default.conf unchanged
-rserveri@rserveri:/var$ cd /home/rserveri/
-rserveri@rserveri:~$ ls
-Desktop  Documents  Downloads  log-analysis  Music  Pictures  Public  Templates  Videos
-rserveri@rserveri:~$ sudo cp log-analysis/etc/rsyslog.d/
-20-ufw.conf           50-default.conf       50-default.conf.save  elasticsearch.conf    tmpl.conf             
-rserveri@rserveri:~$ sudo cp log-analysis/etc/rsyslog.d/tmpl.conf /etc/rsyslog.d/
-[sudo] password for rserveri: 
-'rserveri@rserveri:~$ ls /etc/rsyslog.d/
-20-ufw.conf  50-default.conf  tmpl.conf
-rserveri@rserveri:~$ sudo service rsyslog restart 
-rserveri@rserveri:~$ sudo service rsyslog status 
-● rsyslog.service - System Logging Service
-   Loaded: loaded (/lib/systemd/system/rsyslog.service; enabled; vendor preset: enabled)
-   Active: active (running) since Fri 2018-10-05 11:27:35 EEST; 4s ago
-     Docs: man:rsyslogd(8)
-           http://www.rsyslog.com/doc/
- Main PID: 10525 (rsyslogd)
-    Tasks: 9 (limit: 4915)
-   CGroup: /system.slice/rsyslog.service
-           └─10525 /usr/sbin/rsyslogd -n
-
-loka 05 11:27:35 rserveri systemd[1]: Starting System Logging Service...
-loka 05 11:27:35 rserveri rsyslogd[10525]: warning: ~ action is deprecated, consider using the 'stop' statement instead [v8.32.0 try http://www.rsyslog.com/e/2307 ]
-loka 05 11:27:35 rserveri rsyslogd[10525]: imuxsoc
-
 Process explained in https://www.rsyslog.com/doc/v8-stable/tutorials/tls.html
 
 ## For testing purposes set up Rsyslog server and clien
