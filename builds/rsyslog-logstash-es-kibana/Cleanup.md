@@ -5,7 +5,7 @@
 1) [Install](https://github.com/jisosomppi/log-analysis/blob/master/builds/rsyslog-logstash-es-kibana/Installations.md) Java, Logstash, Elasticsearch and Kibana  
 2) Uncomment lines regarding IP and port in *elasticsearch.yml*. Also replace "localhost" with your proper IP.  
 3) Activate TCP and UDP modules in rsyslog.conf  
-4) Tell Rsyslog to send data to Logstash in /etc/rsyslog.d/60-output.conf by adding line with `*.* @@Your_IP:10514;json-template`.    
+4) Tell Rsyslog to send data to Logstash in /etc/rsyslog.d/60-output.conf by adding line with `*.* @Your_IP:10514;json-template`.    
 5) Prepare JSON template and add it to Rsyslog.d (I named it 01-json-template.conf)  
 6) Add logstash.conf to /etc/logstash/conf.d/  
 ```
