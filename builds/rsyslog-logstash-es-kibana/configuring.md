@@ -423,7 +423,27 @@ Check Kibana!
 
 ![kuva2](https://i.imgur.com/cbOBwm8.png)
 
+Now that we are passing data to Kibana, we might as well clean that logstash.conf file. Removing the TCP part from input block also cleaned the messages a lot in Kibana.
 
+```
+input {
+  udp {
+    host  => "172.28.171.230"
+    port  => 10514
+    codec => "json"
+    type  => "rsyslog"
+  }
+}
+
+filter { }
+
+output {
+  elasticsearch { hosts => "http://172.28.171.230:9200" }
+  stdout {
+    codec    => "json"
+  }
+}
+```
 
 
 
