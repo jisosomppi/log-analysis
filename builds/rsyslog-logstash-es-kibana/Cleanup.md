@@ -2,7 +2,7 @@
 
 **This is a working solution on ubuntu 18.04. I doupt it would work on a live-usb. This documents becomes partially invalid once I add a proper client and server structure.**
 
-1) Install Java, Logstash, Elasticsearch and Kibana  
+1) [Install](https://github.com/jisosomppi/log-analysis/blob/master/builds/rsyslog-logstash-es-kibana/Installations.md) Java, Logstash, Elasticsearch and Kibana  
 2) Uncomment lines regarding IP and port in *elasticsearch.yml*. Also replace "localhost" with your proper IP.  
 3) Activate TCP and UDP modules in rsyslog.conf  
 4) Tell Rsyslog to send data to Logstash in /etc/rsyslog.d/60-output.conf by adding line with `*.* @@Your_IP:10514;json-template`.    
