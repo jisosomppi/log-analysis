@@ -766,3 +766,4 @@ Found out that there is a rsyslog-relp package in packet manager so I installed 
 With this setup I was also able test client-server fuctionality.
 
 Tested encryption with Wireshark
+![Wireshar pic](https://raw.githubusercontent.com/jisosomppi/log-analysis/master/images/Wireshark%20encrypted.png)
