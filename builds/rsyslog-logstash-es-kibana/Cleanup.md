@@ -27,7 +27,8 @@ output {
   }
 }
 ```
-7) Verify your logstash configuration with `sudo -u logstash /usr/share/logstash/bin/logstash --path.settings /etc/logstash -t`
+7) Verify your logstash configuration with
+`sudo -u logstash /usr/share/logstash/bin/logstash --path.settings /etc/logstash -t`
 8) Run logstash from /usr/share/logstash/bin and use the configuration file we just made.
 9) Ensure logstash is running properly in the right port. `netstat -na | grep 10514` or `sudo netstat -ntlpu` should do the trick.  
 10) Configure Kibana with proper IP addresses and ports for itself and connecting to Elasticsearch.
