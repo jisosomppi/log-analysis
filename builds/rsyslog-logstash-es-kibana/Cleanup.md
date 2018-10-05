@@ -38,3 +38,6 @@ sudo /bin/systemctl enable kibana.service
 sudo systemctl start kibana.service
 
 ```
+Whenever I made any changes into configurations, I made sure to restart the related services. Since we only have 4 moving parts in this stack, it's not too big of an effort to restart them all before checking if everything works properly.  
+
+I will update this document or link to the next if or when I progress this build further (most likely with client & server structure).
