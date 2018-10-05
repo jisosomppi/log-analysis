@@ -1,4 +1,4 @@
-**I got this stack working and passed log data to Kibana successfully in my last [build](https://github.com/jisosomppi/log-analysis/blob/master/builds/rsyslog-logstash-es-kibana/configuring.md). I would still image that document is a pain to read for me and everyone else, so let's clean it up.
+**I got this stack working and passed log data to Kibana successfully in my last [build](https://github.com/jisosomppi/log-analysis/blob/master/builds/rsyslog-logstash-es-kibana/configuring.md). I would still image that document is a pain to read for me and everyone else, so let's clean it up.**
 
 **This is a working solution on ubuntu 18.04. I doupt it would work on a live-usb. This documents becomes partially invalid once I add a proper client and server structure.**
 
