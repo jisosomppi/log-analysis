@@ -128,6 +128,9 @@ output {
 Ensure that Logstash is running in port 10514:  
 `netstat -na | grep 10514`  
 
+or:  
+`sudo netstat -ntlpu`
+
 Test Logstash configuration with command:  
 `sudo -u logstash /usr/share/logstash/bin/logstash --path.settings /etc/logstash -t`
 
@@ -361,5 +364,66 @@ output {
 }
 
 ```
+
+The part with  
+```
+type  => [
+      "syslog",
+      "rsyslog"
+    ]
+```
+doesn't pass the configuration check, so at the ablosute least we can say the test actually does something. Fixing and testing again. 
+
+Also had to remove the line with `protocol => "http"` and the configuration test passed.
+
+This should be a working file:
+```
+# This input block will listen on port 10514 for logs to come in.
+
+input {
+  udp {
+    host  => "172.28.171.230"
+    port  => 10514
+    codec => "json"
+    type  => "rsyslog"
+  }
+  tcp {
+    host  => "172.28.171.230"
+    port  => 10514
+    codec => "json"
+    type  => "rsyslog"
+  }
+}
+
+# Lets leave this empty for now. The filter plugins are used to enrich and transform data.
+filter { }
+
+# This output block will send all events of type "syslog" or "rsyslog" to Elasticsearch at the configured host and port
+output {
+  elasticsearch { hosts => "http://172.28.171.230:9200" }
+  stdout {
+    codec    => "json"
+  }
+}
+
+```
+
+`sudo netstat -ntlpu`
+Logstash doesn't seem to be active in port 10514
+
+Jussi pointed out, that the process should be started from */usr/share/logstash/bin*. Lets start the service from this location, using the configuration files under /etc/logstash/conf.d.  
+`./logstash -f /etc/logstash/conf.d/`
+
+Ensure that Logstash is running in port 10514:  
+`netstat -na | grep 10514`
+
+![kuva1](https://i.imgur.com/Nkc7kQH.png)
+
+Check Kibana!
+
+![kuva2](https://i.imgur.com/cbOBwm8.png)
+
+
+
 
 
