@@ -261,7 +261,11 @@ output {
 }
 ```
 I must continue this another day. This file is still missing input (and filter) block. source: https://discuss.elastic.co/t/error-on-logstash-cant-connect-to-elasticsearch/28674/3  
-If the file doesn't work, I will follow my next lead: https://deviantony.wordpress.com/2014/09/23/how-to-setup-an-elasticsearch-cluster-with-logstash-on-ubuntu-12-04/  
+If the file doesn't work, I will follow my next lead: https://deviantony.wordpress.com/2014/09/23/how-to-setup-an-elasticsearch-cluster-with-logstash-on-ubuntu-12-04/ 
+
+## Where we left off & continuing troubleshooting ##
+
+![kuva3](https://i.imgur.com/SX0bl38.png)
 
 Overly simplified *logstash.conf* file:  
 ```
