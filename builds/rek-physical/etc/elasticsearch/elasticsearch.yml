@@ -14,7 +14,7 @@
 #
 # Use a descriptive name for your cluster:
 #
-#cluster.name: my-application
+cluster.name: rek
 #
 # ------------------------------------ Node ------------------------------------
 #
@@ -52,7 +52,7 @@ path.logs: /var/log/elasticsearch
 #
 # Set the bind address to a specific IP (IPv4 or IPv6):
 #
-network.host: 172.28.171.194
+network.host: 172.28.175.21
 #
 # Set a custom port for HTTP:
 #
@@ -69,7 +69,8 @@ http.port: 9200
 #
 # Prevent the "split brain" by configuring the majority of nodes (total number of master-eligible nodes / 2 + 1):
 #
-#discovery.zen.minimum_master_nodes: 
+discovery.zen.minimum_master_nodes: 1
+discovery.type: single-node
 #
 # For more information, consult the zen discovery module documentation.
 #
