@@ -44,7 +44,7 @@ Output should look something similar:
 **Huom!**
 At a later stage of the stack configuration, we found out that */var/log/syslog* had filled our entire system and took some 450Gb space. By searching information about the problem, I came upon a post that suggested this is caused by `stdout` output somewhere in the configuration files.
 
-The current fix we have, is to disable the following modules in the next step, as you enable *imudp* and *imtcp* modules: *imuxsock* and *imklog*
+~~The current fix we have, is to disable the following modules in the next step, as you enable *imudp* and *imtcp* modules: *imuxsock* and *imklog*~~ Scratch that. I'm still unsure what caused the looping last week, but I left those modules up and nothing imploded.
 
 --------------------------
 
