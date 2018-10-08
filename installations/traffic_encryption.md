@@ -78,7 +78,7 @@ On client added in `/etc/rsyslog.conf`
 
 
 ```
-*. * @@172.28.171.54.10514
+*. * @@172.28.171.54:10514
 ```
 
 After that I restarted rsyslog service `sudo service rsyslog restart`
