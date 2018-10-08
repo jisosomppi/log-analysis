@@ -3,12 +3,12 @@ Process explained in https://www.rsyslog.com/doc/v8-stable/tutorials/tls.html
 ## For testing purposes set up Rsyslog server and clien
 
 ### Client config
-https://www.rsyslog.com/sending-messages-to-a-remote-syslog-server/
-https://www.tecmint.com/setup-rsyslog-client-to-send-logs-to-rsyslog-server-in-centos-7/
+https://www.rsyslog.com/sending-messages-to-a-remote-syslog-server/  
+https://www.tecmint.com/setup-rsyslog-client-to-send-logs-to-rsyslog-server-in-centos-7/  
 
 ### Server config
-https://www.rsyslog.com/receiving-messages-from-a-remote-system/
-https://www.tecmint.com/create-centralized-log-server-with-rsyslog-in-centos-7/
+https://www.rsyslog.com/receiving-messages-from-a-remote-system/  
+https://www.tecmint.com/create-centralized-log-server-with-rsyslog-in-centos-7/  
 
 ### Separating log files
 https://www.rsyslog.com/storing-messages-from-a-remote-system-into-a-specific-file/
