@@ -21,8 +21,8 @@ https://github.com/rsyslog/rsyslog/tree/master/contrib/gnutls
 
 `sudo apt install gnutls-bin`
 
-## Reference
-https://www.rsyslog.com/doc/v8-stable/tutorials/tls.html
+## Reference  
+https://www.rsyslog.com/doc/v8-stable/tutorials/tls.html  
 https://www.rsyslog.com/doc/v8-stable/tutorials/tls_cert_summary.html
 
 ### Rsyslog server config
