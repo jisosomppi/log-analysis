@@ -65,3 +65,5 @@ Restarted rsyslog service
 For now client rsyslog remains errorless
 
 Tested connection with `logger -s "testitesti"` and confirmed in wireshark that the packets indeed were encrypted.
+
+![ENCRYPTED](https://raw.githubusercontent.com/jisosomppi/log-analysis/master/images/ENCRYPTED.png.jpg)
