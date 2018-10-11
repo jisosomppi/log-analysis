@@ -36,4 +36,8 @@ Search Guard offers all basic security features for free. The Community Edition 
 
 Sources:
 https://github.com/floragunncom/search-guard  
+https://www.syslog-ng.com/community/b/blog/posts/securing-esk-stack-free-using-search-guard/  
+
+sudo /usr/share/elasticsearch/bin/plugin install -b com.floragunn/search-guard-ssl/2.4.1.16  
+
 
