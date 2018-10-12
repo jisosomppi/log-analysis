@@ -489,15 +489,6 @@ server@server:~$ certtool --generate-privkey --outfile server-key.pem --bits 204
 Generating a 2048 bit RSA private key...
 server@server:~$ certtool --generate-request --load-privkey server-key.pem --outfile server-request.pem
 Generating a PKCS #10 certificate request...
-Common name: Eino
-Organizational unit name: 
-Organization name: 
-Locality name: 
-State or province name: 
-Country name (2 chars): FI
-Enter the subject's domain component (DC): ^C
-server@server:~$ certtool --generate-request --load-privkey server-key.pem --outfile server-request.pem
-Generating a PKCS #10 certificate request...
 Common name: 172.28.172.69
 Organizational unit name: 
 Organization name: 
