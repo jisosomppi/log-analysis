@@ -122,13 +122,13 @@ Next steps for this configuration:
 * Moving Elasticsearch and Kibana out of Docker containers
 
 In our minds, this solved the single biggest problem we had with the project, getting Rsyslog to talk to Elasticsearch.
+### Week 8
+Work on builds continued. We're working on implementing certificates in our Rsyslog client-server communication. 
 
-
-### Removing X-pack  
+#### Removing X-pack  
 X-pack is usually bundled with Elasticsearch and Kibana and uses Elastic license. Thus, we should remove it from our solution and replace it with Search Guard (for now).  
 
 https://www.elastic.co/guide/en/x-pack/current/xpack-uninstalling.html  
 
-
-
-
+#### Working build
+**The most complete build is currently [RELK-physical](https://github.com/jisosomppi/log-analysis/tree/master/builds/rek-physical).**   The build has no authentication, but does store the log files in both local folders (on the server) and in Logstash/Elasticsearch. In its current form, the build works from start to finish accurately.
