@@ -60,8 +60,30 @@ https://docs.search-guard.com/latest/search-guard-versions
 https://fi.wikipedia.org/wiki/Chmod  
 
 
+files created by the SG installation can be found under  
+`/usr/share/elasticsearch/plugins/search-guard-6/sgconfig/`  
+
+Lets take a quick look at the files.
+
+## Elasticsearch.yml.example  
+-Settings found in this file should be added to the standard elasticsearch.yml configuration file alongside with the 
+Search Guard TSL settings.  
 
 
+This line should be commented away. The enterprise modules are enabled by default and require licence if used in production. We could be eligible to use these modules in our project, but our end goal is to make an open source solution, so best ignore these modules from the get-go.  
+`searchguard.enterprise_modules_enabled: true`  
 
 
+This part is used to specify distinguished names which denote the other nodes in the cluster. Supports wilcards and regular expressions. This setting only has effect if 'searchguard.cert.intercluster_request_evaluator_class' is not set.  
+```
+searchguard.nodes_dn:
+  - "CN=*.example.com, OU=SSL, O=Test, L=Test, C=DE"
+  - "CN=node.other.com, OU=SSL, O=Test, L=Test, C=DE"
+```
 
+
+This block defines which DNs (distinguished names) of certificates admin privileges should be assigned to. 
+```
+searchguard.authcz.admin_dn:
+  - "CN=kirk,OU=client,O=client,l=tEst, C=De"
+```
