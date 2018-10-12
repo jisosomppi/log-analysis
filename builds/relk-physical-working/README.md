@@ -2,14 +2,15 @@
 
 ![dataflow](https://github.com/jisosomppi/log-analysis/blob/master/builds/relk-physical-working/relk-dataflow.png)
 
-Data flow:
+This build only needs rsyslog on the clients, and leaves the heavy work to the server. The logging server receives logs, stores them in folders divided by `/hostname/programname.log`, formats them to proper JSON and sends them to be processed by Elasticsearch. The data contained in Elasticsearch can be easily viewed and studied using Kibana.
 
-Rsyslog client -`514/tcp(remote)`-> Rsyslog server -`write`->  
-local log files on server  
-<-`read`- Logstash -`9200/tcp(localhost)`-> Elasticsearch <-`9200/tcp(localhost)`- Kibana <-`5601/tcp(remote)`- Browser
+Pros:
+* Lightweight on clients
+* Only entries into the server are Rsyslog intake (514/tcp) and Kibana access (5601/tcp)
 
-This build is a second version of the physical stack, and attempts were made to make it work both with Logstash and without.
-The configuration is non-functional, but stored for possible future use.
+Cons:
+* Logstash is quite heavy on the server
+* Origin of logs is not automatically inserted into Elasticsearch
 
 ## Techniques, changes, etc
 * rsyslog.conf
@@ -29,3 +30,4 @@ The configuration is non-functional, but stored for possible future use.
 * Too much data is being logged
   * Sort out filters on client
 * Log severity levels not implemented
+* Rotated/archived log files (syslog.1, auth.log.1 etc) are re-ingested upon creation, causing doubles in the logs
