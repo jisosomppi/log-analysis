@@ -26,10 +26,11 @@ Cons:
   * input defined as file instead of tcp
     * THIS WORKS! Rsyslog never forwarded the log files, but saves and organises them perfectly. 
     * In order to allow Logstash to read the files, it needs permissions: `sudo usermod -a -G adm logstash`
+    * Defining the file path as `/var/log/client_logs/*/*.log` targets all the host folders and the all .log files in them
 
 ## Known issues
 * Giving Logstash admin permissions is probably not the most secure way of doing this
-* Currently, the template for the logs is a bit off due to the config
+* Currently, the template for the logs is a bit off due to the build configuration
   * hostname for all logs is shown as `logmaster`, the hostname of the server storing the logs
     * Solve by editing templates, foldername -> hostname
 * Too much data is being logged
