@@ -6,7 +6,12 @@ This build only needs rsyslog on the clients, and leaves the heavy work to the s
 
 Pros:
 * Lightweight on clients
-* Only entries into the server are Rsyslog intake (514/tcp) and Kibana access (5601/tcp)
+  * Only Rsyslog needed, mostly preinstalled
+* Fast and easy setup on clients
+  * The entire client configuration is:  
+`echo "*.* @@[server_ip]:514" | sudo tee -a /etc/rsyslog.conf && sudo service rsyslog restart`
+* Pretty well secured
+  * Only entries into the server are Rsyslog intake (514/tcp) and Kibana access (5601/tcp)
 
 Cons:
 * Logstash is quite heavy on the server
