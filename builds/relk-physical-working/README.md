@@ -1,5 +1,7 @@
 # RELK-physical
 
+![dataflow](https://github.com/jisosomppi/log-analysis/blob/master/builds/relk-physical-working/relk-dataflow.png)
+
 Data flow:
 
 Rsyslog client -`514/tcp(remote)`-> Rsyslog server -`write`->  
