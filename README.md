@@ -122,3 +122,13 @@ Next steps for this configuration:
 * Moving Elasticsearch and Kibana out of Docker containers
 
 In our minds, this solved the single biggest problem we had with the project, getting Rsyslog to talk to Elasticsearch.
+
+
+### Removing X-pack  
+X-pack is usually bundled with Elasticsearch and Kibana and uses Elastic license. Thus, we should remove it from our solution and replace it with Search Guard (for now).  
+
+https://www.elastic.co/guide/en/x-pack/current/xpack-uninstalling.html  
+
+
+
+
