@@ -359,8 +359,10 @@ Is the above information ok? (y/N): y
 Signing certificate...
 ```
 
-Siirsin "server-ca.pem" 
+I moved "server-ca.pem" to client /home/xubuntu/gntls/
 
-Restarttien jälkeen sain clientilla errorin:
+Adter service restarts got error on client:
+
+![Gnutlserror](https://raw.githubusercontent.com/jisosomppi/log-analysis/master/images/GnuTLS_error.png.jpg)
 
 
