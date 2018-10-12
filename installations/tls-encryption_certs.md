@@ -90,9 +90,9 @@ sudoedit /etc/rsyslog.conf
 $DefaultNetstreamDriver gtls
 
 # certificate files
-$DefaultNetstreamDriverCAFile /etc/ssl/certs/ca.pem
-$DefaultNetstreamDriverCertFile /etc/ssl/certs/cert.pem
-$DefaultNetstreamDriverKeyFile /etc/ssl/certs/key.pem
+$DefaultNetstreamDriverCAFile /etc/ssl/certs/server-ca.pem
+$DefaultNetstreamDriverCertFile /etc/ssl/certs/xubuntu-cert.pem
+$DefaultNetstreamDriverKeyFile /etc/ssl/certs/xubuntu-key.pem
 
 $ModLoad imtcp # load TCP listener
 
@@ -358,4 +358,9 @@ Is the above information ok? (y/N): y
 
 Signing certificate...
 ```
+
+Siirsin "server-ca.pem" 
+
+Restarttien jälkeen sain clientilla errorin:
+
 
