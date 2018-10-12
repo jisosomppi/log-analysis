@@ -38,12 +38,28 @@ Sources:
 https://github.com/floragunncom/search-guard  
 https://www.syslog-ng.com/community/b/blog/posts/securing-esk-stack-free-using-search-guard/  
 
-`sudo /usr/share/elasticsearch/bin/plugin install -b com.floragunn/search-guard-ssl/2.4.1.16´  
 
-´´´
-<ES directory>/bin/elasticsearch-plugin install \
-  -b com.floragunn:search-guard-6:6.0.0-17.beta1
-´´´
+For *Search Guard* demo installation:
+```
+cd /usr/share/elasticsearch/bin
+./elasticsearch-plugin install -b com.floragunn:search-guard-6:6.4.2-23.1
+```
+
+The *Search Guard* version has to match that of the *Elasticsearch* & *Kibana*. The correct version / artifact can be found in:  
+https://docs.search-guard.com/latest/search-guard-versions
+
+Lets move into the Searh Guard directory and find the demo installation script. I found it in:  
+`/usr/share/elasticsearch/plugins/search-guard-6/tools`
+
+First, we need to use **chmod** on the script, to be able to run it. I used `chmod +x`, but I'm well aware, that it might not be the most secure way to do things. However, I will wipe this computer after I'm done for today. 
+
+
+Sources today:  
+https://docs.search-guard.com/latest/demo-installer  
+https://docs.search-guard.com/latest/search-guard-versions  
+https://fi.wikipedia.org/wiki/Chmod  
+
+
 
 
 
