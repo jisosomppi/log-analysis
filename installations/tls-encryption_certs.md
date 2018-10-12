@@ -792,9 +792,9 @@ Restarted both services
 ## Debugging
 
 Server error
-
+![servererror](https://raw.githubusercontent.com/jisosomppi/log-analysis/master/images/server_error.png.jpg)
 
 Client error
-
+![clienterror](https://raw.githubusercontent.com/jisosomppi/log-analysis/master/images/client-error'.png.jpg)
 
 
