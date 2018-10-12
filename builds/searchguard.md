@@ -38,6 +38,14 @@ Sources:
 https://github.com/floragunncom/search-guard  
 https://www.syslog-ng.com/community/b/blog/posts/securing-esk-stack-free-using-search-guard/  
 
-sudo /usr/share/elasticsearch/bin/plugin install -b com.floragunn/search-guard-ssl/2.4.1.16  
+`sudo /usr/share/elasticsearch/bin/plugin install -b com.floragunn/search-guard-ssl/2.4.1.16´  
+
+´´´
+<ES directory>/bin/elasticsearch-plugin install \
+  -b com.floragunn:search-guard-6:6.0.0-17.beta1
+´´´
+
+
+
 
 
