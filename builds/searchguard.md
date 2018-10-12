@@ -136,4 +136,11 @@ Option                Description
 -v, --verbose         show verbose output                                       
 ERROR: Positional arguments not allowed, found [ -Des.pidfile=/var/run/elasticsearch/elasticsearch.pid,  -Des.default.path.home=/usr/share/elasticsearch,  -Des.default.path.logs=/var/log/elasticsearch,  -Des.default.path.data=/var/lib/elasticsearch,  -Des.default.path.conf=/etc/elasticsearch]
 ```
+--------------------------------------------
+It would seem like it's not the Search Guard demo-installation that breaks the Elasticsearch, but rather the installation of the plugin itself.  
 
+![kuva3](https://i.imgur.com/mgXu7im.png)  
+This is what pretty much what I got after running  
+`./elasticsearch-plugin install -b com.floragunn:search-guard-6:6.4.2-23.1`
+
+The tutorials I followed only mention a prompt, to which you should answer *yes* to get rid of any permission related errors. However, I never got this prompt, and after the plugin installation stops, I can no longer start Elasticsearch service.
