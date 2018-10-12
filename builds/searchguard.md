@@ -87,3 +87,26 @@ This block defines which DNs (distinguished names) of certificates admin privile
 searchguard.authcz.admin_dn:
   - "CN=kirk,OU=client,O=client,l=tEst, C=De"
 ```
+
+The bare minimum Search Guard configuration consists of the TLS settings on transport layer and at least one admin certificate for initializing the Search Guard index. This is configured in elasticsearch.yml, all paths to certificates must be specified relative to the Elasticsearch config directory:
+```
+searchguard.ssl.transport.pemcert_filepath: <path_to_node_certificate>
+searchguard.ssl.transport.pemkey_filepath: <path_to_node_certificate_key>
+searchguard.ssl.transport.pemkey_password: <key_password (optional)>
+searchguard.ssl.transport.pemtrustedcas_filepath: <path_to_root_ca>
+searchguard.ssl.transport.enforce_hostname_verification: <true | false>
+
+searchguard.authcz.admin_dn:
+  - CN=kirk,OU=client,O=client,L=test, C=de
+```
+If you want to use TLS also on the REST layer (HTTPS), add the following lines to elasticsearch.yml:  
+```
+searchguard.ssl.http.enabled: true
+searchguard.ssl.http.pemcert_filepath: <path_to_http_certificate>
+searchguard.ssl.http.pemkey_filepath: <path_to_http_certificate_key>
+searchguard.ssl.http.pemkey_password: <key_password (optional)>
+searchguard.ssl.http.pemtrustedcas_filepath: <path_to_http_root_ca>
+```
+You can use the same certificates on the transport and on the REST layer. For production systems, we recommend to use individual certificates.
+
+https://docs.search-guard.com/latest/search-guard-installation
