@@ -53,8 +53,6 @@ Lets move into the Searh Guard directory and find the demo installation script. 
 
 First, we need to use **chmod** on the script, to be able to run it. I used `chmod +x`, but I'm well aware, that it might not be the most secure way to do things. However, I will wipe this computer after I'm done for today. 
 
-
-Sources today:  
 https://docs.search-guard.com/latest/demo-installer  
 https://docs.search-guard.com/latest/search-guard-versions  
 https://fi.wikipedia.org/wiki/Chmod  
@@ -110,3 +108,32 @@ searchguard.ssl.http.pemtrustedcas_filepath: <path_to_http_root_ca>
 You can use the same certificates on the transport and on the REST layer. For production systems, we recommend to use individual certificates.
 
 https://docs.search-guard.com/latest/search-guard-installation
+https://sematext.com/blog/elasticsearch-kibana-security-search-guard/
+
+running Search Guard demo-installation seems to break Elasticsearch for some reason. After the installation, I am still unable to run Elasticsearch, even after commenting whatever changes SG made to `elasticsearch.yml`.
+![kuva1](https://i.imgur.com/4s6RK3i.png)
+
+Found some tips for troubleshooting:  
+https://stackoverflow.com/questions/29615414/elasticsearch-systemd-service-failing  
+
+Ran command:  
+```
+sudo -u elasticsearch /usr/share/elasticsearch/bin/elasticsearch \ -Des.pidfile=/var/run/elasticsearch/elasticsearch.pid \ -Des.default.path.home=/usr/share/elasticsearch \ -Des.default.path.logs=/var/log/elasticsearch \ -Des.default.path.data=/var/lib/elasticsearch \ -Des.default.path.conf=/etc/elasticsearch
+```
+![kuva2](https://i.imgur.com/85niHpt.png)
+
+I'm not sure what to make of the response.  
+```
+Option                Description                                               
+------                -----------                                               
+-E <KeyValuePair>     Configure a setting                                       
+-V, --version         Prints elasticsearch version information and exits        
+-d, --daemonize       Starts Elasticsearch in the background                    
+-h, --help            show help                                                 
+-p, --pidfile <Path>  Creates a pid file in the specified path on start         
+-q, --quiet           Turns off standard output/error streams logging in console
+-s, --silent          show minimal output                                       
+-v, --verbose         show verbose output                                       
+ERROR: Positional arguments not allowed, found [ -Des.pidfile=/var/run/elasticsearch/elasticsearch.pid,  -Des.default.path.home=/usr/share/elasticsearch,  -Des.default.path.logs=/var/log/elasticsearch,  -Des.default.path.data=/var/lib/elasticsearch,  -Des.default.path.conf=/etc/elasticsearch]
+```
+
