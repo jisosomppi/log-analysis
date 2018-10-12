@@ -365,4 +365,8 @@ Adter service restarts got error on client:
 
 ![Gnutlserror](https://raw.githubusercontent.com/jisosomppi/log-analysis/master/images/GnuTLS_error.png.jpg)
 
+I'm guessing that I've just configured certs wrong, as I still don't have the big pictutre of certs clear to me.
+
+
+
 
