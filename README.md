@@ -131,4 +131,6 @@ X-pack is usually bundled with Elasticsearch and Kibana and uses Elastic license
 https://www.elastic.co/guide/en/x-pack/current/xpack-uninstalling.html  
 
 #### Working build
-**The most complete build is currently [RELK-physical](https://github.com/jisosomppi/log-analysis/tree/master/builds/rek-physical).**   The build has no authentication, but does store the log files in both local folders (on the server) and in Logstash/Elasticsearch. In its current form, the build works from start to finish accurately.
+**The most complete build is currently [RELK-physical](https://github.com/jisosomppi/log-analysis/tree/master/builds/rek-physical).**
+
+The build has no authentication, but does store the log files in both local folders (on the server) and in Logstash/Elasticsearch. In its current form, the build works from start to finish accurately.
