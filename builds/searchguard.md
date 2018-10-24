@@ -51,7 +51,7 @@ https://docs.search-guard.com/latest/search-guard-versions
 Lets move into the Searh Guard directory and find the demo installation script. I found it in:  
 `/usr/share/elasticsearch/plugins/search-guard-6/tools`
 
-First, we need to use **chmod** on the script, to be able to run it. I used `chmod +x`, but I'm well aware, that it might not be the most secure way to do things. However, I will wipe this computer after I'm done for today. 
+First, we need to use **chmod** on the script, to be able to run it. I used `chmod +x`, but I'm well aware, that it might not be the most secure way to do things. However, I will wipe this computer after I'm done for today, so I will let it slide. 
 
 https://docs.search-guard.com/latest/demo-installer  
 https://docs.search-guard.com/latest/search-guard-versions  
