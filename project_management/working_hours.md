@@ -9,7 +9,7 @@
 |wk 40|16|16|16|Continued our work on previous tasks on monday. On wednesday, Jussi passed data from rsyslog to Elasticsearch and Kibana. Saku and Eino continued working on their own builds. On friday, Saku got his stack with logstash working. Eino started working on setting up TSL. Jussi is removing containers from his build and refining the overall structure.|
 |wk 41|13|15|15|We have working TLS-connection though anyone can start the secured connection, so need to set up ip-whitelist or make a system with certs and keys. Encrypted messaging with unsecure (public) keys and certs done, next step generating custom and secure. **RELK-stack build works! Data flow from logging client to Kibana working.**|
 |wk 42|||||
-|wk 43|||||
+|wk 43||5|5|Saku worked on setting up authentication for ElasticSearch, Eino continued working on his project|
 |wk 44|||||
 |wk 45|||||
 |wk 46|||||
