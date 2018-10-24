@@ -33,3 +33,6 @@ The plugin can be removed with:
 `sudo /usr/share/elasticsearch/bin/elasticsearch-plugin remove readonlyrest`
 
 Now, according to Tero's post, we should add *readonlyREST* configuration into the *elasticsearch.yml*.
+
+Ongelmia javassa:  
+https://docs.oracle.com/javase/8/docs/technotes/guides/security/permissions.html
