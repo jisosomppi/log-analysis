@@ -367,7 +367,7 @@ Adter service restarts got error on client:
 
 I'm guessing that I've just configured certs wrong, as I still don't have the big pictutre of certs clear to me.
 
-# New trie with new instructions and relp
+# New try with new instructions and relp
 
 Removed lines added in the former conf to /etc/rsyslog.conf
 Installed rsyslog-relp package
