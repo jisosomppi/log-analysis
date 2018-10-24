@@ -148,4 +148,4 @@ The tutorials I followed only mention a prompt, to which you should answer *yes*
 https://stackoverflow.com/questions/40766301/run-elastic-search-as-root-user  
 https://docs.search-guard.com/latest/search-guard-community-edition  
 
-
+### Searchguard contains parts that don't seem to be completely open source, and the setup has taken much longer than I hoped for. Thus, I belive my time might be better spent on looking into another approaches.
