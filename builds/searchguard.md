@@ -137,7 +137,7 @@ Option                Description
 ERROR: Positional arguments not allowed, found [ -Des.pidfile=/var/run/elasticsearch/elasticsearch.pid,  -Des.default.path.home=/usr/share/elasticsearch,  -Des.default.path.logs=/var/log/elasticsearch,  -Des.default.path.data=/var/lib/elasticsearch,  -Des.default.path.conf=/etc/elasticsearch]
 ```
 --------------------------------------------
-It would seem like it's not the Search Guard demo-installation that breaks the Elasticsearch, but rather the installation of the plugin itself.  
+**It would seem like it's not the Search Guard demo-installation that breaks the Elasticsearch, but rather the installation of the plugin itself.**  
 
 ![kuva3](https://i.imgur.com/mgXu7im.png)  
 This is what pretty much what I got after running  
