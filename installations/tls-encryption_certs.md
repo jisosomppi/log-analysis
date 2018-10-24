@@ -369,6 +369,7 @@ I'm guessing that I've just configured certs wrong, as I still don't have the bi
 
 # New try with new instructions and relp
 
+https://www.rsyslog.com/using-tls-with-relp/
 Removed lines added in the former conf to /etc/rsyslog.conf
 Installed rsyslog-relp package
 
