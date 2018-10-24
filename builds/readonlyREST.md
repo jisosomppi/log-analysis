@@ -29,3 +29,7 @@ First, I moved to my download folder and ran the command
 This seemed to work properly. However, a question about permissions rose up, because this is the exact same looking thing that crashed my ElasticSearch when I tried to install SearchGuard.
 ![kuva2](https://i.imgur.com/EZPLz4O.png)
 
+The plugin can be removed with:  
+`sudo /usr/share/elasticsearch/bin/elasticsearch-plugin remove readonlyrest`
+
+Now, according to Tero's post, we should add *readonlyREST* configuration into the *elasticsearch.yml*.
