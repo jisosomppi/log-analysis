@@ -373,7 +373,7 @@ sudoedit /etc/rsyslog.conf
 
 module(load="imrelp" ruleset="relp")
  
-input(type="imrelp" port="10514″ tls="on"
+input(type="imrelp" port="20514″ tls="on"
 tls.caCert="/etc/rsyslog.d/ca.pem"
 tls.myCert="/etc/rsyslog.d/server-cert.pem"
 tls.myPrivKey="/etc/rsyslog.d/server-key.pem"
@@ -410,4 +410,7 @@ Was missing closing bracket ) after `tls.permittedpeer=["server"]`
 This was missing also from reference material, corrected to .conf file
 
 Now I was error free, but didn't get ny logs to server either.
+
 Checked that server ip was correct, added client ip-adress to permitted peers
+Noticed that on client .conf common name was without upper case, but still no luck.
+Corrected input port on server .conf from 10514 to 20154, updated to above.
