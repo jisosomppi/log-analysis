@@ -79,18 +79,14 @@ sudo nano /etc/elasticsearch/readonlyrest.yml
 
 
 readonlyrest:
-    #optional
-    response_if_req_forbidden: Access denied.
-
-    access_control_rules:
-
-    - name: Accept all requests from localhost
-      hosts: [localhost]
-
-    - name: Just certain indices, and read only
-      actions: ["indices:data/read/*"]
-      indices: ["all_my_public_indices_start_with*"] # index aliases are taken in account!
+  enable: true
+  response_if_req_forbidden: Access denied.
+  access_control_rules:
+  - name: Full access with HTTP auth
+    auth_key: sakarin:villapaita
+    type: allow
 ```
+In this case the username used to log in is sakarin, and password is villapaita.
 
 This is where I ran into another problem. `sudo service elasticsearch restart` and `sudo service elasticsearch status` tell me that the service is active and running, but nothing is actually running in port 9200 and the service hasn't properly started.
 
@@ -102,6 +98,7 @@ I had a feeling that x-pack and readonlyREST cannot run simultaneously, but x-pa
 The solution was to add the following line into *elasticsearch.yml* configuration file.
 `xpack.security.enabled: false`  
 
+![it-works]([Imgur](https://i.imgur.com/6X6I62A.png))
 
 
 
