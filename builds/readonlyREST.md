@@ -24,7 +24,7 @@ I opened downloaded the zip file from the link sent to my email and followed the
 ![kuva3](https://i.imgur.com/QLC01pK.png)  
 
 First, I moved to my download folder and ran the command  
-`/usr/share/elasticsearch/bin/elasticsearch-plugin install file:readonlyrest-1.16.28_es6.4.2.zip`  
+`/absolute/path/elasticsearch-plugin install file:///absolute/path/readonlyrest-1.16.28_es6.4.2.zip`  
 
 This seemed to work properly. However, a question about permissions rose up, because this is the exact same looking thing that crashed my ElasticSearch when I tried to install SearchGuard.
 ![kuva2](https://i.imgur.com/EZPLz4O.png)
@@ -43,5 +43,55 @@ readonlyrest:
    type: allow
 ```
 
-Ongelmia javassa:  
+problems javassa:  
 https://docs.oracle.com/javase/8/docs/technotes/guides/security/permissions.html
+
+Opensource ElasticSearch (without x-pack and some other plugins which we currently have no use for anyway)
+https://www.elastic.co/downloads/elasticsearch-oss
+I still have no idea how to get the oss version of elasticsearch with apt-get installation. I'll look into it later.
+
+I got the plugin running for the first time! Here are my steps so far:  
+**1) Installing java**  
+```
+sudo apt-get install -y default-jre
+sudo apt-get install -y default-jdk
+```
+**2) Installing Elasticsearch**  
+```
+wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -
+sudo apt-get install apt-transport-https
+echo "deb https://artifacts.elastic.co/packages/6.x/apt stable main" | sudo tee -a /etc/apt/sources.list.d/elastic-6.x.list
+sudo apt-get update
+sudo apt-get install elasticsearch
+```
+**3) Installing readonlyREST**  
+By curling localhost:9200 to see if elasticsearch is running, you also find out the version you installed. Mine is 6.4.2.  
+Next, I got the download link from [readonlyREST web page](https://readonlyrest.com/download/).
+After I downloaded the plugin zip, I installed it using abosute paths:  
+`sudo /usr/share/elasticsearch/bin/elasticsearch-plugin install file:///home/xubuntu/Downloads/readonlyrest-1.16.28_es6.4.2.zip`
+
+**4) Setting up readonlyrest.yml to /etc/elasticsearch**
+Previously, I tried to run elasticsearch after installing the plugin and received a lot of errors. Not one installation guide told me to actually create the configuration file before starting the program. If I understood correctly, since ElasticSearch version 6.1 you have to create *readonlyrest.yml* instead of putting the configurations into *elasticsearch.yml*.
+
+I found and example of *readonlyrest.yml* from https://mpolinowski.github.io/securing-elasticsearch-readonlyrest/.  
+```
+sudo nano /etc/elasticsearch/readonlyrest.yml
+
+
+readonlyrest:
+    #optional
+    response_if_req_forbidden: Access denied.
+
+    access_control_rules:
+
+    - name: Accept all requests from localhost
+      hosts: [localhost]
+
+    - name: Just certain indices, and read only
+      actions: ["indices:data/read/*"]
+      indices: ["all_my_public_indices_start_with*"] # index aliases are taken in account!
+```
+
+
+
+
