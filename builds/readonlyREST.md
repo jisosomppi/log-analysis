@@ -101,4 +101,8 @@ The solution was to add the following line into *elasticsearch.yml* configuratio
 ![it-works](https://i.imgur.com/6X6I62A.png)
 
 
+### Next up, we're securing Kibana with Nginx. I found this [page](https://mpolinowski.github.io/nginx-node-security/) to get me started. ####
+
+
+
 
