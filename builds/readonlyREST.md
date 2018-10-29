@@ -92,6 +92,9 @@ readonlyrest:
       indices: ["all_my_public_indices_start_with*"] # index aliases are taken in account!
 ```
 
+This is where I ran into another problem. `sudo service elasticsearch restart` and `sudo service elasticsearch status` tell me that the service is active and running, but nothing is actually running in port 9200 and the service hasn't properly started.
+
+I tried to remove the plugin and see if elasticsearch runs without it. It did. I am currently unsure what causes this mess.
 
 
 
