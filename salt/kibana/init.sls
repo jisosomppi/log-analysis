@@ -1,5 +1,7 @@
 kibana:
   pkg.installed
+    - require:
+      - sls: server-setup
 
 /etc/kibana/kibana.yml:
   file.managed:

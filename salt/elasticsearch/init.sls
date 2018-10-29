@@ -1,5 +1,7 @@
 elasticsearch:
   pkg.installed
+    - require:
+      - sls: server-setup
 
 /etc/elasticsearch/elasticsearch.yml:
   file.managed:

@@ -1,5 +1,7 @@
 logstash:
   pkg.installed
+    - require:
+      - sls: server-setup
 
 /etc/logstash/conf.d/logstash.conf:
   file.managed:
