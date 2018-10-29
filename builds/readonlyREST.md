@@ -43,9 +43,6 @@ readonlyrest:
    type: allow
 ```
 
-problems javassa:  
-https://docs.oracle.com/javase/8/docs/technotes/guides/security/permissions.html
-
 Opensource ElasticSearch (without x-pack and some other plugins which we currently have no use for anyway)
 https://www.elastic.co/downloads/elasticsearch-oss
 I still have no idea how to get the oss version of elasticsearch with apt-get installation. I'll look into it later.
