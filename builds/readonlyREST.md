@@ -95,7 +95,7 @@ I tried to remove the plugin and see if elasticsearch runs without it. It did. I
 Found solution from https://github.com/beshu-tech/readonlyrest-docs/blob/master/elasticsearch.md.
 I had a feeling that x-pack and readonlyREST cannot run simultaneously, but x-pack wasn't listen in active plugins and I didn't really think it would have be the cause of my headache.
 
-The solution was to add the following line into *elasticsearch.yml* configuration file.
+The solution was to add the following line into *elasticsearch.yml* configuration file:  
 `xpack.security.enabled: false`  
 
 ![it-works](https://i.imgur.com/6X6I62A.png)
