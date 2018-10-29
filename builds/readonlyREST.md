@@ -44,8 +44,8 @@ readonlyrest:
    type: allow
 ```
 
-Opensource ElasticSearch (without x-pack and some other plugins which we currently have no use for anyway)
-https://www.elastic.co/downloads/elasticsearch-oss
+Opensource ElasticSearch (without x-pack and some other plugins which we currently have no use for anyway):  
+https://www.elastic.co/downloads/elasticsearch-oss  
 I still have no idea how to get the oss version of elasticsearch with apt-get installation. I'll look into it later.
 
 I got the plugin running for the first time! Here are my steps so far:  
@@ -71,7 +71,7 @@ After I downloaded the plugin zip, I installed it using abosute paths:
 **4) Setting up readonlyrest.yml to /etc/elasticsearch**
 Previously, I tried to run elasticsearch after installing the plugin and received a lot of errors. Not one installation guide told me to actually create the configuration file before starting the program. If I understood correctly, since ElasticSearch version 6.1 you have to create *readonlyrest.yml* instead of putting the configurations into *elasticsearch.yml*.
 
-I found and example of *readonlyrest.yml* from https://mpolinowski.github.io/securing-elasticsearch-readonlyrest/.  
+I found and example of *readonlyrest.yml* from https://mpolinowski.github.io/securing-elasticsearch-readonlyrest/. This link seems to have some strange syntax, so I used Tero's post as a base.  
 ```
 sudo nano /etc/elasticsearch/readonlyrest.yml
 
