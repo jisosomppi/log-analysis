@@ -98,7 +98,7 @@ I had a feeling that x-pack and readonlyREST cannot run simultaneously, but x-pa
 The solution was to add the following line into *elasticsearch.yml* configuration file.
 `xpack.security.enabled: false`  
 
-![it-works]([Imgur](https://i.imgur.com/6X6I62A.png))
+![it-works](https://i.imgur.com/6X6I62A.png)
 
 
 
