@@ -15,6 +15,13 @@ and
 sudo apt-get install -y default-jre
 sudo apt-get install -y openjdk-8-jdk
 ```
+or 
+
+**Lately I've just been using:**  
+```
+sudo apt-get install -y default-jre
+sudo apt-get install -y default-jdk
+```
 
 # Installing Elasticsearch #
 ```
