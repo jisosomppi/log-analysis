@@ -5,7 +5,8 @@ logstash:
   file.managed:
     - source: salt://logstash/logstash.conf
 
-logstash:
+logstash.service:
   service.running:
+    - name: logstash
     - watch:
       - file: /etc/logstash/conf.d/logstash.conf

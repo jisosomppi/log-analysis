@@ -1,6 +1,10 @@
 base:
-  '*':
+  'ws*':
     - rsyslog-client
 
   'srv*':
-    - logging-server
+    - server-setup
+    - rsyslog-server
+    - logstash
+    - elasticsearch
+    - kibana

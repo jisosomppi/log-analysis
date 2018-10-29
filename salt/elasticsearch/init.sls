@@ -8,7 +8,8 @@ elasticsearch:
     - context:
       elasticsearch_port: 9200
 
-elasticsearch:
+elasticsearch.service:
   service.running:
+    - name: elasticsearch
     - watch:
       - file: /etc/elasticsearch/elasticsearch.yml
