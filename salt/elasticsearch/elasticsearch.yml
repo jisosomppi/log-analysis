@@ -1,0 +1,13 @@
+# THIS IS A MANAGED FILE
+# CHANGES WILL BE OVERWRITTEN
+
+cluster.name: rek
+
+path.data: /var/lib/elasticsearch
+path.logs: /var/log/elasticsearch
+
+network.host: localhost
+http.port: {{elasticsearch_port}}
+
+discovery.zen.minimum_master_nodes: 1
+discovery.type: single-node
