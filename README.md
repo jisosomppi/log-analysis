@@ -133,4 +133,51 @@ https://www.elastic.co/guide/en/x-pack/current/xpack-uninstalling.html
 #### Working build
 **The most complete build is currently [RELK-physical](https://github.com/jisosomppi/log-analysis/tree/master/builds/relk-physical-working).**
 
+This build sends data from Rsyslog clients to the Rsyslog server, which stores the log files in structured folders on the system. Logstash is then used to retrieve these logs from the folders and forward them to the Elasticsearch server.
+
 The build has no authentication, but does store the log files in both local folders (on the server) and in Logstash/Elasticsearch. In its current form, the build works from start to finish accurately.
+
+### Week 9
+#### Troubleshooting
+Despite our previous version appearing to be a complete success, something went wrong with the Logstash/Elasticsearch settings. All previously parsed log files were showing up on Elasticsearch/Kibana just fine, but no new files were getting indexed. Even spoofing new log entries into log files already sorted by the Rsyslog server resulted in perfect data transfer via Logstash to Elasticsearch.
+
+**Theory 1: Lost file position**
+Several Google searches ended up pointing in the direction of Logstash "forgetting" what part of a file it had previously read. Logstash stores the position data of processed files in `sincedb` files, which contain a combination of file names, line numbers and some more techincal details of the file in question. Current versions of Logstash store these files under `/var/lib/logstash/plugins/inputs/file`, unlike the `$HOME/` folder mentioned in most of the (admittedly old) replies to similar issues.
+
+We tried to solve this issue by forcing Logstash to re-index the files, which can be done in two ways:
+* Adding the line `sincedb_path => "/dev/null` to the pipeline config, which results in a per-startup sincedb file, reindexing all files after a service restart
+* The more forgiving apporach of removing existing `sincedb` files, which leads to the files being rebuilt on the next startup.
+
+Sadly, both of the aforementioned approaches resulted in the same situation:
+* The entire dataset that was already in Elasticsearch got duplicated
+* None of the new files were still processed
+
+**Theory 2: Permissions**
+The more likely theory, then, is that something has changed with the permission structure between the previous configuration and the new one. The permissions were previously changed so that the owner of everything in our log folder (`/var/log/client_logs`) was syslog (a group that logstash already a member of) and all users had read access to the files. Despite this being a seemingly correct configuration, logstash was only able to read the pre-existing, pre-indexed files.
+
+Confirming the problem was with permissions was easy: `chmod 777 -R /var/log/client_logs` "solved" the problem, resulting in all the new data being diplayed in Kibana. Obviously this is *NOT* and acceptable way to solve this issue in a production environment, but it was used merely to confirm the source of the problem. A full reformat and reinstall of our logging server is looming in the near future, so this was deemed an acceptable shortcut.
+
+The next step is to troubleshoot the permission configuration in more detail. The configuration for Rsyslog (server) contains several permission settings for created log files, probably including the source of our problems.
+
+#### Salt modules
+Started work on the salt modules required to automate setup of both the server and the clients. The structure of the Salt modules is still far from finished, but the general outline for the configuration is as follows:
+* Server
+  * Installation of required applications
+    * Each component managed with its own state
+  * Making sure conficuration is accurate
+* Clients
+  * Installation of required applications
+    * For this project, the only required application is Rsyslog
+  * Configuration for sending logs to master
+* General structure
+  * States are built using Jinja templates
+  * All sensitive information (IP addresses, ports, authentication) is stored in Pillars
+    * Pillars are secured on the server, allowing only authorized clients to obtain their contents
+    * All information can be stored once in a Pillar, and filled to multiple different files
+    * Filling several configuration files with information from a single location allows for fast and easy changes to port numbers, IP addresses and more
+  * States will be built to restart relevant services in case any change in configuration happens
+  * Computers in the network must be identified using unique ID's (not necessarily their hostnames)
+    * To simplify centralized Salt management, hostnames or minion ID's will follow predetermined patterns
+    * In order to avoid clashes in the log files, it would be wise to use unique hostnames so that all computers get their own log folder
+    
+Currently the Salt modules are in a raw and untested state, and the pillar configuration hasn't been started yet.
