@@ -32,7 +32,8 @@ This seemed to work properly. However, a question about permissions rose up, bec
 The plugin can be removed with:  
 `sudo /usr/share/elasticsearch/bin/elasticsearch-plugin remove readonlyrest`
 
-Now, according to Tero's post, we should add *readonlyREST* configuration into the *elasticsearch.yml*.
+~~Now, according to Tero's post, we should add *readonlyREST* configuration into the *elasticsearch.yml*.~~
+This is outdated, and doesn't work in newer versions (from 6.1 onwards if I'm not mistaken). Instead of adding the configuration into the *elasticsearch.yml* file, you should create a new file called *readonlyrest.yml* to the same folder and add the configuration there.  
 ```
 readonlyrest:
  enable: true
