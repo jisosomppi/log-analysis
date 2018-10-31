@@ -20,6 +20,9 @@ curl localhost:9200
 Next, I need to install the *readonlyREST* plugin. Tero's command didn't work for me, and even if it did, it would still have outdated version. So, lets find out which version we need.  
 In readonlyREST [download page](https://readonlyrest.com/download/) you need to fill out the wanted product (elasticsearch plugin), elasticsearch version and your email address, to which the site will send a download link for the plugin. This was kinda off putting, but I didn't find an easy alternative so lets just go with it. Our elasticsearch version is 6.4.2 (We found this out in the previous step where we curled the localhost port 9200).  
 
+Alternatively, you can download the zip file from out github repository with:  
+`wget https://github.com/jisosomppi/log-analysis/blob/master/downloads/readonlyrest-1.16.28_es6.4.2.zip`
+
 I opened downloaded the zip file from the link sent to my email and followed the steps in the email to some degree.  
 ![kuva3](https://i.imgur.com/QLC01pK.png)  
 
