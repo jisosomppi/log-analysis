@@ -20,8 +20,7 @@ curl localhost:9200
 Next, I need to install the *readonlyREST* plugin. Tero's command didn't work for me, and even if it did, it would still have outdated version. So, lets find out which version we need.  
 In readonlyREST [download page](https://readonlyrest.com/download/) you need to fill out the wanted product (elasticsearch plugin), elasticsearch version and your email address, to which the site will send a download link for the plugin. This was kinda off putting, but I didn't find an easy alternative so lets just go with it. Our elasticsearch version is 6.4.2 (We found this out in the previous step where we curled the localhost port 9200).  
 
-**Alternatively, you can download the zip file from out github repository with:**  
-`wget https://github.com/jisosomppi/log-analysis/blob/master/downloads/readonlyrest-1.16.28_es6.4.2.zip`
+**Alternatively, you can download the zip file from out github [downloads folder](https://github.com/jisosomppi/log-analysis/blob/master/downloads/readonlyrest-1.16.28_es6.4.2.zip)**
 
 I opened downloaded the zip file from the link sent to my email and followed the steps in the email to some degree.  
 ![kuva3](https://i.imgur.com/QLC01pK.png)  
@@ -70,8 +69,7 @@ By curling localhost:9200 to see if elasticsearch is running, you also find out 
 Next, I got the download link from [readonlyREST web page](https://readonlyrest.com/download/).
 
 **UPDATED**  
-As stated earlier in the post, you can now download the installation file from our github repository with:  
-`wget https://github.com/jisosomppi/log-analysis/blob/master/downloads/readonlyrest-1.16.28_es6.4.2.zip`
+As stated earlier in the post, you can now download the installation file from our github [downloads folder](https://github.com/jisosomppi/log-analysis/blob/master/downloads/readonlyrest-1.16.28_es6.4.2.zip) if you don't wish to get an email link.
 
 After I downloaded the plugin zip, I installed it using abosute paths:  
 `sudo /usr/share/elasticsearch/bin/elasticsearch-plugin install file:///home/xubuntu/Downloads/readonlyrest-1.16.28_es6.4.2.zip`
