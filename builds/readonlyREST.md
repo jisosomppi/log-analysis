@@ -123,5 +123,6 @@ sudo apt-get update && sudo apt-get install kibana
 ```
 Next, I activated the lines about authentication in *kibana.yml* (under /etc/kibana/) and added the credentials used by ElasticSearch.  
 
+![kibana-auth](https://i.imgur.com/ilQChzy.png)
 
 
