@@ -113,4 +113,15 @@ I found these pages to get me started:
 https://mpolinowski.github.io/nginx-node-security  
 https://blog.ruanbekker.com/blog/2017/09/16/nginx-reverse-proxy-for-elasticsearch-and-kibana-5-on-aws/  
 
+**Before going more deeply into Nginx, I installed Kibana and made some very basic configurations to *kibana.yml* file. This extended the authentication provided by *readonlyREST* to Kibana login.**
+
+I installed Kibana with the following commands:  
+```
+wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -
+echo "deb https://artifacts.elastic.co/packages/6.x/apt stable main" | sudo tee -a /etc/apt/sources.list.d/elastic-6.x.list
+sudo apt-get update && sudo apt-get install kibana
+```
+Next, I activated the lines about authentication in *kibana.yml* (under /etc/kibana/) and added the credentials used by ElasticSearch.  
+
+
 
