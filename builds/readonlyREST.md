@@ -122,6 +122,7 @@ echo "deb https://artifacts.elastic.co/packages/6.x/apt stable main" | sudo tee 
 sudo apt-get update && sudo apt-get install kibana
 ```
 Next, I activated the lines about authentication in *kibana.yml* (under /etc/kibana/) and added the credentials used by ElasticSearch.  
+After restarting kibana and visiting kibana web page I got the following:
 
 ![kibana-auth](https://i.imgur.com/ilQChzy.png)
 
