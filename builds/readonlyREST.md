@@ -128,4 +128,45 @@ After restarting kibana and visiting kibana web page I got the following:
 
 ![kibana-auth](https://i.imgur.com/ilQChzy.png)
 
+At this point, we have locked ElasticSearch and Kibana behind basic authentication. They are running locally in localhost address. However, we would also like to be able to connect to Kibana remotely once the server is up, so a (reverse) proxy is needed.  
+I started reading on the links I put up earlier, but didn't really get a clear picture of setting up Nginx.  
+I followed this [github page](https://gist.github.com/Dev-Dipesh/2ac30a8a01afb7f65b2192928a875aa1) written Dev-Dipesh.
 
+Basically, I had set everything else up already, so I only needed to install Nginx, write a configuration file and restart it.  
+
+I installed nginx and required apache utilities with:  
+`sudo apt-get install nginx apache2-utils`
+
+After this, I opened the configuration file
+`sudoedit /etc/nginx/sites-available/default`
+
+and rewrote the contents
+```
+server {
+  listen 80;
+    server_name kibana;
+
+
+  error_log   /var/log/nginx/kibana.error.log;
+  access_log  /var/log/nginx/kibana.access.log;
+
+
+
+  location / {
+    rewrite ^/(.*) /$1 break;
+    proxy_ignore_client_abort on;
+    proxy_pass http://localhost:5601;
+    proxy_set_header  X-Real-IP  $remote_addr;
+    proxy_set_header  X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header  Host $http_host;
+
+  }
+}
+```
+After this I restarted Nginx and checked my "home page".  
+`ifconfig`
+My computer's IP address is 172.28.171.32.  ---> http://172.28.171.32
+
+![kibanaception](https://i.imgur.com/Gfnfn7o.png)  
+
+It would seem like everything worked. This will be enough for today, next time I will look into the configurations more deeply.
