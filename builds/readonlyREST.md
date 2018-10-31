@@ -97,7 +97,7 @@ This is where I ran into another problem. `sudo service elasticsearch restart` a
 I tried to remove the plugin and see if elasticsearch runs without it. It did. I am currently unsure what causes this mess.
 
 Found solution from https://github.com/beshu-tech/readonlyrest-docs/blob/master/elasticsearch.md.
-I had a feeling that x-pack and readonlyREST cannot run simultaneously, but x-pack wasn't listen in active plugins and I didn't really think it would have be the cause of my headache.
+I had a feeling that x-pack and readonlyREST cannot run simultaneously, but x-pack wasn't listed in active plugins and I didn't really think it would have be the cause of my headache.
 
 The solution was to add the following line into *elasticsearch.yml* configuration file:  
 `xpack.security.enabled: false`  
