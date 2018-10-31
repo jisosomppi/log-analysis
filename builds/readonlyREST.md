@@ -68,6 +68,11 @@ sudo apt-get install elasticsearch
 **3) Installing readonlyREST**  
 By curling localhost:9200 to see if elasticsearch is running, you also find out the version you installed. Mine is 6.4.2.  
 Next, I got the download link from [readonlyREST web page](https://readonlyrest.com/download/).
+
+**UPDATED**  
+As stated earlier in the post, you can now download the installation file from our github repository with:  
+`wget https://github.com/jisosomppi/log-analysis/blob/master/downloads/readonlyrest-1.16.28_es6.4.2.zip`
+
 After I downloaded the plugin zip, I installed it using abosute paths:  
 `sudo /usr/share/elasticsearch/bin/elasticsearch-plugin install file:///home/xubuntu/Downloads/readonlyrest-1.16.28_es6.4.2.zip`
 
