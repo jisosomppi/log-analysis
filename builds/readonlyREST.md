@@ -168,5 +168,5 @@ After this I restarted Nginx and checked my "home page".
 My computer's IP address is 172.28.171.32.  ---> http://172.28.171.32
 
 ![kibanaception](https://i.imgur.com/Gfnfn7o.png)  
-
+Note: I also went through authentication, just like earlier when I connected to Kibana for the first time.  
 It would seem like everything worked. This will be enough for today, next time I will look into the configurations more deeply.
