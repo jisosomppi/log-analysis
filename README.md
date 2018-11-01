@@ -182,4 +182,24 @@ The more likely theory, then, is that something has changed with the permission 
 
 Confirming the problem was with permissions was easy: `chmod 777 -R /var/log/client_logs` "solved" the problem, resulting in all the new data being diplayed in Kibana. Obviously this is *NOT* and acceptable way to solve this issue in a production environment, but it was used merely to confirm the source of the problem. A full reformat and reinstall of our logging server is looming in the near future, so this was deemed an acceptable shortcut.
 
-The next step is to troubleshoot the permission configuration in more detail. The configuration for Rsyslog (server) contains several permission settings for created log files, probably including the source of our problems.
+The configuration for Rsyslog (server) contains several permission settings for created log files, probably including the source of our problems.
+
+Doing a bit more research into `rsyslog.conf`, and more specifically the permission parts, revealed a lot of control over log permissions:
+* FileOwner
+* FileGroup
+* DirOwner
+* DirGroup
+
+In addition to the former options, the configuration contains another crucial piece of information:
+* PrivDropToUser
+* PrivDropToGroup
+
+On startup, rsyslog runs as the `root` user, and has all possible permissions. After running the startup configuration, rsyslog drops privileges to the defined user and group. In order to make logstash and rsyslog work properly, setting up these options correctly is crucial.
+
+Now, despite setting these options up properly, rsyslog refuses to create the log files (and directories) with the proper permissions. Directories seem to get created with 0700 permissions, which prevents logstash from accessing the log files. The files themselves have read rights set for all users.
+
+In our current configuration, files and directories are owned by syslog:adm, and Rsyslog drops to the same privileges after startup. Logstash is also part of the adm group, so group read rights on the files and rwx rights on the folders are enough for Logstash to function (this was confirmed with manually assigning the proper permissions).
+
+One possible way to fix this situation is to set up access control lists for the drive, so we can make directories inherit permissions. In this case we could use the simple permissions for the parent log folder `/var/log/client_logs`: g+rwX (capital X to make only directories executable). 
+
+**At this point, we can confidently say the problem lies in the permissions.**
