@@ -192,8 +192,24 @@ The configuration files can be found under */etc*. According to the page I linke
 Last time I restarted Nginx using `sudo service nginx restart`. According to the guide I linked, `nginx -s reload` should also work.
 
 
-### Supporting IPv6 in Nginx ###
-Next, the aforementioned link indicates, that some versions of nginx don't support IPv6 by default. I found [this artcle](https://kovyrin.net/2010/01/16/enabling-ipv6-support-in-nginx/) to be helpful.  
+
+## Supporting IPv6 in Nginx ##
+Next, the aforementioned link indicates, that some versions of nginx don't support IPv6 by default. I found [this article](https://kovyrin.net/2010/01/16/enabling-ipv6-support-in-nginx/) to be helpful on the matter.  
+
+I can't get it working right now.. Seems like I have to reinstall Nginx from source code and after that enable IPv6 in configurations. I'm having problems installing the program from source.
+```
+./configure --without-http_autoindex_module --without-http_userid_module \
+--without-http_auth_basic_module --without-http_geo_module \
+--without-http_fastcgi_module --without-http_empty_gif_module \
+--with-poll_module --with-http_stub_status_module \
+--with-http_ssl_module --with-ipv6
+```
+
+**Additional links I used on the matter**  
+https://www.cyberciti.biz/faq/nginx-ipv6-configuration/  
+https://www.linode.com/docs/web-servers/nginx/nginx-installation-and-basic-setup/  
+https://docs.nginx.com/nginx/admin-guide/installing-nginx/installing-nginx-open-source/#sources_download  
+https://linuxconfig.org/how-to-install-gcc-the-c-compiler-on-ubuntu-18-04-bionic-beaver-linux  
 
 
 
