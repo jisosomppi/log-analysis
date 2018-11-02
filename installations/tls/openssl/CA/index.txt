@@ -1,0 +1,2 @@
+V	191102111256Z		01	unknown	/C=FI/ST=Helsinki/L=Helsinki/O=Lokittajat/CN=172.28.171.54
+V	191102111555Z		02	unknown	/C=FI/ST=Helsinki/L=Helsinki/O=Lokittjat/OU=172.28.171.175/CN=172.28.171.175
