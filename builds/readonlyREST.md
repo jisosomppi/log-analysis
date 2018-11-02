@@ -170,3 +170,31 @@ My computer's IP address is 172.28.171.32.  ---> http://172.28.171.32
 ![kibanaception](https://i.imgur.com/Gfnfn7o.png)  
 Note: I also went through authentication, just like earlier when I connected to Kibana for the first time.  
 It would seem like everything worked. This will be enough for today, next time I will look into the configurations more deeply.
+
+
+https://www.linode.com/docs/web-servers/nginx/nginx-installation-and-basic-setup/ This has been a good source to gain more information about Nginx configurations.  
+I'm working on Ubuntu 16.04 Live-usb, so I will have to start from scratch again. Lets install Nginx again and see what the default files look like. 
+
+So, lets recap. To install Nginx I ran the following command:  
+`sudo apt-get install nginx apache2-utils`  
+
+I think installing some java is also recommended when starting fresh:  
+```
+sudo apt-get install -y default-jre
+sudo apt-get install -y default-jdk
+```
+
+The configuration files can be found under */etc*. According to the page I linked, it's good idea to uncomment the line with:  
+`server_tokens off;`
+
+"NGINX’s version number is visible by default with any connection made to the server, whether by a successful 201 connection by cURL, or a 404 returned to a browser. Disabling server tokens makes it more difficult to determine NGINX’s version, and therefore more difficult for an attacker to execute version-specific attacks."
+
+Last time I restarted Nginx using `sudo service nginx restart`. According to the guide I linked, `nginx -s reload` should also work.
+
+
+### Supporting IPv6 in Nginx ###
+Next, the aforementioned link indicates, that some versions of nginx don't support IPv6 by default. I found [this artcle](https://kovyrin.net/2010/01/16/enabling-ipv6-support-in-nginx/) to be helpful.  
+
+
+
+
