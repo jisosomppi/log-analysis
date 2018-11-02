@@ -10,7 +10,7 @@
 |wk 41|13|15|15|We have working TLS-connection though anyone can start the secured connection, so need to set up ip-whitelist or make a system with certs and keys. Encrypted messaging with unsecure (public) keys and certs done, next step generating custom and secure. **RELK-stack build works! Data flow from logging client to Kibana working.**|
 |wk 42||||Week off, worked on other projects|
 |wk 43||9|8|Saku worked on setting up authentication for ElasticSearch, Eino continued working on his project|
-|wk 44|9|16|10|Saku got his elasticsearch authentication plugin [readonlyREST](https://github.com/jisosomppi/log-analysis/blob/master/builds/readonlyREST.md) up and running. Jussi started work on Salt modules and troubleshooted missing log files. Saku got Kibana to use the authentication of readonlyREST and set up Nginx for proxy connection to Kibana. Eino tried to get tls connection with certs, without succeeding. On friday tried with openssl instead of gnutls cause it should give clearer error messages. Propably the installation was faulty, also lost report... Saku started looking into configuring Nginx |
+|wk 44|9|16|16|Saku got his elasticsearch authentication plugin [readonlyREST](https://github.com/jisosomppi/log-analysis/blob/master/builds/readonlyREST.md) up and running. Jussi started work on Salt modules and troubleshooted missing log files. Saku got Kibana to use the authentication of readonlyREST and set up Nginx for proxy connection to Kibana. Eino tried to get tls connection with certs, without succeeding. On friday tried with openssl instead of gnutls cause it should give clearer error messages. Propably the installation was faulty, also lost report... Saku started looking into configuring Nginx |
 |wk 45|||||
 |wk 46|||||
 |wk 47|||||
