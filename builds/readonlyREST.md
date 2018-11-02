@@ -246,13 +246,17 @@ Configuration summary
 ```
 The last line leads me to believe that IPv6 is already configured into the packet.. This however hasn't been made clear in any point. I guess the only thing left to do is to find the configuration files and make the necessary changes.
 
+I have a feeling there is no need to even configure anything in the current versions.. I'll test this with a fresh install on live-usb.  
+
+Using the following command for testing:  
+`netstat -tulpna | grep nginx`
+
 **Additional links I used on the matter**  
 https://www.cyberciti.biz/faq/nginx-ipv6-configuration/  
 https://www.linode.com/docs/web-servers/nginx/nginx-installation-and-basic-setup/  
 https://docs.nginx.com/nginx/admin-guide/installing-nginx/installing-nginx-open-source/#sources_download  
 https://linuxconfig.org/how-to-install-gcc-the-c-compiler-on-ubuntu-18-04-bionic-beaver-linux  
 
-I will evaluate the need for IPv6 and continue from where I left off later.  
 
 
 
