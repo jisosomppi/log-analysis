@@ -205,12 +205,54 @@ I can't get it working right now.. Seems like I have to reinstall Nginx from sou
 --with-http_ssl_module --with-ipv6
 ```
 
+I had to install these packages in order for the command to work:  
+**C Compiler**  
+```
+sudo apt install gcc
+sudo apt install build-essential
+```
+**PCRE Library**  
+`sudo apt-get install libpcre3 libpcre3-dev`
+
+**SSL Library**  
+`sudo apt-get install libssl-dev`
+
+**ZLib**  
+`sudo apt install zlib1g-dev`
+
+
+
+After several attemps I ran the command succesfully and got the following:  
+```
+Configuration summary
+  + using system PCRE library
+  + using system OpenSSL library
+  + using system zlib library
+
+  nginx path prefix: "/usr/local/nginx"
+  nginx binary file: "/usr/local/nginx/sbin/nginx"
+  nginx modules path: "/usr/local/nginx/modules"
+  nginx configuration prefix: "/usr/local/nginx/conf"
+  nginx configuration file: "/usr/local/nginx/conf/nginx.conf"
+  nginx pid file: "/usr/local/nginx/logs/nginx.pid"
+  nginx error log file: "/usr/local/nginx/logs/error.log"
+  nginx http access log file: "/usr/local/nginx/logs/access.log"
+  nginx http client request body temporary files: "client_body_temp"
+  nginx http proxy temporary files: "proxy_temp"
+  nginx http uwsgi temporary files: "uwsgi_temp"
+  nginx http scgi temporary files: "scgi_temp"
+
+./configure: warning: the "--with-ipv6" option is deprecated
+```
+The last line leads me to believe that IPv6 is already configured into the packet.. This however hasn't been made clear in any point. I guess the only thing left to do is to find the configuration files and make the necessary changes.
+
 **Additional links I used on the matter**  
 https://www.cyberciti.biz/faq/nginx-ipv6-configuration/  
 https://www.linode.com/docs/web-servers/nginx/nginx-installation-and-basic-setup/  
 https://docs.nginx.com/nginx/admin-guide/installing-nginx/installing-nginx-open-source/#sources_download  
 https://linuxconfig.org/how-to-install-gcc-the-c-compiler-on-ubuntu-18-04-bionic-beaver-linux  
 
+I will evaluate the need for IPv6 and continue from where I left off later.  
 
 
 
