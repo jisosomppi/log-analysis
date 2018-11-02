@@ -196,6 +196,8 @@ Last time I restarted Nginx using `sudo service nginx restart`. According to the
 ## Supporting IPv6 in Nginx ##
 Next, the aforementioned link indicates, that some versions of nginx don't support IPv6 by default. I found [this article](https://kovyrin.net/2010/01/16/enabling-ipv6-support-in-nginx/) to be helpful on the matter.  
 
+**UPDATE! it seems like the current apt installed version of Nginx supports IPv6 without any further configurations**
+
 I can't get it working right now.. Seems like I have to reinstall Nginx from source code and after that enable IPv6 in configurations. I'm having problems installing the program from source.
 ```
 ./configure --without-http_autoindex_module --without-http_userid_module \
