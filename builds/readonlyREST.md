@@ -260,5 +260,14 @@ https://docs.nginx.com/nginx/admin-guide/installing-nginx/installing-nginx-open-
 https://linuxconfig.org/how-to-install-gcc-the-c-compiler-on-ubuntu-18-04-bionic-beaver-linux  
 
 
+# Setting up Let's Encrypt with Nginx Server Blocks on Ubuntu 16.04 #
+
+Find out more after lunchbreak.
+
+Sources:  
+https://www.digitalocean.com/community/tutorials/how-to-set-up-let-s-encrypt-with-nginx-server-blocks-on-ubuntu-16-04  
+https://loune.net/2016/01/https-with-lets-encrypt-ssl-and-nginx/  
+
+
 
 
