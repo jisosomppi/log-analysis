@@ -2,7 +2,9 @@ kibana:
   pkg.installed
     - skip_verify: True
     - require:
-      - sls: server-setup
+      - sls: 
+        - server-setup
+        - java
 
 /etc/kibana/kibana.yml:
   file.managed:
