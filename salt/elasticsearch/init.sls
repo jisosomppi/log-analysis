@@ -2,8 +2,10 @@ elasticsearch:
   pkg.installed
     - skip_verify: True
     - require:
-      - sls: server-setup
-
+      - sls: 
+        - server-setup
+        - java
+        
 /etc/elasticsearch/elasticsearch.yml:
   file.managed:
     - source: salt://elasticsearch/elasticsearch.yml
