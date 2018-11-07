@@ -1,5 +1,6 @@
 kibana:
   pkg.installed
+    - skip_verify: True
     - require:
       - sls: server-setup
 
