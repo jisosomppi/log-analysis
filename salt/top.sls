@@ -1,7 +1,6 @@
 base:
   'ws*':
     - rsyslog-client
-    - fixperms
 
   'srv*':
     - server-setup
@@ -9,3 +8,4 @@ base:
     - logstash
     - elasticsearch
     - kibana
+    - fixperms
