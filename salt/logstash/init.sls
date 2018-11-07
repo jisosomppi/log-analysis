@@ -2,7 +2,9 @@ logstash:
   pkg.installed
     - skip_verify: True
     - require:
-      - sls: server-setup
+      - sls: 
+        - server-setup
+        - java
 
 /etc/logstash/conf.d/logstash.conf:
   file.managed:
