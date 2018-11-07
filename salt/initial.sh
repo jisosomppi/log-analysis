@@ -4,7 +4,7 @@
 
 # Install prerequisites
 apt-get update
-apt-get install -y dpkg-dev default-jre
+apt-get install -y dpkg-dev
 
 # Make folder for local repository
 mkdir /srv/local-repo
@@ -19,6 +19,7 @@ wget https://artifacts.elastic.co/downloads/logstash/logstash-6.4.2.deb
 dpkg-scanpackages . /dev/null | gzip -9c > Packages.gz
 echo "deb file:/srv/local-repo ./" | tee -a /etc/apt/sources.list
 
-# Install
-apt-get update
-apt-get install -y elasticsearch kibana logstash --allow-unauthenticated
+# Manual install DEPRECATED
+# Use Salt states instead
+#apt-get update
+#apt-get install -y elasticsearch kibana logstash --allow-unauthenticated
