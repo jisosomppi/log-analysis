@@ -1,4 +1,6 @@
-#TLS encryption
+# TLS encryption
+
+https://www.rsyslog.com/tls-secured-syslog-via-relp/
 
 I got TLS-encryption working last week, but I wanted to confirm the config, as I had installed and reconfigured the files for several hours before a working setup
 
