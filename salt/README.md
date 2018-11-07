@@ -14,32 +14,32 @@ In order to make a complete working environment we need to have two different se
 
 In a perfect world these two would be one and the same (idempotency), but since we're using some plain commands in the salt states, this isn't currently possible.
 
-### Initial setup
+### Single-run setup
 To start building the infrastructure we need to setup the logging server. This means making some modifications to a new computer, as well as downloading and installing packages, modifying setting files, changing firewall rules etc. to build the actual logging setup.
+* Making local package repo for Elastic products
+  * Download v. 6.4.2 of Logstash, Elasticsearch and Kibana
+  * [Make repository](https://www.linux.com/learn/create-your-own-local-apt-repository-avoid-dependency-hell) and add to `/etc/apt/sources.list`
+
+### Ongoing setup (highstate)
 * Basic settings
   * User accounts
   * Firewall rules
   * SSH rules
   * Locale settings
 * Package installation
+  * Java
   * Nginx proxy
   * Rsyslog
-  * Adding elastic.co repository and installing
-    * Elasticsearch
-    * Kibana
-    * Logstash
+  * Elasticsearch
+  * Kibana
+  * Logstash
+    * Install unverified (local) packages by adding `skip_verify: True` to their Salt states
 * Modifying settings for installed packages
-
-### Ongoing setup (highstate)
-* Confirm all daemons are installed, updated and running
+* Confirm all daemons updated and running
   * Monitor for changes in critical setting files
 * Manually modify settings for log files
   * This step currently exists because we're having trouble getting Rsyslog's permission settings to work. In our current configuration Rsyslog refuses to give new folders the proper access permissions, resulting in Logstash being unable to read the files. This can be easily overridden with manually forcing the permissions, however:  
   **THIS IS NOT SUITABLE FOR A PRODUCTION ENVIRONMENT!!**. 
 * Make sure all changes to setting files are reflected on clients
-
-### Custom local repo + Salt
-* [Make the repository](https://www.linux.com/learn/create-your-own-local-apt-repository-avoid-dependency-hell), add packages with single-run script 
-* Install + verify packages by adding `skip_verify: True` to Salt state
 
 ***Editing in progress!***
