@@ -2,9 +2,7 @@ elasticsearch:
   pkg.installed
     - skip_verify: True
     - require:
-      - sls: 
-        - server-setup
-        - java
+      - sls: java
         
 /etc/elasticsearch/elasticsearch.yml:
   file.managed:
