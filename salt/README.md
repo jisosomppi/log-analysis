@@ -1,10 +1,10 @@
 # Setting up a centralized logging server with Salt
 ## Basic idea of the setup
-The idea behind managing the setup is to make reduce the number of problems in the complete installation. By using a centralized system for the installatin we can ensure that:
+The idea behind managing the setup is to make reduce the number of problems in the complete installation. By using a centralized system for the installation we can ensure that:
 * IP addresses and port numbers are correct
 * Client systems are setup with correct logging rules
 * All non-public data remains hidden from unauthorized machines
-* All setting files in the network can have a single source of truth, enalbing us to change ports, addresses, certificate files etc. easily
+* All setting files in the network can have a single source of truth, enabling us to change ports, addresses, certificate files etc. easily
   * Bonus perk: Because changes are fetched from the Salt server, we can use randomly chosen port numbers for services, hindering attack attempts.
 
 ## Salt state structure
@@ -12,7 +12,13 @@ In order to make a complete working environment we need to have two different se
 * The initial setup
 * The ongoing setup
 
-In a perfect world these two would be one and the same (idempotency), but since we're using some plain commands in the salt states, this isn't currently possible.
+We have two options for allowing Salt to install the Elastic packages:
+* [Use a script to make a local repository with the packages](https://www.linux.com/learn/create-your-own-local-apt-repository-avoid-dependency-hell)
+* Use a script to add Elastics GPG key and repository to the system and Target specific versions with [state parameters](https://docs.saltstack.com/en/latest/ref/states/all/salt.states.pkg.html#salt.states.pkg.installed)
+  ```
+  wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -
+  echo "deb https://artifacts.elastic.co/packages/6.x/apt stable main" | sudo tee -a /etc/apt/sources.list.d/elastic-6.x.list:
+  ```
 
 ### Single-run setup
 To start building the infrastructure we need to setup the logging server. This means making some modifications to a new computer, as well as downloading and installing packages, modifying setting files, changing firewall rules etc. to build the actual logging setup.
