@@ -1,3 +1,7 @@
+# Automate generation of local repository
+# Forces Salt to keep packages at chosen version
+# Usage: Save this script, chmod u+x to make it usable
+
 # Install prerequisites
 apt-get update
 apt-get install -y dpkg-dev default-jre
