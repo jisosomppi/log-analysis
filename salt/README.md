@@ -38,4 +38,8 @@ To start building the infrastructure we need to setup the logging server. This m
   **THIS IS NOT SUITABLE FOR A PRODUCTION ENVIRONMENT!!**. 
 * Make sure all changes to setting files are reflected on clients
 
+### Custom local repo + Salt
+* [Make the repository](https://www.linux.com/learn/create-your-own-local-apt-repository-avoid-dependency-hell), add packages with single-run script 
+* Install + verify packages by adding `skip_verify: True` to Salt state
+
 ***Editing in progress!***
