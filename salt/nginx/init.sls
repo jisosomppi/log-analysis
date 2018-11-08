@@ -1,4 +1,4 @@
-apache-utils:
+apache2-utils:
   pkg.installed
 
 nginx:
