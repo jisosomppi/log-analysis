@@ -337,6 +337,23 @@ your_ip_address test.com www.test.com
 your_ip_address test2.com www.test2.com
 ```
 
+**Next, I'd suggest anyone reading this to consult this [guide](https://www.digitalocean.com/community/tutorials/how-to-create-a-self-signed-ssl-certificate-for-nginx-in-ubuntu-16-04) for better understanding about self-signing certs.**
+
+As mentioned, my knowledge about certs is severely lacking, so I will just follow the steps provided by the source I linked.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Sources:  
 https://www.digitalocean.com/community/tutorials/how-to-set-up-let-s-encrypt-with-nginx-server-blocks-on-ubuntu-16-04 (This tutorial requires a dns server)    
 https://www.digitalocean.com/community/tutorials/how-to-set-up-nginx-server-blocks-virtual-hosts-on-ubuntu-16-04 (server blocks)  
