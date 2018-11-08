@@ -22,10 +22,11 @@ We have two options for allowing Salt to install the Elastic packages:
   ```
 
 ### Single-run setup
-To start building the infrastructure we need to setup the logging server. This means making some modifications to a new computer, as well as downloading and installing packages, modifying setting files, changing firewall rules etc. to build the actual logging setup.
-* Making local package repo for Elastic products
-  * Download v. 6.4.2 of Logstash, Elasticsearch and Kibana
-  * [Make repository](https://www.linux.com/learn/create-your-own-local-apt-repository-avoid-dependency-hell) and add to `/etc/apt/sources.list`
+~~To start building the infrastructure we need to setup the logging server. This means making some modifications to a new computer, as well as downloading and installing packages, modifying setting files, changing firewall rules etc. to build the actual logging setup.~~
+* ~~Making local package repo for Elastic products~~
+  * ~~Download v. 6.4.2 of Logstash, Elasticsearch and Kibana~~
+  * ~~[Make repository](https://www.linux.com/learn/create-your-own-local-apt-repository-avoid-dependency-hell) and add to `/etc/apt/sources.list`~~
+Replaced by a Salt state!
 
 ### Ongoing setup (highstate)
 * Basic settings
@@ -40,7 +41,8 @@ To start building the infrastructure we need to setup the logging server. This m
   * Elasticsearch
   * Kibana
   * Logstash
-    * Install unverified (local) packages by adding `skip_verify: True` to their Salt states
+    * ~~Install unverified (local) packages by adding `skip_verify: True` to their Salt states~~
+    * Require `elastic-pkg` Salt state, which verifies the Elastic package repository is present
 * Modifying settings for installed packages
 * Confirm all daemons updated and running
   * Monitor for changes in critical setting files
