@@ -26,7 +26,8 @@ We have two options for allowing Salt to install the Elastic packages:
 * ~~Making local package repo for Elastic products~~
   * ~~Download v. 6.4.2 of Logstash, Elasticsearch and Kibana~~
   * ~~[Make repository](https://www.linux.com/learn/create-your-own-local-apt-repository-avoid-dependency-hell) and add to `/etc/apt/sources.list`~~
-Replaced by a Salt state!
+
+**Replaced by a Salt state!**
 
 ### Ongoing setup (highstate)
 * Basic settings
