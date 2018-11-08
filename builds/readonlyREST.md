@@ -358,9 +358,89 @@ Lets walk through this command step by step.
 **-keyout**: This line tells OpenSSL where to place the generated private key file that we are creating.  
 **-out**: This tells OpenSSL where to place the certificate that we are creating.
 
+These options will create both a key file and a certificate. We will be asked a few questions about our server in order to embed the information correctly in the certificate.  
+The most important line is the one that requests the `Common Name` (e.g. server FQDN or YOUR name). You need to enter the domain name associated with your server or, more likely, your server's public IP address.  
+Both of the files you created will be placed in the appropriate subdirectories of the `/etc/ssl` directory.
+
+While we are using OpenSSL, we should also create a strong Diffie-Hellman group, which is used in negotiating [Forward Secrecy](https://en.wikipedia.org/wiki/Forward_secrecy) with clients.
+
+We can do this by typing:  
+`sudo openssl dhparam -out /etc/ssl/certs/dhparam.pem 2048`
 
 
+**Step 2: Configure Nginx to Use SSL**
 
+We have created our key and certificate files under the `/etc/ssl` directory. Now we just need to modify our Nginx configuration to take advantage of these.  
+
+**Create a Configuration Snippet Pointing to the SSL Key and Certificate**  
+first, let's create a new Nginx configuration snippet in the /etc/nginx/snippets directory.  
+To properly distinguish the purpose of this file, let's call it `self-signed.conf`:
+`sudoedit /etc/nginx/snippets/self-signed.conf`
+Adding the lines:  
+```
+ssl_certificate /etc/ssl/certs/nginx-selfsigned.crt;
+ssl_certificate_key /etc/ssl/private/nginx-selfsigned.key;
+```
+
+**Create a Configuration Snippet with Strong Encryption Settings**  
+Next, we will create another snippet that will define some SSL settings. This will set Nginx up with a strong SSL cipher suite and enable some advanced features that will help keep our server secure.
+
+The parameters we will set can be reused in future Nginx configurations, so we will give the file a generic name:  
+ `sudoedit /etc/nginx/snippets/ssl-params.conf`
+ ```
+ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
+ssl_prefer_server_ciphers on;
+ssl_ciphers "EECDH+AESGCM:EDH+AESGCM:AES256+EECDH:AES256+EDH";
+ssl_ecdh_curve secp384r1;
+ssl_session_cache shared:SSL:10m;
+ssl_session_tickets off;
+#ssl_stapling on;
+#ssl_stapling_verify on;
+resolver 8.8.8.8 8.8.4.4 valid=300s;
+resolver_timeout 5s;
+# Disable preloading HSTS for now.  You can use the commented out header line that includes
+# the "preload" directive if you understand the implications.
+#add_header Strict-Transport-Security "max-age=63072000; includeSubdomains; preload";
+add_header Strict-Transport-Security "max-age=63072000; includeSubdomains";
+add_header X-Frame-Options DENY;
+add_header X-Content-Type-Options nosniff;
+
+ssl_dhparam /etc/ssl/certs/dhparam.pem;
+ ```
+ If I understood correctly, the lines containing  *ssl-stapling** are left active in the source guide, but they are deactivated when the changes are enabled. Thus, we can just comment the lines away in this phase.  
+ 
+**Adjust the Nginx Configuration to Use SSL**  
+In this part, I will use the default server block, even though we created some additional ones earlier.  
+At this point, it might be a good idea to create a back-up copy of the *default* file:  
+`sudo cp /etc/nginx/sites-available/default /etc/nginx/sites-available/default.bak`
+
+Now, lets open the server block file to make some changes into the configuration:  
+`sudoedit /etc/nginx/sites-available/default`
+```
+server {
+    listen 80 default_server;
+    listen [::]:80 default_server;
+    server_name your_IP;
+    return 302 https://$server_name$request_uri;
+}
+
+server {
+
+    # SSL configuration
+
+    listen 443 ssl http2 default_server;
+    listen [::]:443 ssl http2 default_server;
+    include snippets/self-signed.conf;
+    include snippets/ssl-params.conf;
+```
+
+**Enable changes in Nginx**
+
+`sudo nginx -t`
+If configuration is a OK, restart the service:  
+`sudo service nginx restart`
+
+Test encryption by visiting your IP --> `https://your_IP`
 
 
 
