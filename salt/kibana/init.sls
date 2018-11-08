@@ -1,4 +1,4 @@
-kibana:
+kibana-oss:
   pkg.installed:
     - version: 6.4.2
  #   - require:
