@@ -8,7 +8,7 @@
     - group: adm
     - dir_mode: 755
     - file_mode: 644
-    - recurse
+    - recurse:
       - user
       - group
       - mode
