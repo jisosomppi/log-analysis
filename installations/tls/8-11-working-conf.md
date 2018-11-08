@@ -1,4 +1,5 @@
 https://www.rsyslog.com/doc/v8-stable/tutorials/tls.html
+
 https://serverfault.com/questions/579709/rsyslog-through-tls
 
 Sertificates were created on "server" -machine
