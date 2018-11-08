@@ -374,9 +374,9 @@ We have created our key and certificate files under the `/etc/ssl` directory. No
 
 **Create a Configuration Snippet Pointing to the SSL Key and Certificate**  
 first, let's create a new Nginx configuration snippet in the /etc/nginx/snippets directory.  
-To properly distinguish the purpose of this file, let's call it `self-signed.conf`:
+To properly distinguish the purpose of this file, let's call it `self-signed.conf`:  
 `sudoedit /etc/nginx/snippets/self-signed.conf`
-Adding the lines:  
+Add the lines:  
 ```
 ssl_certificate /etc/ssl/certs/nginx-selfsigned.crt;
 ssl_certificate_key /etc/ssl/private/nginx-selfsigned.key;
@@ -449,7 +449,7 @@ server {
 
 **Enable changes in Nginx**
 
-`sudo nginx -t`
+`sudo nginx -t`  
 If configuration is a OK, restart the service:  
 `sudo service nginx restart`
 
