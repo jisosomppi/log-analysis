@@ -7,6 +7,9 @@ nginx:
 /etc/nginx/sites-available/default:
   file.managed:
     - source: salt://nginx/default
+    - template: jinja
+    - context:
+      server_ip: 172.28.171.138
     
 nginx.service:
   service.running:
