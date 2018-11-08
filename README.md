@@ -203,3 +203,12 @@ In our current configuration, files and directories are owned by syslog:adm, and
 One possible way to fix this situation is to set up access control lists for the drive, so we can make directories inherit permissions. In this case we could use the simple permissions for the parent log folder `/var/log/client_logs`: g+rwX (capital X to make only directories executable). 
 
 **At this point, we can confidently say the problem lies in the permissions.**
+
+### Week 10
+#### Log permissions
+To avoid spending too much time on the permissions, we will just bruteforce the permissions for now. Rsyslog touches the permissions only when creating new files and directories, so there should be no further issues after changing the permissions once. We're going to use Salt for managing the system, so forcing the permissions on each run is a valid option. Logstash reads and forwards all the new information it finds in files, so only newly created log files should be unindexed, and only until the next Salt run. Forcing Salt to run more frequently lowers the amount of missing log data.
+
+#### Salt
+We started building the Salt structure for managing the network. Each separate component of the system gets its own Salt state. Client setup for Salt is handled with a simple installation script, that asks user for input, writes it in the `/etc/salt/minion` file and restarts the daemon.
+
+We're using plugins for Elasticsearch that haven't yet been updated to work with the newest version, so we had to come up with a way to use an older version of the components. Our solution for this is to create a local repository with the 6.4.2 versions of all the Elastic components. Salt can then be used to target these packages for installation, removing the chance of conflicts.
