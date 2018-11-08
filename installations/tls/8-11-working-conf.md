@@ -245,7 +245,7 @@ Is the above information ok? (y/N): y
 Signing certificate...
 ```
 
-##Client certs
+## Client certs
 
 ```
 testi@testi:/etc/ssl/rsyslog$ sudo certtool --generate-privkey --outfile CLIENT-key.pem --bits 2048
@@ -376,7 +376,7 @@ Signing certificate...
 
 `sudo -u root scp -i ~/.ssh/id_rsa CA.pem CLIENT-* root@172.28.171.52:/etc/ssl/rsyslog/`
 
-`sudo apt isntall -y rsyslog-gnutls (on both server and client)`
+`sudo apt isntall -y rsyslog-gnutls` (on both server and client)
 
 ## Server config
 
