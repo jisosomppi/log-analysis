@@ -1,6 +1,6 @@
 kibana-oss:
   pkg.installed:
-    - version: 6.4.2
+    - version: '*6.4.2*'
  #   - require:
  #     - sls: java
  #     - sls: elastic-pkg
