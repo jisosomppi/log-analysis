@@ -1,4 +1,4 @@
-default-jre:
+openjdk-8-jre:
   pkg.installed:
     - required_in:
       - sls: elasticsearch
