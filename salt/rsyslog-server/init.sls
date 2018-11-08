@@ -3,7 +3,7 @@ rsyslog:
 
 /etc/rsyslog.conf:
   file.managed:
-    - source: salt://rsyslog/rsyslog.conf
+    - source: salt://rsyslog-server/rsyslog.conf
     - template: jinja
     - context:
       server_port: 514
