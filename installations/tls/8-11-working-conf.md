@@ -369,11 +369,11 @@ Signing certificate...
 
 ## Deleting request, moving client keys and installing rsyslog-gnutls 
 
-sudo rm *-request.pem
+`sudo rm *-request.pem`
 
-sudo -u root scp -i ~/.ssh/id_rsa CA.pem CLIENT-* root@172.28.171.52:/etc/ssl/rsyslog/
+`sudo -u root scp -i ~/.ssh/id_rsa CA.pem CLIENT-* root@172.28.171.52:/etc/ssl/rsyslog/`
 
-sudo apt isntall -y rsyslog-gnutls (on both server and client)
+`sudo apt isntall -y rsyslog-gnutls (on both server and client)`
 
 ## Server config
 
@@ -401,7 +401,6 @@ $InputTCPServerRun 6514
 ```
 
 `sudo service rsyslog restart`
-```
 
 Also added conf to separate incoming client logs to separate folders
 
