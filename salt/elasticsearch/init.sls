@@ -1,10 +1,7 @@
 elasticsearch-oss:
   pkg.installed:
     - version: '6.4.2'
-#    - require:
-#      - sls: java
-#      - sls: elastic-pkg
-        
+
 /etc/elasticsearch/elasticsearch.yml:
   file.managed:
     - source: salt://elasticsearch/elasticsearch.yml

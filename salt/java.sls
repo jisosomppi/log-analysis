@@ -1,2 +1,6 @@
 default-jre:
-  pkg.installed
+  pkg.installed:
+    - required_in:
+      - sls: elasticsearch
+      - sls: kibana
+      - sls: logstash

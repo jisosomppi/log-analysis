@@ -6,6 +6,10 @@ elastic-pkg:
     - file: /etc/apt/sources.list.d/elastic-6.x.list
     - gpgcheck: 1
     - key_url: https://artifacts.elastic.co/GPG-KEY-elasticsearch
+    - require_in:
+      - sls: elasticsearch
+      - sls: kibana
+      - sls: logstash
 
 elastic-oss:
   pkgrepo.managed:
@@ -15,3 +19,8 @@ elastic-oss:
     - file: /etc/apt/sources.list.d/elastic-oss-6.x.list
     - gpgcheck: 1
     - key_url: https://artifacts.elastic.co/GPG-KEY-elasticsearch
+    - require_in:
+      - sls: elasticsearch
+      - sls: kibana
+      - sls: logstash
+
