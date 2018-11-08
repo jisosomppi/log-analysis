@@ -6,7 +6,7 @@ nginx:
     
 /etc/nginx/sites-available/default:
   file.managed:
-    - source: salt://nginx/default:
+    - source: salt://nginx/default
     
 nginx.service:
   service.running:
