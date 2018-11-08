@@ -1,3 +1,6 @@
+# This configuration replaces the old version of 
+# forcing chmod a+rX -R /var/log/client_logs/
+
 /var/log/client_logs/:
   file.directory:
     - makedirs: True
@@ -9,6 +12,3 @@
       - user
       - group
       - mode
-
-#chmod a+rX -R /var/log/client_logs/:
-#  cmd.run
