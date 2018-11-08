@@ -3,8 +3,9 @@ base:
     - rsyslog-client
 
   'srv*':
-    - server-setup
     - rsyslog-server
+    - elastic-pkg
+    - java
     - logstash
     - elasticsearch
     - kibana
