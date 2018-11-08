@@ -1,6 +1,9 @@
 #!/bin/bash
-#Simple client setup
+#Simple salt-minion
+
+echo "Updating packages..."
 sudo apt-get update -qq >> /dev/null
+echo "Installing salt-minion..."
 sudo apt-get install salt-minion -y -qq >> /dev/null
 echo "Please enter master IP address here:"
 read MasterIP
