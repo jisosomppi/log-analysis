@@ -1,4 +1,4 @@
-apache-utils:
+apache2-utils:
   pkg.installed
 
 nginx:
@@ -6,7 +6,7 @@ nginx:
     
 /etc/nginx/sites-available/default:
   file.managed:
-    - source: salt://nginx/default:
+    - source: salt://nginx/default
     
 nginx.service:
   service.running:
