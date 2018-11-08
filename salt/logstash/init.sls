@@ -1,6 +1,6 @@
-logstash:
+logstash-oss:
   pkg.installed:
-    - version: 1:6.4.2-1
+    - version: '*6.4.2*'
 #    - require:
 #      - sls: elastic-pkg
 #      - sls: java
