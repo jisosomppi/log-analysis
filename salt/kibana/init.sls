@@ -1,9 +1,9 @@
 kibana:
-  pkg.installed
+  pkg.installed:
     - version: 6.4.2
-    - require:
-      - sls: java
-      - sls: elastic-pkg
+ #   - require:
+ #     - sls: java
+ #     - sls: elastic-pkg
 
 /etc/kibana/kibana.yml:
   file.managed:
