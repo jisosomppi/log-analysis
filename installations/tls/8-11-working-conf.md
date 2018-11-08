@@ -1,7 +1,8 @@
 https://www.rsyslog.com/doc/v8-stable/tutorials/tls.html
 https://serverfault.com/questions/579709/rsyslog-through-tls
 
-sudo apt install -y gnutls-bin
+Sertificates were created on "server" -machine
+`sudo apt install -y gnutls-bin`
 
 ## Self-signed CA
 
