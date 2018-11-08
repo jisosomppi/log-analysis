@@ -3,10 +3,10 @@ base:
     - rsyslog-client
 
   'srv*':
-    - rsyslog-server
+#    - rsyslog-server
     - elastic-pkg
     - java
     - logstash
     - elasticsearch
     - kibana
-    - fixperms
+#    - fixperms
