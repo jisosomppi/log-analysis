@@ -341,9 +341,25 @@ your_ip_address test2.com www.test2.com
 
 As mentioned, my knowledge about certs is severely lacking, so I will just follow the steps provided by the source I linked.
 
+**Step 1: Create the SSL Certificate**  
+TLS/SSL works by using a combination of a public certificate and a private key. The SSL key is kept secret on the server. It is used to encrypt content sent to clients. The SSL certificate is publicly shared with anyone requesting the content. It can be used to decrypt the content signed by the associated SSL key.
 
+We can create a self-signed key and certificate pair with OpenSSL in a single command:  
+`sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/private/nginx-selfsigned.key -out /etc/ssl/certs/nginx-selfsigned.crt`  
+Lets walk through this command step by step.   
 
+**openssl**:
 
+**brb, doing some salty stuff first**
+
+openssl: This is the basic command line tool for creating and managing OpenSSL certificates, keys, and other files.
+req: This subcommand specifies that we want to use X.509 certificate signing request (CSR) management. The "X.509" is a public key infrastructure standard that SSL and TLS adheres to for its key and certificate management. We want to create a new X.509 cert, so we are using this subcommand.
+-x509: This further modifies the previous subcommand by telling the utility that we want to make a self-signed certificate instead of generating a certificate signing request, as would normally happen.
+-nodes: This tells OpenSSL to skip the option to secure our certificate with a passphrase. We need Nginx to be able to read the file, without user intervention, when the server starts up. A passphrase would prevent this from happening because we would have to enter it after every restart.
+-days 365: This option sets the length of time that the certificate will be considered valid. We set it for one year here.
+-newkey rsa:2048: This specifies that we want to generate a new certificate and a new key at the same time. We did not create the key that is required to sign the certificate in a previous step, so we need to create it along with the certificate. The rsa:2048 portion tells it to make an RSA key that is 2048 bits long.
+-keyout: This line tells OpenSSL where to place the generated private key file that we are creating.
+-out: This tells OpenSSL where to place the certificate that we are creating.
 
 
 
