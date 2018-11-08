@@ -265,4 +265,5 @@ https://linuxconfig.org/how-to-install-gcc-the-c-compiler-on-ubuntu-18-04-bionic
 Sources:  
 https://www.digitalocean.com/community/tutorials/how-to-set-up-let-s-encrypt-with-nginx-server-blocks-on-ubuntu-16-04  
 https://www.digitalocean.com/community/tutorials/how-to-set-up-nginx-server-blocks-virtual-hosts-on-ubuntu-16-04  
-https://loune.net/2016/01/https-with-lets-encrypt-ssl-and-nginx/  
+https://www.digitalocean.com/community/tutorials/how-to-create-a-self-signed-ssl-certificate-for-nginx-in-ubuntu-16-04  
+
