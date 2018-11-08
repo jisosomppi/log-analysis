@@ -1,6 +1,9 @@
 kibana-oss:
   pkg.installed:
     - version: '6.4.2'
+    - require:
+      - sls: elastic-pkg
+      - sls: java
 
 /etc/kibana/kibana.yml:
   file.managed:
@@ -8,7 +11,7 @@ kibana-oss:
     - template: jinja
     - context:
       kibana_port: 5601
-      server_ip: 172.28.175.21
+      server_ip: localhost
 
 kibana.service:
   service.running:
