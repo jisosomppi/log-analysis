@@ -1,4 +1,5 @@
 # Setting up a centralized logging server with Salt
+*This Salt build is based on the [RELK-physical-working build](https://github.com/jisosomppi/log-analysis/tree/master/builds/relk-physical-working), and aims to automate and centralize the settings for it.*
 ## Basic idea of the setup
 The idea behind managing the setup is to make reduce the number of problems in the complete installation. By using a centralized system for the installation we can ensure that:
 * IP addresses and port numbers are correct
