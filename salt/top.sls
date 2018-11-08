@@ -9,4 +9,5 @@ base:
     - logstash
     - elasticsearch
     - kibana
+    - nginx
     - fixperms
