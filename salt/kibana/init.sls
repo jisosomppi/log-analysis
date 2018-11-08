@@ -1,8 +1,9 @@
 kibana:
   pkg.installed
-    - skip_verify: True
+    - version: 6.4.2
     - require:
       - sls: java
+      - sls: elastic-pkg
 
 /etc/kibana/kibana.yml:
   file.managed:

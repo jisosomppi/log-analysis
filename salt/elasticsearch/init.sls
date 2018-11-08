@@ -1,8 +1,9 @@
 elasticsearch:
-  pkg.installed
-    - skip_verify: True
-    - require:
-      - sls: java
+  pkg.installed:
+    - version: '6.4.2'
+#    - require:
+#      - sls: java
+#      - sls: elastic-pkg
         
 /etc/elasticsearch/elasticsearch.yml:
   file.managed:

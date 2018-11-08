@@ -1,7 +1,8 @@
 logstash:
   pkg.installed
-    - skip_verify: True
+    - version: 1:6.4.2-1
     - require:
+      - sls: elastic-pkg
       - sls: java
 
 /etc/logstash/conf.d/logstash.conf:
