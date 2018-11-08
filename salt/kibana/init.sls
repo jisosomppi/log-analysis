@@ -1,8 +1,10 @@
+include:
+  - java
+
 kibana-oss:
   pkg.installed:
     - version: '6.4.2'
     - require:
-      - sls: elastic-pkg
       - sls: java
 
 /etc/kibana/kibana.yml:
