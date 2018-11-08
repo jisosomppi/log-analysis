@@ -376,7 +376,7 @@ Signing certificate...
 
 `sudo -u root scp -i ~/.ssh/id_rsa CA.pem CLIENT-* root@172.28.171.52:/etc/ssl/rsyslog/`
 
-`sudo apt isntall -y rsyslog-gnutls` (on both server and client)
+`sudo apt install -y rsyslog-gnutls` (on both server and client)
 
 ## Server config
 
