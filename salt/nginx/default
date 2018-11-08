@@ -6,17 +6,15 @@ server {
 
   error_log   /var/log/nginx/kibana.error.log;
   access_log  /var/log/nginx/kibana.access.log;
-
 }
 
 server {
+  listen 443 ssl http2 default_server;
+  listen [::]:443 ssl http2 default_server;
+  include snippets/self-signed.conf;
+  include snippets/ssl-params.conf;
 
-    listen 443 ssl http2 default_server;
-    listen [::]:443 ssl http2 default_server;
-    include snippets/self-signed.conf;
-    include snippets/ssl-params.conf;
-
- location / {
+  location / {
     rewrite ^/(.*) /$1 break;
     proxy_ignore_client_abort on;
     proxy_pass http://localhost:5601;
