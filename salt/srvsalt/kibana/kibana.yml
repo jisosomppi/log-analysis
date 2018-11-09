@@ -3,10 +3,10 @@
 
 server.port: {{kibana_port}}
 
-server.host: {{server_ip}}
+server.host: {{kibana_ip}}
 
 # The Kibana server's name.  This is used for display purposes.
-server.name: "relk"
+server.name: "RELK stack"
 
 # The URL of the Elasticsearch instance to use for all your queries.
-elasticsearch.url: "http://localhost:9200"
+elasticsearch.url: "http://{{elasticsearch_ip}}:{{elasticsearch_port}}"
