@@ -2,6 +2,7 @@ base:
 
   '*':
     - rsyslog
+    - saltmaster
 
   'logmaster':
     - kibana
