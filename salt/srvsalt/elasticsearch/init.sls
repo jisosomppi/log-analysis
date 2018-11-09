@@ -12,7 +12,7 @@ elasticsearch-oss:
     - source: salt://elasticsearch/elasticsearch.yml
     - template: jinja
     - context:
-      elasticsearch_port: 9200
+      elasticsearch_port: pillar.get('elasticsearch_port','9200')
 
 elasticsearch.service:
   service.running:
