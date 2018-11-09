@@ -8,6 +8,13 @@ rsyslog:
     - context:
       server_port: 514
 
+syslog.user:
+  user.present:
+    - name: syslog
+    - groups:
+      - adm
+      - syslog
+
 rsyslog.service:
   service.running:
     - name: rsyslog
