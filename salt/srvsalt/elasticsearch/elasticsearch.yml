@@ -6,7 +6,7 @@ cluster.name: rek
 path.data: /var/lib/elasticsearch
 path.logs: /var/log/elasticsearch
 
-network.host: localhost
+network.host: {{elasticsearch_ip}}
 http.port: {{elasticsearch_port}}
 
 discovery.zen.minimum_master_nodes: 1
