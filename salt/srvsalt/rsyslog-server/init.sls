@@ -6,7 +6,7 @@ rsyslog:
     - source: salt://rsyslog-server/rsyslog.conf
     - template: jinja
     - context:
-      server_port: 514
+      rsyslog_port: pillar.get('rsyslog_port','514')
 
 syslog.user:
   user.present:
