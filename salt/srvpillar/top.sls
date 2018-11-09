@@ -1,6 +1,8 @@
 base:
   'srv*':
-    - server
+    - kibana
+    - nginx
+    - elasticsearch
 
   'ws*':
-    - workstation
+    - rsyslog
