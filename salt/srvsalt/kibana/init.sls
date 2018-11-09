@@ -12,8 +12,9 @@ kibana-oss:
     - source: salt://kibana/kibana.yml
     - template: jinja
     - context:
-      kibana_port: 5601
-      server_ip: localhost
+      kibana_port: pillar.get('kibana_port','5601')
+      kibana_ip: pillar.get('kibana_ip','localhost')
+
 
 kibana.service:
   service.running:
