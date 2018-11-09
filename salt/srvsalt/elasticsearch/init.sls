@@ -13,6 +13,7 @@ elasticsearch-oss:
     - template: jinja
     - context:
       elasticsearch_port: pillar.get('elasticsearch_port','9200')
+      elasticsearch_ip: pillar.get('elasticsearch_ip','localhost')
 
 elasticsearch.service:
   service.running:
