@@ -9,8 +9,9 @@ nginx:
     - source: salt://nginx/default_nossl
     - template: jinja
     - context:
-      server_name: {{salt['network.interface_ip']('eno1')}} 
-##    server_name: logserver.local
+##    server_ip: {{salt['network.interface_ip']('eno1')}} 
+      server_ip: pillar.get('server_ip','')
+      nginx_port: pillar.get('nginx_port','80')
 
 nginx.service:
   service.running:
