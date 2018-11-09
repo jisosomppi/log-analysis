@@ -1,3 +1,2 @@
 master: localhost
 id: srv-01
-file_ignore_glob: []
