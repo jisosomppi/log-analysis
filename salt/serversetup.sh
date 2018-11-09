@@ -11,5 +11,5 @@ echo "Running automated setup.."
 echo "(This will take a while)"
 sudo cp log-analysis/salt/saltmaster /etc/salt/master
 sudo systemctl restart salt-minion
-sudo salt-call --local --file-root log-analysis/salt/srvsalt --pillar-root log-analysis/salt/srvpillar --id srv01 state.highstate --state-output terse
+sudo salt-call --local --file-root log-analysis/salt/srvsalt --pillar-root log-analysis/salt/srvpillar --id srv01 state.highstate --state-output terse -l quiet
 echo "Setup is now complete! Access the Kibana logging frontend at http://localhost"
