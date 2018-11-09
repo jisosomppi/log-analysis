@@ -1,8 +1,9 @@
 base:
-  'srv*':
+
+  '*':
+    - rsyslog
+
+  'logmaster':
     - kibana
     - nginx
     - elasticsearch
-
-  'ws*':
-    - rsyslog
