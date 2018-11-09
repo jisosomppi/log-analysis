@@ -1,6 +1,6 @@
 server {
   listen 80;
-    server_name {{server_ip}};
+    server_name {{server_name}};
     
   error_log   /var/log/nginx/kibana.error.log;
   access_log  /var/log/nginx/kibana.access.log;

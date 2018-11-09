@@ -1,7 +1,7 @@
 server {
   listen 80;
   listen [::]:80;
-  server_name {{server_ip}};
+  server_name {{server_name}};
   return 302 https://$server_name$request_uri;
 
   error_log   /var/log/nginx/kibana.error.log;
