@@ -455,11 +455,7 @@ If configuration is a OK, restart the service:
 
 Test encryption by visiting your IP --> `https://your_IP`
 
-
-
-
-
-
+When signing your own certificate, it is normal, that your browser warns you about the connection not being secure. I'm not sure how you can add the exception when using Chrome, but it's fairly easy on Firefox.
 
 
 Sources:  
