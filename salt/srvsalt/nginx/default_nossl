@@ -1,5 +1,5 @@
 server {
-  listen {{kibana_port}};
+  listen {{nginx_port}};
     server_name {{server_ip}};
     
   error_log   /var/log/nginx/kibana.error.log;
@@ -8,7 +8,7 @@ server {
   location / {
     rewrite ^/(.*) /$1 break;
     proxy_ignore_client_abort on;
-    proxy_pass http://localhost:5601;
+    proxy_pass http://{{kibana_ip}}:{{kibana_port}};
     proxy_set_header  X-Real-IP  $remote_addr;
     proxy_set_header  X-Forwarded-For $proxy_add_x_forwarded_for;
     proxy_set_header  Host $http_host;
