@@ -6,15 +6,13 @@ nginx:
     
 /etc/nginx/sites-available/default:
   file.managed:
-    - source: salt://nginx/default
+    - source: salt://nginx/default_nossl
     - template: jinja
     - context:
-      server_ip: 172.28.171.138
-## server_ip: grains['ipv4 interfaces'](eno1)   
+      server_ip: {{grains['localhost']}} 
     
 nginx.service:
   service.running:
     - name: nginx
     - watch:
       - file: /etc/nginx/sites-available/default
-      
