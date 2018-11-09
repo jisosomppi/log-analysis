@@ -11,6 +11,13 @@ logstash:
   file.managed:
     - source: salt://logstash/logstash.conf
 
+logstash.user:
+  user.present:
+    - name: logstash
+    - groups: 
+      - adm
+      - syslog
+
 logstash.service:
   service.running:
     - name: logstash
