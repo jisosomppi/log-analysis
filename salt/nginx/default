@@ -6,14 +6,7 @@ server {
 
   error_log   /var/log/nginx/kibana.error.log;
   access_log  /var/log/nginx/kibana.access.log;
-}
-
-server {
-  listen 443 ssl http2 default_server;
-  listen [::]:443 ssl http2 default_server;
-  include snippets/self-signed.conf;
-  include snippets/ssl-params.conf;
-
+  
   location / {
     rewrite ^/(.*) /$1 break;
     proxy_ignore_client_abort on;
@@ -22,4 +15,21 @@ server {
     proxy_set_header  X-Forwarded-For $proxy_add_x_forwarded_for;
     proxy_set_header  Host $http_host;
   }
+  
 }
+
+#server {
+#  listen 443 ssl http2 default_server;
+#  listen [::]:443 ssl http2 default_server;
+#  include snippets/self-signed.conf;
+#  include snippets/ssl-params.conf;
+#
+#  location / {
+#    rewrite ^/(.*) /$1 break;
+#    proxy_ignore_client_abort on;
+#    proxy_pass http://localhost:5601;
+#    proxy_set_header  X-Real-IP  $remote_addr;
+#    proxy_set_header  X-Forwarded-For $proxy_add_x_forwarded_for;
+#    proxy_set_header  Host $http_host;
+#  }
+#}
