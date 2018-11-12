@@ -12,8 +12,8 @@ logstash:
     - source: salt://logstash/logstash.conf
     - template: jinja
     - context:
-      elasticsearch_ip: pillar.get('elasticsearch_ip','localhost')
-      elasticsearch_port: pillar.get('elasticsearch_port','9200')
+      elasticsearch_ip: {{pillar.get('elasticsearch_ip','localhost')}}
+      elasticsearch_port: {{pillar.get('elasticsearch_port','9200')}}
 
 logstash.user:
   user.present:
