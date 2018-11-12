@@ -1,5 +1,5 @@
 # Server
-server_ip: {{ LOG SERVER IP ADDRESS GOES HERE }}
+server_ip: 172.28.172.12
 
 # Kibana
 # Use localhost here to avoid opening the ports to public access
@@ -17,5 +17,3 @@ rsyslog_port: 514
 # Nginx
 # Use port 80 to avoid entering port number while accessing Kibana
 nginx_port: 80
-
-# Salt
