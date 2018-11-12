@@ -84,7 +84,5 @@ We have two options for allowing Salt to install the Elastic packages:
   **THIS IS NOT SUITABLE FOR A PRODUCTION ENVIRONMENT!!**. 
 * Make sure all changes to setting files are reflected on clients
 
-***Editing in progress!***
-
 ### Pillar structure
 Using Salt pillars to store data is a great way to keep a single source of truth. Having salt minions read the information from the pillar allows segmenting the network, and giving different server information to computers depending on their id (department, usecase, etc.).
