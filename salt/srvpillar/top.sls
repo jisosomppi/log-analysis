@@ -1,10 +1,6 @@
 base:
-
-  '*':
-    - rsyslog
-    - saltmaster
-
-  'logmaster':
-    - kibana
-    - nginx
-    - elasticsearch
+  'srv*':
+    - server
+    
+  'ws*':
+    - workstation
