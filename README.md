@@ -1,5 +1,5 @@
 # Logging and analysis of security data in a network
-***Multidisciplinary Software Project, fall 2018***  
+***ICT Infrastructure Project, fall 2018***  
 ***Haaga-Helia University of Applied Sciences***  
 *[Jussi Isosomppi](https://github.com/jisosomppi), [Eino Kupias](https://github.com/einokupias), [Saku Kähäri](https://github.com/nauskis)*
 
