@@ -8,9 +8,6 @@ kibana_port: 5601
 elasticsearch_ip: localhost
 elasticsearch_port: 9200
 
-# Rsyslog
-rsyslog_port: 514
-
 # Nginx
 # Use port 80 to avoid entering port number while accessing Kibana
 nginx_port: 80
