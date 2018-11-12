@@ -9,7 +9,6 @@ nginx:
     - source: salt://nginx/default_nossl
     - template: jinja
     - context:
-##      server_ip: {{salt['ip4_interfaces']('eno1')}} 
       server_ip: pillar.get('server_ip','')
       nginx_port: pillar.get('nginx_port','80')
       kibana_ip: pillar.get('kibana_ip','localhost')
