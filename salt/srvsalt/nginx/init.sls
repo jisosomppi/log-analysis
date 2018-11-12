@@ -12,7 +12,7 @@ nginx:
       server_ip: {{ salt['grains.get']('ip4_interfaces:eno1')[0] }}
       nginx_port: 80
       kibana_ip: localhost
-      kibana_port: 80
+      kibana_port: 5601
 
 nginx.service:
   service.running:
