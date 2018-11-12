@@ -12,10 +12,10 @@ kibana-oss:
     - source: salt://kibana/kibana.yml
     - template: jinja
     - context:
-      kibana_ip: pillar.get('kibana_ip','localhost')
-      kibana_port: pillar.get('kibana_port','5601')
-      elasticsearch_ip: pillar.get('elasticsearch_ip','localhost')
-      elasticsearch_port: pillar.get('elasticsearch_port','9200')
+      kibana_ip: {{pillar.get('kibana_ip','localhost')}}
+      kibana_port: {{pillar.get('kibana_port','5601')}}
+      elasticsearch_ip: {{pillar.get('elasticsearch_ip','localhost')}}
+      elasticsearch_port: {{pillar.get('elasticsearch_port','9200')}}
 
 
 kibana.service:
