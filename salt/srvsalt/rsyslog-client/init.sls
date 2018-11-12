@@ -6,7 +6,7 @@ rsyslog:
     - source: salt://rsyslog-client/rsyslog.conf
     - template: jinja
     - context:
-      rsyslog_ip: {{salt['grains.get']('master')[0]}}
+      rsyslog_ip: {{salt['grains.get']('master')}}
       rsyslog_port: {{pillar.get('rsyslog_port', '514')}}
 
 rsyslog.service:
