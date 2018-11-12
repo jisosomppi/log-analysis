@@ -14,5 +14,3 @@ rsyslog_port: 514
 # Nginx
 # Use port 80 to avoid entering port number while accessing Kibana
 nginx_port: 80
-
-# Server IP goes here
