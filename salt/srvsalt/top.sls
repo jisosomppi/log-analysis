@@ -1,5 +1,5 @@
 base:
-  '*':
+  'ws*':
     - rsyslog-client
 
   'srv*':
