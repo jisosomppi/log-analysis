@@ -1,5 +1,11 @@
 # Setting up a centralized logging server with Salt
 >*This Salt build is based on the [RELK-physical-working build](https://github.com/jisosomppi/log-analysis/tree/master/builds/relk-physical-working), and aims to automate and centralize the settings for it.*
+
+## Currently missing from the Salt version
+* Encryption of log traffic
+* User authentication for Nginx/Kibana
+* Automatic log analysis/filtering
+
 ## Installation
 ### Server install
 ```
@@ -25,11 +31,6 @@ The logs will be saved on the master at `/var/log/client_logs`, but won't be vis
 The logging frontend is Kibana, which is automatically set up and started on the master. The interface can be accessed either locally on the server (http://localhost) or from other machines (http://serverip). Kibana requires minimal setup after the initial scripts:
 * Create new index (the easiest index pattern for this is " \* "), choose @timestamp as the time filter
 * Go to the Discover tab to see log entries
-
-### Currently missing from the Salt version
-* Encryption of log traffic
-* User authentication for Nginx/Kibana
-* Automatic log analysis/filtering
 
 ## Basic idea of the setup
 The idea behind managing the setup is to reduce the number of problems in the complete installation. By using a centralized system for the installation we can ensure that:
