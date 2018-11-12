@@ -1,6 +1,6 @@
 base:
+  '*':
+    - rsyslog
   'srv*':
     - server
     
-  'ws*':
-    - workstation
