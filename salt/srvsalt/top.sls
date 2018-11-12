@@ -1,6 +1,7 @@
 base:
   'ws*':
     - rsyslog-client
+    - etchosts
 
   'srv*':
     - rsyslog-server
