@@ -26,7 +26,7 @@ https://www.experts-exchange.com/questions/28408576/Setting-up-rsyslog-to-send-t
 **Docker**  
 https://portainer.io/install.html  
 
-**Salt CA** 
+**Salt CA**  
 https://groups.google.com/forum/#!topic/salt-users/D1WRJPaE284
 
 **Other**  
