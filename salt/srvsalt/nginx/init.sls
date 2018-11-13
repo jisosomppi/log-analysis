@@ -13,6 +13,7 @@ nginx:
       nginx_port: {{pillar.get('nginx_port','80')}}
       kibana_ip: {{pillar.get('kibana_ip','localhost')}}
       kibana_port: {{pillar.get('kibana_port','5601')}}
+      ssl_port: {{pillar.get('ssl_port','443')}}
 
 nginx.service:
   service.running:
