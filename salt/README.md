@@ -22,7 +22,7 @@ chmod +x clientsetup.sh
 
 ```
 ### Setup & testing
-After running both installation scripts, run the command `sudo salt-key -A` on the master to accept all pending keys. After this run `sudo salt '*' state.highstate --state-output terse` on the server to set all machines (server+clients) to the desired state.
+The above commands should be run on two different (X)Ubuntu machines (live installs and Vagrant boxes should work well). After running both installation scripts, run the command `sudo salt-key -A` on the master to accept all pending keys. After this run `sudo salt '*' state.highstate --state-output terse` on the master to set all machines (server+clients) to the desired state.
 
 You can generate log data for testing by typing `logger -s testmessage` on the client (-s to print the message to the terminal as well). 
 
