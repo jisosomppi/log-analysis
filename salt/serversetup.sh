@@ -1,6 +1,7 @@
 #!/bin/bash
 #Simple logging server
 
+cd ~
 echo "Updating packages..."
 sudo apt-get update -qq >> /dev/null
 echo "Installing git and salt..."
