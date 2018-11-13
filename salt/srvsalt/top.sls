@@ -4,6 +4,7 @@ base:
     - etchosts
 
   'srv*':
+    - etchosts
     - rsyslog-server
     - elastic-pkg
     - java
