@@ -12,7 +12,7 @@
 |wk 43||9|8|Saku worked on setting up authentication for ElasticSearch, Eino continued working on his project|
 |wk 44|9|16|16|Saku got his elasticsearch authentication plugin [readonlyREST](https://github.com/jisosomppi/log-analysis/blob/master/builds/readonlyREST.md) up and running. Jussi started work on Salt modules and troubleshooted missing log files. Saku got Kibana to use the authentication of readonlyREST and set up Nginx for proxy connection to Kibana. Eino tried to get tls connection with certs, without succeeding. On friday tried with openssl instead of gnutls cause it should give clearer error messages. Propably the installation was faulty, also lost report... Saku started looking into configuring Nginx |
 |wk 45|26|16|14|Jussi created local repository for specific version of Elastic products + made it usable with Salt. Eino got tls encryption working with some dodgy file permissions. Saku started working on encrypting Nginx: used self-signed certs because the lack of dns-server. |
-|wk 46|3|7|3|Made v1.0 of Salt packages. Ready for outside user testing.|
+|wk 46|8|7|3|Made v1.0 of Salt packages. Ready for outside user testing.|
 |wk 47|||||
 |wk 48|||||
 |wk 49|||||
