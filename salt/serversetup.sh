@@ -9,6 +9,9 @@ sudo apt-get install git salt-master salt-minion -y -qq >> /dev/null
 echo "Cloning repository..."
 git clone https://github.com/jisosomppi/log-analysis
 echo "Running automated setup... (This will take a while)"
+if [ ! -d "/srv/" ]; then
+sudo mkdir /srv/
+fi 
 sudo mkdir /srv/salt /srv/pillar
 sudo cp -R log-analysis/salt/srvsalt/* /srv/salt
 sudo cp -R log-analysis/salt/srvpillar/* /srv/pillar
