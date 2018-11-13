@@ -29,7 +29,8 @@ You can generate log data for testing by typing `logger -s testmessage` on the c
 The logs will be saved on the master at `/var/log/client_logs`, but won't be visible in Kibana before running `sudo salt 'srv*' state.highstate` or `sudo salt 'srv*' state.apply fixperms` on the server to give the log files proper permissions (this part is still under work). 
 
 The logging frontend is Kibana, which is automatically set up and started on the master. The interface can be accessed either locally on the server (http://localhost) or from any salt minion (http://logserver.local). Kibana requires minimal setup after the initial scripts:
-* Create new index (the easiest index pattern for this is " \* "), choose @timestamp as the time filter
+* Go to the Discover tab
+* Create new index (to show all stored log data enter " \* "), choose @timestamp as the time filter
 * Go to the Discover tab to see log entries
 
 ## Basic idea of the setup
