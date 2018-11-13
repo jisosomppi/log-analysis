@@ -9,8 +9,3 @@
       {% else %}
       logserver: {{grains['master']}}
       {% endif %}
-
-networking:
-  service.running:
-    - watch: 
-      - file: /etc/hosts
