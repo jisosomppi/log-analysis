@@ -18,13 +18,16 @@ https://rsyslog.readthedocs.io/en/latest/configuration/modules/omelasticsearch.h
 http://yallalabs.com/linux/how-to-setup-a-centralized-log-server-using-rsyslog-on-ubuntu-16-04-lts/  
 http://serverascode.com/2016/11/11/ryslog-to-elasticsearch.html  
 https://www.rsyslog.com/tag/elasticsearch/  
-https://www.elastic.co/blog/how-to-centralize-logs-with-rsyslog-logstash-and-elasticsearch-on-ubuntu-14-04  
+https://www.elastic.co/blog/how-to-centralize-logs-with-rsyslog-logstash-and-elasticsearch-on-ubuntu-14-04
 
 **REK Stack**  
 https://www.experts-exchange.com/questions/28408576/Setting-up-rsyslog-to-send-to-Elasticsearch-and-Kibana.html  
 
 **Docker**  
 https://portainer.io/install.html  
+
+**Salt CA**
+https://groups.google.com/forum/#!topic/salt-users/D1WRJPaE284
 
 **Other**  
 https://www.draw.io/ `flowcharts/data_flow_01.xml` for prototype visualization
