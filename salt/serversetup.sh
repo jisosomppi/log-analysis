@@ -19,10 +19,11 @@ sudo salt-call --local --id srv01 state.highstate --state-output terse -l quiet
 
 echo "Server setup is now complete!"
 echo ""
-echo "Access the Kibana logging frontend at http://localhost"
-echo "Client logs will be found in /var/log/client_logs"
+echo "You can access the Kibana logging frontend at http://localhost"
+echo "Collected client logs will be found in /var/log/client_logs"
 echo "Direct your clients to this servers IP address:"
 hostname -I
 echo ""
 echo "Run 'sudo salt srv01 state.apply fixperms' when new"
 echo "host directories or log files are created"
+firefox http://logserver.local
