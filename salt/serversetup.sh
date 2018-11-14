@@ -11,7 +11,6 @@ echo "Installing git and salt..."
 apt-get install git salt-master salt-minion -y -qq >> /dev/null
 echo "Cloning repository..."
 git clone https://github.com/jisosomppi/log-analysis/
-echo "Running automated setup... (This will take a while)"
 
 # Create directories
 if [ ! -d "/srv/" ]; then
@@ -42,10 +41,11 @@ systemctl restart salt-master
 
 # Create OpenSSL keys for Nginx
 echo "Generating OpenSSL keys for Nginx..."
-openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/private/nginx-selfsigned.key -out /etc/ssl/certs/nginx-selfsigned.crt -subj "/C=FI/ST=Uusimaa/L=Helsinki/O=Haaga-Helia/OU=Logserver/CN=logserver.local"
-openssl dhparam -out /etc/ssl/certs/dhparam.pem 2048
+openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/private/nginx-selfsigned.key -out /etc/ssl/certs/nginx-selfsigned.crt -subj "/C=FI/ST=Uusimaa/L=Helsinki/O=Haaga-Helia/OU=Logserver/CN=logserver.local" 2> /dev/null
+openssl dhparam -out /etc/ssl/certs/dhparam.pem 2048 2> /dev/null
 
 # Run salt state for master (forcing id because local salt key is not signed yet)
+echo "Applying salt state for server install... (This will take a while)"
 salt-call --local --id srv01 state.highstate --state-output terse -l quiet
 
 # Print instructions
