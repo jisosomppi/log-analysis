@@ -24,7 +24,7 @@ readonlyrest.plugin:
     - source: salt://elasticsearch/readonlyrest.yml
     - template: jinja
     - context:
-      username: {{ pillar.get('elasticsearch_user','foo') }}
+      username: {{ pillar.get('elasticsearch_username','foo') }}
       password: {{ pillar.get('elasticsearch_password','bar')
 
 
