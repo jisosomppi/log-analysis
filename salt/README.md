@@ -14,11 +14,11 @@ The aim of this project is to create a centralized logging solution, where all w
   * [Client install](#client-install)
   * [Setup & testing](#setup--testing)
 * [Basic idea of the setup](#basic-idea-of-the-setup)
-* [Salt state structure](#salt-state-structure)
-  * [Single-run setup](#single-run-setup)
-  * [Ongoing setup (highstate)](https://github.com/jisosomppi/log-analysis/blob/master/salt/README.md#ongoing-setup-highstate)
+  * [Server highstate](#server-highstate)
+  * [Client highstate](#client-highstate)
   * [Pillar structure](#pillar-structure)
-  * [Currently missing from the Salt version](#currently-missing-from-the-salt-version)
+  * [Upcoming features](#upcoming-features)
+  * [Known issues](#known-issues)
 
 ## Installation
 ### Server install
@@ -92,6 +92,9 @@ The idea behind managing the setup is to reduce the number of problems in the co
 * Package installation
   * Rsyslog
   * Salt-minion
+* Adding the DNS redirect for log server
+The client highstate is kept minimal, as we're only defining logging rules, not an imaginary workflow 
+  
 
 ### Pillar structure
 * Workstation
@@ -101,8 +104,9 @@ The idea behind managing the setup is to reduce the number of problems in the co
   * Reads the same rsyslog.sls pillar file to allow for single source of truth
   * Contains all IP address, port, user authentication details
 
-## Currently missing from the Salt version
+## Upcoming features
 * Encryption of log traffic
-* ~~User authentication for Nginx/Kibana~~
 * Automatic log analysis/filtering
-* Jinja can't render nordic characters (öåä), so they can't be used (even in pillars -> passwords). Entering nordics into the pillar causes a Jinja ascii render error
+
+## Known issues
+* Jinja can't render nordic characters (öåä), so they can't be used (even in pillars -> passwords). Entering nordics into the pillar causes a Jinja ascii render error. [There is a workaround for this](https://github.com/saltstack/salt/issues/40486#issuecomment-291147689) (adding `.decode('utf-8')` to `pillar.get`), but it prevents `salt-call --local` from working, and thus makes no difference in our case.
