@@ -67,8 +67,10 @@ The idea behind managing the setup is to reduce the number of problems in the co
     * presents Kibana at port 80 (no port number needed when browsing to)
     * allows Nginx to be the only open service (apart from Rsyslog receive)
     * allows easier control of http settings
+    * provides SSL
   * Rsyslog
   * Elasticsearch
+    * Also installs the ReadonlyREST plugin, allowing for HTTP authentication
   * Kibana
   * Logstash
   * Salt-master
