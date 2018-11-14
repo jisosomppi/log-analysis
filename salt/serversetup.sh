@@ -29,7 +29,7 @@ echo -e "\nfile_ignore_glob: []\n" >> /etc/salt/master
 systemctl restart salt-minion
 systemctl restart salt-master
 
-# Run salt state for master (forcing rv01
+# Run salt state for master (forcing id because local salt key is not signed yet)
 salt-call --local --id srv01 state.highstate --state-output terse -l quiet
 
 # Print instructions
