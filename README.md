@@ -10,6 +10,8 @@ Part of the tools and methods we're planning to use to achieve these goals are:
 * Using graphical tools (Kibana, Grafana) to allow data to avoid handling data in the CLI
 * Using open source code to ensure availability and low-to-zero cost for the solution
 
+## Table of Contents
+  
 ## Milestones
 1. Setting up a logging server and passing data to it from one client  
 2. Passing data from several (distinguishable) clients  
