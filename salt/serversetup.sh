@@ -12,6 +12,11 @@ echo "Running automated setup... (This will take a while)"
 if [ ! -d "/srv/" ]; then
 sudo mkdir /srv/
 fi 
+
+sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/private/nginx-selfsigned.key -out /etc/ssl/certs/nginx-selfsigned.crt
+sudo openssl dhparam -out /etc/ssl/certs/dhparam.pem 2048
+
+
 sudo mkdir /srv/salt /srv/pillar
 sudo cp -R log-analysis/salt/srvsalt/* /srv/salt
 sudo cp -R log-analysis/salt/srvpillar/* /srv/pillar
@@ -31,5 +36,3 @@ echo "Run 'sudo salt srv01 state.apply fixperms' when new host directories or lo
 echo
 echo "Opening the logging frontend at http://logserver.local (This address also works on connected Salt minions)"
 firefox http://logserver.local
-sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/private/nginx-selfsigned.key -out /etc/ssl/certs/nginx-selfsigned.crt
-sudo openssl dhparam -out /etc/ssl/certs/dhparam.pem 2048
