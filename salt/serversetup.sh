@@ -12,7 +12,7 @@ apt-get update -qq >> /dev/null
 echo "Installing git and salt..."
 apt-get install git salt-master salt-minion -y -qq >> /dev/null
 echo "Cloning repository..."
-git clone -b sakutesti https://github.com/jisosomppi/log-analysis/
+git clone https://github.com/jisosomppi/log-analysis/
 echo "Running automated setup... (This will take a while)"
 
 # Create directories
@@ -33,6 +33,7 @@ systemctl restart salt-minion
 systemctl restart salt-master
 
 # Create OpenSSL keys for Nginx
+echo "Generating OpenSSL keys for Nginx..."
 openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/private/nginx-selfsigned.key -out /etc/ssl/certs/nginx-selfsigned.crt -subj "/C=FI/ST=Uusimaa/L=Helsinki/O=Haaga-Helia/OU=Logserver/CN=logserver.local"
 openssl dhparam -out /etc/ssl/certs/dhparam.pem 2048
 
@@ -48,5 +49,5 @@ echo
 echo "Collected client logs will be found in /var/log/client_logs"
 echo "Run 'sudo salt srv01 state.apply fixperms' when new host directories or log files are created"
 echo
-echo "Opening the logging frontend at http://logserver.local (This address also works on connected Salt minions)"
-firefox http://logserver.local
+echo "Opening the logging frontend at https://logserver.local (This address also works on connected Salt minions)"
+firefox https://logserver.local
