@@ -6,7 +6,7 @@ nginx:
     
 /etc/nginx/sites-available/default:
   file.managed:
-    - source: salt://nginx/default_nossl
+    - source: salt://nginx/default
     - template: jinja
     - context:
       server_ip: {{ salt['grains.get']('ip4_interfaces:eno1')[0] }}
