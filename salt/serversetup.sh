@@ -2,6 +2,8 @@
 #Simple logging server
 
 cd ~
+echo "Setting keyboard mapping to finnish.."
+setxkbmap fi
 echo "Updating packages..."
 sudo apt-get update -qq >> /dev/null
 echo "Installing git and salt..."
