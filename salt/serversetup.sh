@@ -7,7 +7,7 @@ sudo apt-get update -qq >> /dev/null
 echo "Installing git and salt..."
 sudo apt-get install git salt-master salt-minion -y -qq >> /dev/null
 echo "Cloning repository..."
-git clone https://github.com/jisosomppi/log-analysis
+git clone https://github.com/jisosomppi/log-analysis/tree/sakutesti
 echo "Running automated setup... (This will take a while)"
 if [ ! -d "/srv/" ]; then
 sudo mkdir /srv/
