@@ -10,3 +10,6 @@ server.name: "RELK stack"
 
 # The URL of the Elasticsearch instance to use for all your queries.
 elasticsearch.url: "http://{{elasticsearch_ip}}:{{elasticsearch_port}}"
+
+elasticsearch.username: "user"
+elasticsearch.password: "pass"
