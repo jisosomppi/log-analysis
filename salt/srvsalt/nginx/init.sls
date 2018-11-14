@@ -23,7 +23,6 @@ nginx:
   file.managed:
     - source: salt://nginx/snippets/ssl-params.conf
 
-
 nginx.service:
   service.running:
     - name: nginx
@@ -31,4 +30,3 @@ nginx.service:
       - file: /etc/nginx/sites-available/default
       - file: /etc/nginx/snippets/self-signed.conf
       - file: /etc/nginx/snippets/ssl-params.conf
-
