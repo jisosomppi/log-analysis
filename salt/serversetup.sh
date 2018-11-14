@@ -1,6 +1,7 @@
 #!/bin/bash
 #Simple logging server
 
+# Complete basic setup
 echo "Setting Finnish keyboard layout..."
 setxkbmap fi
 cd ~
@@ -31,6 +32,7 @@ systemctl restart salt-master
 # Run salt state for master (forcing rv01
 salt-call --local --id srv01 state.highstate --state-output terse -l quiet
 
+# Print instructions
 echo "Server setup is now complete!"
 echo "Direct your clients to this servers IP address:"
 hostname -I
