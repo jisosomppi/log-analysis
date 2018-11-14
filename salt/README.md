@@ -20,7 +20,7 @@ chmod +x serversetup.sh
 sudo ./serversetup.sh
 
 ```
-Once the server setup script has completed it's task it will open a firefox window (if you have a browser window active when the installation completes, an error message will be prompted and no new browser window will be opened).  
+Once the server setup script has completed it's task, it will open a firefox window (if you have a browser window active when the installation completes, an error message will be prompted and no new browser window will be opened).  
 
 If a new window is opened after the script completes, you will be directed to your localhost page. There, you will:  
  - Add security exceptions to firefox for your new self-signed cert.  
@@ -28,6 +28,7 @@ If a new window is opened after the script completes, you will be directed to yo
  
  If your firefox was already running once the script completed, you can test that everything works by browsing `localhost`, `logserver.local` or your IP.
 
+![default_kibana](https://raw.githubusercontent.com/jisosomppi/log-analysis/master/images/default_kibana.png)
 
 ### Client install
 ```
