@@ -19,6 +19,8 @@ mkdir /srv/
 fi 
 
 # Collect user details
+echo
+echo
 echo "Enter username for Logging server:"
 read es_user
 echo "Enter password for Logging server:"
