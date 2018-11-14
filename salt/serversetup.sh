@@ -20,6 +20,14 @@ if [ ! -d "/srv/" ]; then
 mkdir /srv/
 fi 
 
+# Collect user details
+echo "Enter username for Logging server:"
+read es_user
+echo "Enter password for Logging server:"
+read es_pass
+# Write details into pillar
+echo -e "\nelasticsearch_username: $es_user\nelasticsearch_password: $es_pass\n" >> log-analysis/salt/srvpillar/server.sls
+
 # Place Salt files
 mkdir /srv/salt /srv/pillar
 cp -R log-analysis/salt/srvsalt/* /srv/salt
