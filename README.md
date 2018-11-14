@@ -11,22 +11,6 @@ Part of the tools and methods we're planning to use to achieve these goals are:
 * Using open source code to ensure availability and low-to-zero cost for the solution
 
 ## Table of Contents
-
-- [Milestones](#milestones)
-- [Tools](#tools)
-- [Project diary](#project-diary)
-  * [Week 1](#week-1)
-  * [Week 2](#week-2)
-  * [Week 3](#week-3)
-  * [Week 4](#week-4)
-  * [Week 5](#week-5)
-  * [Week 6](#week-6) 
-  * [Week 7](#week-7)
-  * [Week 8](#week-8)
-  * [Week 9](#week-9)   
-  * [Week 10](#week-10)
-  * [Week 11](#week-11)
-  * [Week 12](#week-12) 
   
 ## Milestones
 1. Setting up a logging server and passing data to it from one client  
