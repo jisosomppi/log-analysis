@@ -9,7 +9,6 @@ echo "Please enter master IP address here:"
 read MasterIP
 echo "Please enter a unique id for your system:"
 read SystemID
-echo "Writing information to /etc/salt/minion..."
-echo -e "master: $MasterIP\nid: ws-$SystemID" | sudo tee /etc/salt/minion
-echo "Restarting salt-minion..."
+echo "Writing salt settings to file and restarting salt-minion..."
+echo -e "master: $MasterIP\nid: ws-$SystemID" >> /etc/salt/minion
 systemctl restart salt-minion
