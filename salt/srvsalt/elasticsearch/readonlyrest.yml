@@ -1,0 +1,7 @@
+readonlyrest:
+  enable: true
+  response_if_req_forbidden: Access denied.
+  access_control_rules:
+  - name: Full access with HTTP auth
+    auth_key: {{elasticsearch_username}}:{{elasticsearch_password}}
+    type: allow

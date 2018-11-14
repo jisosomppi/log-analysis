@@ -51,7 +51,7 @@ Opensource ElasticSearch (without x-pack and some other plugins which we current
 https://www.elastic.co/downloads/elasticsearch-oss  
 I still have no idea how to get the oss version of elasticsearch with apt-get installation. I'll look into it later.
 
-I got the plugin running for the first time! Here are my steps so far:  
+### I got the plugin running for the first time! Here are my steps so far: ###  
 **1) Installing java**  
 ```
 sudo apt-get install -y default-jre
@@ -71,7 +71,8 @@ Next, I got the download link from [readonlyREST web page](https://readonlyrest.
 
 **UPDATED**  
 As stated earlier in the post, you can now download the installation file from our github [downloads folder](https://github.com/jisosomppi/log-analysis/blob/master/downloads/readonlyrest-1.16.28_es6.4.2.zip) if you don't wish to get an email link.  
-`wget https://github.com/jisosomppi/log-analysis/raw/master/downloads/readonlyrest-1.16.28_es6.4.2.zip` should also work.
+`wget https://github.com/jisosomppi/log-analysis/raw/master/downloads/readonlyrest-1.16.28_es6.4.2.zip`  
+should also work.
 
 After I downloaded the plugin zip, I installed it using abosute paths:  
 `sudo /usr/share/elasticsearch/bin/elasticsearch-plugin install file:///home/xubuntu/Downloads/readonlyrest-1.16.28_es6.4.2.zip`

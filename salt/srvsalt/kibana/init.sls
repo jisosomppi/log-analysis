@@ -16,7 +16,8 @@ kibana-oss:
       kibana_port: {{pillar.get('kibana_port','5601')}}
       elasticsearch_ip: {{pillar.get('elasticsearch_ip','localhost')}}
       elasticsearch_port: {{pillar.get('elasticsearch_port','9200')}}
-
+      elasticsearch_username: {{pillar.get('elasticsearch_username','foo')}}
+      elasticsearch_password: {{pillar.get('elasticsearch_password','bar')}}
 
 kibana.service:
   service.running:
