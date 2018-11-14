@@ -1,18 +1,16 @@
 # Setting up a centralized logging server with Salt
->*This Salt build is based on the [RELK-physical-working build](https://github.com/jisosomppi/log-analysis/tree/master/builds/relk-physical-working), and aims to automate and centralize the settings for it.*
+## Table of Contents
 
-# Table of Contents
-
-- [Currently missing from the Salt version](#currently-missing-from-the-salt-version)
-- [Installation](#installation)
+* [Installation](#installation)
   * [Server install](#server-install)
   * [Client install](#client-install)
   * [Setup & testing](#setup--testing)
-- [Basic idea of the setup](#basic-idea-of-the-setup)
-- [Salt state structure](#salt-state-structure)
+* [Basic idea of the setup](#basic-idea-of-the-setup)
+* [Salt state structure](#salt-state-structure)
   * [Single-run setup](#single-run-setup)
   * [Ongoing setup (highstate)](https://github.com/jisosomppi/log-analysis/blob/master/salt/README.md#ongoing-setup-highstate)
   * [Pillar structure](#pillar-structure)
+  * [Currently missing from the Salt version](#currently-missing-from-the-salt-version)
 
 ## Installation
 ### Server install
