@@ -2,10 +2,8 @@
 #Simple logging server
 
 # Complete basic setup
-echo "Setting Finnish keyboard layout..."
-setxkbmap fi
 cd ~
-echo "Setting keyboard mapping to finnish.."
+echo "Setting Finnish keyboard layout..."
 setxkbmap fi
 echo "Updating packages..."
 apt-get update -qq >> /dev/null
