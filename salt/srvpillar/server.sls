@@ -7,6 +7,8 @@ kibana_port: 5601
 # Use localhost here to avoid opening the ports to public access
 elasticsearch_ip: localhost
 elasticsearch_port: 9200
+elasticsearch_username: vakiokäyttäjä
+elasticsearch_password: vaikeasalasana
 
 # Nginx
 # Use port 80 to avoid entering port number while accessing Kibana
