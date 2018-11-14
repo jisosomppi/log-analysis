@@ -51,7 +51,7 @@ Opensource ElasticSearch (without x-pack and some other plugins which we current
 https://www.elastic.co/downloads/elasticsearch-oss  
 I still have no idea how to get the oss version of elasticsearch with apt-get installation. I'll look into it later.
 
-I got the plugin running for the first time! Here are my steps so far:  
+### I got the plugin running for the first time! Here are my steps so far: ###  
 **1) Installing java**  
 ```
 sudo apt-get install -y default-jre
