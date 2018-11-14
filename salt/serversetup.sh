@@ -1,25 +1,27 @@
 #!/bin/bash
 #Simple logging server
 
+echo "Setting keyboard layout to fi-FI"
+setxkbmap fi
 cd ~
 echo "Updating packages..."
-sudo apt-get update -qq >> /dev/null
+apt-get update -qq >> /dev/null
 echo "Installing git and salt..."
-sudo apt-get install git salt-master salt-minion -y -qq >> /dev/null
+apt-get install git salt-master salt-minion -y -qq >> /dev/null
 echo "Cloning repository..."
 git clone https://github.com/jisosomppi/log-analysis
 echo "Running automated setup... (This will take a while)"
 if [ ! -d "/srv/" ]; then
-sudo mkdir /srv/
+mkdir /srv/
 fi 
-sudo mkdir /srv/salt /srv/pillar
-sudo cp -R log-analysis/salt/srvsalt/* /srv/salt
-sudo cp -R log-analysis/salt/srvpillar/* /srv/pillar
-sudo cp log-analysis/salt/saltmaster /etc/salt/minion
-echo -e "\nfile_ignore_glob: []\n" | sudo tee -a /etc/salt/master
-sudo systemctl restart salt-minion
-sudo systemctl restart salt-master
-sudo salt-call --local --id srv01 state.highstate --state-output terse -l quiet
+mkdir /srv/salt /srv/pillar
+cp -R log-analysis/salt/srvsalt/* /srv/salt
+cp -R log-analysis/salt/srvpillar/* /srv/pillar
+cp log-analysis/salt/saltmaster /etc/salt/minion
+echo -e "\nfile_ignore_glob: []\n" >> /etc/salt/master
+systemctl restart salt-minion
+systemctl restart salt-master
+salt-call --local --id srv01 state.highstate --state-output terse -l quiet
 
 echo "Server setup is now complete!"
 echo "Direct your clients to this servers IP address:"
