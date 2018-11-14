@@ -7,12 +7,12 @@
 - [Installation](#installation)
  * [Server install](#server-install)
  * [Client install](#client-install)
-    + [Setup & testing](#setup---testing)
+ * [Setup & testing](#setup---testing)
 - [Basic idea of the setup](#basic-idea-of-the-setup)
 - [Salt state structure](#salt-state-structure)
  * [Single-run setup](#single-run-setup)
  * [Ongoing setup (highstate)](#ongoing-setup--highstate-)
- * [Pillar structure](#pillar-structure
+ * [Pillar structure](#pillar-structure)
 
 ## Currently missing from the Salt version
 * Encryption of log traffic
