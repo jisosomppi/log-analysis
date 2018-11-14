@@ -10,5 +10,5 @@ read MasterIP
 echo "Please enter a unique id for your system:"
 read SystemID
 echo "Writing salt settings to file and restarting salt-minion..."
-echo -e "master: $MasterIP\nid: ws-$SystemID" >> /etc/salt/minion
+echo -e "master: $MasterIP\nid: ws-$SystemID" | sudo tee /etc/salt/minion
 systemctl restart salt-minion
