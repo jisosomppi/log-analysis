@@ -11,7 +11,7 @@
 - [Basic idea of the setup](#basic-idea-of-the-setup)
 - [Salt state structure](#salt-state-structure)
   * [Single-run setup](#single-run-setup)
-  * [Ongoing setup (highstate)](#ongoing-setup-(highstate))
+  * [Ongoing setup (highstate)](https://github.com/jisosomppi/log-analysis/blob/master/salt/README.md#ongoing-setup-highstate)
   * [Pillar structure](#pillar-structure)
 
 ## Currently missing from the Salt version
