@@ -23,6 +23,7 @@ sudo mkdir /srv/salt /srv/pillar
 sudo cp -R log-analysis/salt/srvsalt/* /srv/salt
 sudo cp -R log-analysis/salt/srvpillar/* /srv/pillar
 sudo cp log-analysis/salt/saltmaster /etc/salt/minion
+sudo mv log-analysis/downloads/readonlyrest-1.16.28_es6.4.2.zip /tmp/
 echo -e "\nfile_ignore_glob: []\n" | sudo tee -a /etc/salt/master
 sudo systemctl restart salt-minion
 sudo systemctl restart salt-master
