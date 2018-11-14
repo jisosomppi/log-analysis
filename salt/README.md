@@ -11,14 +11,14 @@
 ```
 wget https://raw.githubusercontent.com/jisosomppi/log-analysis/master/salt/serversetup.sh
 chmod +x serversetup.sh
-./serversetup.sh
+sudo ./serversetup.sh
 
 ```
 ### Client install
 ```
 wget https://raw.githubusercontent.com/jisosomppi/log-analysis/master/salt/clientsetup.sh
 chmod +x clientsetup.sh
-./clientsetup.sh
+sudo ./clientsetup.sh
 
 ```
 ### Setup & testing
