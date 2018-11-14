@@ -1,4 +1,6 @@
 # Setting up a centralized logging server with Salt
+
+*Updated on 14/11/18: Added SSL certificates to Nginx and HTTP authentication to Kibana/Elasticsearch*
 ## Table of Contents
 
 * [Installation](#installation)
