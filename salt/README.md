@@ -14,12 +14,6 @@
   * [Ongoing setup (highstate)](https://github.com/jisosomppi/log-analysis/blob/master/salt/README.md#ongoing-setup-highstate)
   * [Pillar structure](#pillar-structure)
 
-## Currently missing from the Salt version
-* Encryption of log traffic
-* ~~User authentication for Nginx/Kibana~~
-* Automatic log analysis/filtering
-* Jinja can't render nordic characters (öåä), so they can't be used (even in pillars -> passwords)
-
 ## Installation
 ### Server install
 ```
@@ -101,3 +95,9 @@ We have two options for allowing Salt to install the Elastic packages:
 
 ### Pillar structure
 Using Salt pillars to store data is a great way to keep a single source of truth. Having salt minions read the information from the pillar allows segmenting the network, and giving different server information to computers depending on their id (department, usecase, etc.).
+
+## Currently missing from the Salt version
+* Encryption of log traffic
+* ~~User authentication for Nginx/Kibana~~
+* Automatic log analysis/filtering
+* Jinja can't render nordic characters (öåä), so they can't be used (even in pillars -> passwords)
