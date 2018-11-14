@@ -16,8 +16,9 @@
 
 ## Currently missing from the Salt version
 * Encryption of log traffic
-* User authentication for Nginx/Kibana
+* ~~User authentication for Nginx/Kibana~~
 * Automatic log analysis/filtering
+* Jinja can't render nordic characters (öåä), so they can't be used (even in pillars -> passwords)
 
 ## Installation
 ### Server install
