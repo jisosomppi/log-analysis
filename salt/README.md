@@ -3,9 +3,11 @@
 ***Haaga-Helia University of Applied Sciences***  
 *[Jussi Isosomppi](https://github.com/jisosomppi), [Eino Kupias](https://github.com/einokupias), [Saku Kähäri](https://github.com/nauskis)*
 
-*Updated on 14/11/18: Added SSL certificate generation to Nginx and HTTP authentication to Kibana/Elasticsearch*
+![RELK_dataflow](https://github.com/jisosomppi/log-analysis/blob/master/images/RELK_dataflow_final.png?raw=true)
 
 The aim of this project is to create a centralized logging solution, where all workstations on a network send their log data to a central logging server. Our solution consists of fully open source components (and the Apache 2.0 -licensed versions of Elastic Co.'s products), and uses the popular and often preinstalled Rsyslog for log reporting. By doing this, we can keep the resource draw from logging very low on client systems.
+
+*Updated on 14/11/18: Added SSL certificate generation to Nginx and HTTP authentication to Kibana/Elasticsearch*
 
 ## Table of Contents
 
@@ -110,3 +112,4 @@ The client highstate is kept minimal, as we're only defining logging rules, not 
 
 ## Known issues
 * Jinja can't render nordic characters (öåä), so they can't be used (even in pillars -> passwords). Entering nordics into the pillar causes a Jinja ascii render error. [There is a workaround for this](https://github.com/saltstack/salt/issues/40486#issuecomment-291147689) (adding `.decode('utf-8')` to `pillar.get`), but it prevents `salt-call --local` from working, and thus makes no difference in our case.
+* With the current configuration, we're not logging events from the log server. This is due to a previous configuration error that resulted in ~450Gb (a full disk) of log data being generated from a single system within an hour. We're going to address this issue at a later time.
