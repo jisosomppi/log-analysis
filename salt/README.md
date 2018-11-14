@@ -1,6 +1,12 @@
 # Setting up a centralized logging server with Salt
+***ICT Infrastructure Project, fall 2018***  
+***Haaga-Helia University of Applied Sciences***  
+*[Jussi Isosomppi](https://github.com/jisosomppi), [Eino Kupias](https://github.com/einokupias), [Saku Kähäri](https://github.com/nauskis)*
 
-*Updated on 14/11/18: Added SSL certificates to Nginx and HTTP authentication to Kibana/Elasticsearch*
+*Updated on 14/11/18: Added SSL certificate generation to Nginx and HTTP authentication to Kibana/Elasticsearch*
+
+The aim of this project is to create a centralized logging solution, where all workstations on a network send their log data to a central logging server. Our solution consists of fully open source components (and the Apache 2.0 -licensed versions of Elastic Co.'s products), and uses the popular and often preinstalled Rsyslog for log reporting. By doing this, we can keep the resource draw from logging very low on client systems.
+
 ## Table of Contents
 
 * [Installation](#installation)
