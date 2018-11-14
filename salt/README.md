@@ -7,7 +7,7 @@
 - [Installation](#installation)
   * [Server install](#server-install)
   * [Client install](#client-install)
-  * [Setup & testing](#https://github.com/jisosomppi/log-analysis/blob/master/salt/README.md#setup--testing)
+  * [Setup & testing](#setup--testing)
 - [Basic idea of the setup](#basic-idea-of-the-setup)
 - [Salt state structure](#salt-state-structure)
   * [Single-run setup](#single-run-setup)
