@@ -17,3 +17,52 @@ We're trying to set up Rsyslog authentication between clients using x509 certifi
 * Creating 
 * Getting rid of certificate warnings while browsing Kibana (maybe?)
   * (would require pre-installed root certificate on Firefox, at least)
+
+## Working setup process
+Following the instructions at https://deliciousbrains.com/ssl-certificate-authority-for-local-https-development/, create keys and certificates:
+```
+# Create the Certificate Authority key, enter a passphrase
+openssl genrsa -des3 -out localCA.key 2048
+```
+
+```
+# Create root certificate, use recognizable Common Name
+openssl req -x509 -new -nodes -key localCA.key -sha256 -days 1825 -out localCA.pem
+```
+
+```
+# Create key for web server
+openssl genrsa -out logserver.local.key 2048
+```
+
+```
+# Create Certificate Singature Request (CSR), input doesn't matter
+openssl req -new -key logserver.local.key -out logserver.local.csr
+```
+```
+# Create logserver.local.ext with following contents:
+authorityKeyIdentifier=keyid,issuer
+basicConstraints=CA:FALSE
+keyUsage = digitalSignature, nonRepudiation, keyEncipherment, dataEncipherment
+subjectAltName = @alt_names
+
+[alt_names]
+DNS.1 = logserver.local
+DNS.2 = 172.28.171.114
+DNS.3 = https://logserver.local
+DNS.4 = https://172.28.171.114
+DNS.5 = http://172.28.171.114
+DNS.6 = http://logserver.local
+```
+
+```
+# Create certificate & key for web server
+openssl x509 -req -in logserver.local.csr -CA localCA.pem -CAkey localCA.key -CAcreateserial \
+-out logserver.local.crt -days 1825 -sha256 -extfile logserver.local.ext
+```
+
+After this, move the generated key `logserver.local.key` and certificate `logserver.local.crt` into `/etc/ssl/` in the right folders, direct `/etc/nginx/snippets` cert conf to them and install `localCA.pem` into Firefox.
+
+Something strange happens with DNS redirection, but at least `https://logserver.local` works like it should, i.e. shows the green lock icon and goes to the page without warnings.
+
+**Success! Next up: automating this setup with Salt.**
