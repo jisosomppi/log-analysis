@@ -1,3 +1,3 @@
 ssl:
   services:
-- nginx
+    - nginx
