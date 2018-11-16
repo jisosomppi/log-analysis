@@ -4,6 +4,7 @@ base:
     - etchosts
 
   'srv*':
+    - ssl-certificate
     - etchosts
     - rsyslog-server
     - elastic-pkg
