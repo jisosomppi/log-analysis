@@ -91,10 +91,11 @@ The idea behind managing the setup is to reduce the number of problems in the co
   **NOTE THAT THIS IS NOT SUITABLE FOR A PRODUCTION ENVIRONMENT!!**. 
 
 ### Client highstate
-* Package installation
+* Package installation & configuration
   * Rsyslog
   * Salt-minion
 * Adding the DNS redirect for log server
+
 The client highstate is kept minimal, as we're only defining logging rules, not an imaginary workflow 
   
 
