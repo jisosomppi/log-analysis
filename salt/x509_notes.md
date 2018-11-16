@@ -1,4 +1,4 @@
-# Setting up an x509 Certificate Authority with Salt
+# Setting up an x509 Certificate Authority
 
 Reference: 
 * https://gist.github.com/fm-jason/c2bf2b986cb47a234f81cfce8e0892de
@@ -9,14 +9,14 @@ Reference:
 * Also referencing [Eino's research notes](https://github.com/jisosomppi/log-analysis/blob/master/installations/tls/working-conf-with-certs.md) for the actual setup
 
 ## The need
-We're trying to set up Rsyslog authentication between clients using x509 certificates. Since we're already using Salt, we could maybe use it to generate and distribute the keys securely.
+We're trying to set up Rsyslog authentication between clients using x509 certificates. We're also hoping to access the Kibana frontend without security prompts.
+
+Since we're already using Salt, we could maybe use it to generate and distribute the keys securely. 
 
 ## Benefits
 * Creating the certificates automatically
 * Distributing the keys via the Salt pillar, securely
-* Creating 
-* Getting rid of certificate warnings while browsing Kibana (maybe?)
-  * (would require pre-installed root certificate on Firefox, at least)
+* Getting rid of certificate warnings while browsing Kibana 
 
 ## Working setup process
 Following the instructions at https://deliciousbrains.com/ssl-certificate-authority-for-local-https-development/, create keys and certificates:
@@ -65,4 +65,4 @@ After this, move the generated key `logserver.local.key` and certificate `logser
 
 Something strange happens with DNS redirection, but at least `https://logserver.local` works like it should, i.e. shows the green lock icon and goes to the page without warnings.
 
-**Success! Next up: automating this setup with Salt.**
+**Success! Next up: automating this setup with Salt and using the certificates for Rsyslog.**
