@@ -46,9 +46,9 @@ openssl genrsa -des3 -out localCA.key 2048
 openssl req -x509 -new -nodes -key localCA.key -sha256 -days 1825 -out localCA.pem -subj "/C=FI/ST=Uusimaa/L=Helsinki/O=Haaga-Helia/OU=Logserver/CN=logserver.local"
 openssl genrsa -out logserver.local.key 2048
 openssl req -new -key logserver.local.key -out logserver.local.csr -subj "/C=FI/ST=Uusimaa/L=Helsinki/O=Haaga-Helia/OU=Logserver/CN=logserver.local"
-echo -e "authorityKeyIdentifier=keyid,issuer\n \
-basicConstraints=CA:FALSE\nkeyUsage = digitalSignature, nonRepudiation, keyEncipherment, dataEncipherment\n \
-subjectAltName = @alt_names\n\n \
+echo -e "authorityKeyIdentifier=keyid,issuer\n\
+basicConstraints=CA:FALSE\nkeyUsage = digitalSignature, nonRepudiation, keyEncipherment, dataEncipherment\n\
+subjectAltName = @alt_names\n\n\
 [alt_names]\nDNS.1 = logserver.local\nDNS.3 = https://logserver.local\nDNS.6 = http://logserver.local" >> test.ext
 
 # Run salt state for master (forcing id because local salt key is not signed yet)
