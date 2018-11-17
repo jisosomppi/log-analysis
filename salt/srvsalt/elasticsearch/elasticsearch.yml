@@ -1,7 +1,7 @@
 ## THIS IS A CENTRALLY MANAGED FILE! ##
 ##    CHANGES WILL BE OVERWRITTEN    ##
 
-cluster.name: rek
+cluster.name: RELK stack
 
 path.data: /var/lib/elasticsearch
 path.logs: /var/log/elasticsearch
