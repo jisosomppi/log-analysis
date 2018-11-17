@@ -7,6 +7,11 @@ Reference:
 * http://virtuallyhyper.com/2013/04/setup-your-own-certificate-authority-ca-on-linux-and-use-it-in-a-windows-environment/
 * https://deliciousbrains.com/ssl-certificate-authority-for-local-https-development/
 * Also referencing [Eino's research notes](https://github.com/jisosomppi/log-analysis/blob/master/installations/tls/working-conf-with-certs.md) for the actual setup
+* Adding root CA to Firefox
+  * ~~https://mike.kaply.com/2012/03/30/customizing-firefox-default-profiles/~~~*deprecated in Firefox 46.0*
+  * https://wiki.mozilla.org/CA:AddRootToFirefox
+  * https://developer.mozilla.org/en-US/docs/Mozilla/Projects/NSS/Tools/certutil
+  * https://gist.github.com/stevenroose/e6abde14258971eae982
 
 ## The need
 We're trying to set up Rsyslog authentication between clients using x509 certificates. We're also hoping to access the Kibana frontend without security prompts.
@@ -65,3 +70,7 @@ After this, move the generated key `logserver.local.key` and certificate `logser
 Changing the server name in the `sites-available/default` file into `logserver.local` seems to fix the DNS redirection issues, since now all connections are directed to the correct domain name (even localhost!). After this the `.ext` file can probably be reduced to just logserver.local and its http:// and https:// variants. 
 
 **Success! Next up: automating this setup with Salt and using the certificates for Rsyslog.**
+
+## Automating Firefox certificate addition
+Looks like the best way to add certs (from the command line) is to use certutil. Certutil is an official Mozilla tool, and is contained in the `libnss3-tools` apt-package. The program has a pretty nice manual file, which should help in adding the certificate.
+
