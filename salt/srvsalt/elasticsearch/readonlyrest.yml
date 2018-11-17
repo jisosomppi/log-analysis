@@ -1,3 +1,6 @@
+## THIS IS A CENTRALLY MANAGED FILE! ##
+##    CHANGES WILL BE OVERWRITTEN    ##
+
 readonlyrest:
   enable: true
   response_if_req_forbidden: Access denied.
