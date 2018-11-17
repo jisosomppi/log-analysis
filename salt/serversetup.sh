@@ -71,6 +71,14 @@ openssl x509 -req -in logserver.local.csr -CA localCA.pem -CAkey localCA.key -CA
 # CURRENTLY BROKEN
 # openssl pkcs12 -export -out logserver.local.pfx -inkey logserver.local.key -in logserver.local.crt -certfile localCA.crt
 
+## Move certificates to /etc/ssl
+#
+#
+
+## Import root CA to Firefox
+#
+#
+
 # Run salt state for master (forcing id because local salt key is not signed yet)
 echo "Applying salt state for server install... (This will take a while)"
 salt-call --local --id srv01 state.highstate --state-output terse -l quiet
