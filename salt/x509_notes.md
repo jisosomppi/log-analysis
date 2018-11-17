@@ -63,6 +63,8 @@ openssl x509 -req -in logserver.local.csr -CA localCA.pem -CAkey localCA.key -CA
 
 After this, move the generated key `logserver.local.key` and certificate `logserver.local.crt` into `/etc/ssl/` in the right folders, direct `/etc/nginx/snippets` cert conf to them and install `localCA.pem` into Firefox.
 
-Something strange happens with DNS redirection, but at least `https://logserver.local` works like it should, i.e. shows the green lock icon and goes to the page without warnings.
+~~Something strange happens with DNS redirection, but at least `https://logserver.local` works like it should, i.e. shows the green lock icon and goes to the page without warnings.~~
+
+Changing the server name in the `sites-available/default` file into `logserver.local` seems to fix the DNS redirection issues, since now all connections are directed to the correct domain name (even localhost!). After this the `.ext` file can probably be reduced to just logserver.local and its http:// and https:// variants. 
 
 **Success! Next up: automating this setup with Salt and using the certificates for Rsyslog.**
