@@ -9,7 +9,7 @@ server {
 
 server {
   listen {{ssl_port}} ssl http2 default_server;
-  include snippets/self-signed.conf;
+  include snippets/logserver.local.conf;
   include snippets/ssl-params.conf;
 
   location / {
