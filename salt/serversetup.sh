@@ -8,7 +8,7 @@ setxkbmap fi
 echo "Updating packages..."
 apt-get update -qq >> /dev/null
 echo "Installing git and salt..."
-apt-get install git salt-master salt-minion -y -qq >> /dev/null
+apt-get install firefox openssl git salt-master salt-minion libnss3-tools -y -qq >> /dev/null
 echo "Cloning repository..."
 git clone https://github.com/jisosomppi/log-analysis/
 
@@ -67,6 +67,8 @@ DNS.3 = https://logserver.local" >> logserver.local.ext
 echo "Enter the root CA password one last time to verify the server certificate:"
 openssl x509 -req -in logserver.local.csr -CA localCA.pem -CAkey localCA.key -CAcreateserial -out logserver.local.crt -days 1825 -sha256 -extfile logserver.local.ext
 
+# Convert certificate into PKCS12 for Firefox import
+openssl pkcs12 -export -out logserver.local.pfx -inkey logserver.local.key -in logserver.local.crt -certfile localCA.crt
 
 # Run salt state for master (forcing id because local salt key is not signed yet)
 echo "Applying salt state for server install... (This will take a while)"
