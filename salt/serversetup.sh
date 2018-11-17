@@ -41,15 +41,32 @@ systemctl restart salt-master
 
 # Create OpenSSL keys for Nginx
 echo "Generating OpenSSL keys for Nginx..."
+# Calculate Diffie-Hellman paramters for stronger encryption
 openssl dhparam -out /etc/ssl/certs/dhparam.pem 2048 2> /dev/null
+# Create root CA key
+echo "Enter a strong password for root CA key:"
 openssl genrsa -des3 -out localCA.key 2048 
+echo "Enter the same password to verify root certificate creation:"
 openssl req -x509 -new -nodes -key localCA.key -sha256 -days 1825 -out localCA.pem -subj "/C=FI/ST=Uusimaa/L=Helsinki/O=Haaga-Helia/OU=Logserver/CN=logserver.local"
+# Create a new key for the log server
 openssl genrsa -out logserver.local.key 2048
+# Make a certificate signature request (CSR)
 openssl req -new -key logserver.local.key -out logserver.local.csr -subj "/C=FI/ST=Uusimaa/L=Helsinki/O=Haaga-Helia/OU=Logserver/CN=logserver.local"
+
+# Create ext file for additional certificate fields
 echo -e "authorityKeyIdentifier=keyid,issuer\n\
-basicConstraints=CA:FALSE\nkeyUsage = digitalSignature, nonRepudiation, keyEncipherment, dataEncipherment\n\
+basicConstraints=CA:FALSE\n\
+keyUsage = digitalSignature, nonRepudiation, keyEncipherment, dataEncipherment\n\
 subjectAltName = @alt_names\n\n\
-[alt_names]\nDNS.1 = logserver.local\nDNS.3 = https://logserver.local\nDNS.6 = http://logserver.local" >> test.ext
+[alt_names]\n\
+DNS.1 = logserver.local\n\
+DNS.2 = http://logserver.local\n\
+DNS.3 = https://logserver.local" >> logserver.local.ext
+
+# Sign the CSR
+echo "Enter the root CA password one last time to verify the server certificate:"
+openssl x509 -req -in logserver.local.csr -CA localCA.pem -CAkey localCA.key -CAcreateserial -out logserver.local.crt -days 1825 -sha256 -extfile logserver.local.ext
+
 
 # Run salt state for master (forcing id because local salt key is not signed yet)
 echo "Applying salt state for server install... (This will take a while)"
