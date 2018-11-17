@@ -41,8 +41,12 @@ systemctl restart salt-master
 
 # Create OpenSSL keys for Nginx
 echo "Generating OpenSSL keys for Nginx..."
-openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/private/nginx-selfsigned.key -out /etc/ssl/certs/nginx-selfsigned.crt -subj "/C=FI/ST=Uusimaa/L=Helsinki/O=Haaga-Helia/OU=Logserver/CN=logserver.local" 2> /dev/null
 openssl dhparam -out /etc/ssl/certs/dhparam.pem 2048 2> /dev/null
+openssl genrsa -des3 -out localCA.key 2048 
+openssl req -x509 -new -nodes -key localCA.key -sha256 -days 1825 -out localCA.pem -subj "/C=FI/ST=Uusimaa/L=Helsinki/O=Haaga-Helia/OU=Logserver/CN=logserver.local"
+openssl genrsa -out logserver.local.key 2048
+openssl req -new -key logserver.local.key -out logserver.local.csr -subj "/C=FI/ST=Uusimaa/L=Helsinki/O=Haaga-Helia/OU=Logserver/CN=logserver.local"
+echo -e "authorityKeyIdentifier=keyid,issuer\nbasicConstraints=CA:FALSE\nkeyUsage = digitalSignature, nonRepudiation, keyEncipherment, dataEncipherment\nsubjectAltName = @alt_names\n\n[alt_names]\nDNS.1 = logserver.local\nDNS.3 = https://logserver.local\nDNS.6 = http://logserver.local"
 
 # Run salt state for master (forcing id because local salt key is not signed yet)
 echo "Applying salt state for server install... (This will take a while)"
