@@ -22,12 +22,12 @@ Since we're already using Salt, we could maybe use it to generate and distribute
 Following the instructions at https://deliciousbrains.com/ssl-certificate-authority-for-local-https-development/, create keys and certificates:
 ```
 # Create the Certificate Authority key, enter a passphrase
-openssl genrsa -des3 -out localCA.key 2048
+openssl genrsa -des3 -out localCA.key 2048 
 ```
 
 ```
 # Create root certificate, use recognizable Common Name
-openssl req -x509 -new -nodes -key localCA.key -sha256 -days 1825 -out localCA.pem
+openssl req -x509 -new -nodes -key localCA.key -sha256 -days 1825 -out localCA.pem -subj "/C=FI/ST=Uusimaa/L=Helsinki/O=Haaga-Helia/OU=Logserver/CN=logserver.local"
 ```
 
 ```
@@ -37,7 +37,7 @@ openssl genrsa -out logserver.local.key 2048
 
 ```
 # Create Certificate Singature Request (CSR), input doesn't matter
-openssl req -new -key logserver.local.key -out logserver.local.csr
+openssl req -new -key logserver.local.key -out logserver.local.csr -subj "/C=FI/ST=Uusimaa/L=Helsinki/O=Haaga-Helia/OU=Logserver/CN=logserver.local"
 ```
 ```
 # Create logserver.local.ext with following contents:
@@ -48,10 +48,7 @@ subjectAltName = @alt_names
 
 [alt_names]
 DNS.1 = logserver.local
-DNS.2 = 172.28.171.114
 DNS.3 = https://logserver.local
-DNS.4 = https://172.28.171.114
-DNS.5 = http://172.28.171.114
 DNS.6 = http://logserver.local
 ```
 
