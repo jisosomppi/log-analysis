@@ -48,13 +48,9 @@ echo "Generating OpenSSL keys for Nginx..."
 openssl dhparam -out /etc/ssl/certs/dhparam.pem 2048 2> /dev/null
 # Create root CA key
 echo "Enter a strong password for root CA key:"
-stty -echo
-read sslpassphrase
-stty echo
-
-openssl genrsa -des3 -out localCA.key 2048 -passin $sslpassphrase
+openssl genrsa -des3 -out localCA.key 2048
 echo "Enter the same password to verify root certificate creation:"
-openssl req -x509 -new -nodes -key localCA.key -sha256 -days 1825 -out localCA.pem -subj "/C=FI/ST=Uusimaa/L=Helsinki/O=Haaga-Helia/OU=Logserver/CN=logserver.local" -passin $sslpassphrase
+openssl req -x509 -new -nodes -key localCA.key -sha256 -days 1825 -out localCA.pem -subj "/C=FI/ST=Uusimaa/L=Helsinki/O=Haaga-Helia/OU=Logserver/CN=logserver.local"
 # Create a new key for the log server
 openssl genrsa -out logserver.local.key 2048
 # Make a certificate signature request (CSR)
@@ -72,7 +68,7 @@ DNS.3 = https://logserver.local" >> logserver.local.ext
 
 # Sign the CSR
 echo "Enter the root CA password one last time to verify the server certificate:"
-openssl x509 -req -in logserver.local.csr -CA localCA.pem -CAkey localCA.key -CAcreateserial -out logserver.local.crt -days 1825 -sha256 -extfile logserver.local.ext -passin $sslpassphrase
+openssl x509 -req -in logserver.local.csr -CA localCA.pem -CAkey localCA.key -CAcreateserial -out logserver.local.crt -days 1825 -sha256 -extfile logserver.local.ext
 
 # Convert certificate into PKCS12 for Firefox import
 # CURRENTLY BROKEN
