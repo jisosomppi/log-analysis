@@ -8,7 +8,7 @@ Reference:
 * https://deliciousbrains.com/ssl-certificate-authority-for-local-https-development/
 * Also referencing [Eino's research notes](https://github.com/jisosomppi/log-analysis/blob/master/installations/tls/working-conf-with-certs.md) for the actual setup
 * Adding root CA to Firefox
-  * ~~https://mike.kaply.com/2012/03/30/customizing-firefox-default-profiles/~~~*deprecated in Firefox 46.0*
+  * ~~https://mike.kaply.com/2012/03/30/customizing-firefox-default-profiles/~~ *deprecated in Firefox 46.0*
   * https://wiki.mozilla.org/CA:AddRootToFirefox
   * https://developer.mozilla.org/en-US/docs/Mozilla/Projects/NSS/Tools/certutil
   * https://gist.github.com/stevenroose/e6abde14258971eae982
