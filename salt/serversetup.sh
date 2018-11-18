@@ -42,9 +42,17 @@ echo -e "\nfile_ignore_glob: []\n" >> /etc/salt/master
 systemctl restart salt-minion
 systemctl restart salt-master
 
+## OpenSSL key creation
+# Could maybe use expect to enter password to interactive scripts:
+# https://stackoverflow.com/questions/15379031/
+# So read password from user input, save to variable, enter with expect
+#
+# Or try this way: https://stackoverflow.com/questions/4294689/
+# -passout & -passin
+
 # Create OpenSSL keys for Nginx
 echo "Generating OpenSSL keys for Nginx..."
-# Calculate Diffie-Hellman paramters for stronger encryption
+# Calculate Diffie-Hellman parameters for stronger encryption
 openssl dhparam -out /etc/ssl/certs/dhparam.pem 2048 2> /dev/null
 # Create root CA key
 echo "Enter a strong password for root CA key:"
