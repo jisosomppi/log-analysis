@@ -71,13 +71,18 @@ openssl x509 -req -in logserver.local.csr -CA localCA.pem -CAkey localCA.key -CA
 # CURRENTLY BROKEN
 # openssl pkcs12 -export -out logserver.local.pfx -inkey logserver.local.key -in logserver.local.crt -certfile localCA.crt
 
-## Move certificates to /etc/ssl
-#
-#
+## Copy certificates to /etc/ssl
+cp logserver.local.crt /etc/ssl/certs/
+cp logserver.local.key /etc/ssl/private/
 
 ## Import root CA to Firefox
-#
-#
+# Need to find the random-generated alphanumeric 
+# Insert new root CA key to existing profiles cert database, maybe like this: 
+# certutil -A -n "keynickname" -t "u,u,u" -i localCA.pem -d ~/.mozilla/firefox/**code**.default/
+# Copy cert database into /etc/firefox/default, something like:
+# cp ~/.mozilla/firefox/**code**.default/cert3.db /etc/firefox/default/
+# Delete existing Firefox user to force create new with the modified database?
+# Or find the profile name -> replace existing db
 
 # Run salt state for master (forcing id because local salt key is not signed yet)
 echo "Applying salt state for server install... (This will take a while)"
