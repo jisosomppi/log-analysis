@@ -61,9 +61,9 @@ echo "Generating OpenSSL keys for Nginx..."
 openssl dhparam -out /etc/ssl/certs/dhparam.pem 2048 2> /dev/null
 # Create root CA key
 # echo "Enter a strong password for root CA key:"
-openssl genrsa -des3 -out localCA.key 2048 -passout pass:$ssl_pass
+openssl genrsa -des3 -out localCA.key -passout pass:$ssl_pass 2048 
 # echo "Enter the same password to verify root certificate creation:"
-openssl req -x509 -new -nodes -key localCA.key -sha256 -days 1825 -out localCA.pem -subj "/C=FI/ST=Uusimaa/L=Helsinki/O=Haaga-Helia/OU=Logserver/CN=logserver.local" -passin pass:$ssl_pass
+openssl req -x509 -new -nodes -key localCA.key -sha256 -days 1825 -out localCA.pem -passin pass:$ssl_pass -subj "/C=FI/ST=Uusimaa/L=Helsinki/O=Haaga-Helia/OU=Logserver/CN=logserver.local"
 # Create a new key for the log server
 openssl genrsa -out logserver.local.key 2048
 # Make a certificate signature request (CSR)
