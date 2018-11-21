@@ -1,6 +1,3 @@
-## THIS IS A CENTRALLY MANAGED FILE! ##
-## CHANGES WILL BE OVERWRITTEN ##
-
 ufw:
   pkg.installed
      
