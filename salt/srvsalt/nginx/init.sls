@@ -15,9 +15,9 @@ nginx:
       kibana_port: {{pillar.get('kibana_port','5601')}}
       ssl_port: {{pillar.get('ssl_port','443')}}
 
-/etc/nginx/snippets/self-signed.conf:
+/etc/nginx/snippets/logserver.local.conf:
   file.managed:
-    - source: salt://nginx/snippets/self-signed.conf
+    - source: salt://nginx/snippets/logserver.local.conf
 
 /etc/nginx/snippets/ssl-params.conf:
   file.managed:

@@ -1,6 +1,9 @@
+## THIS IS A CENTRALLY MANAGED FILE! ##
+##    CHANGES WILL BE OVERWRITTEN    ##
+
 server {
   listen {{nginx_port}};
-  server_name {{server_ip}};
+  server_name logserver.local;
   return 302 https://$server_name$request_uri;
 
   error_log   /var/log/nginx/kibana.error.log;
@@ -9,7 +12,7 @@ server {
 
 server {
   listen {{ssl_port}} ssl http2 default_server;
-  include snippets/self-signed.conf;
+  include snippets/logserver.local.conf;
   include snippets/ssl-params.conf;
 
   location / {

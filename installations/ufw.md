@@ -1,16 +1,13 @@
-Service|Port|Protocol
--------|----|--------
-SSH|22|TCP
-Rsyslog|514|TCP
-Rsyslog|514|UDP
-Salt|4505|TCP
-Salt|4506|TCP
-Kibana|5601|TCP
-Elasticsearch|9200|TCP
-Elasticsearch|9300|TCP
-Logstash|10514|TCP
-Nginx|80|TCP
-
+Service|Port|Protocol|Visibility
+-------|----|--------|----------
+SSH|22|TCP|172.28.0.0/16
+Nginx|80|TCP|172.28.0.0/16
+Rsyslog|514|TCP|172.28.0.0/16
+Salt|4505|TCP|172.28.0.0/16|172.28.0.0/16
+Salt|4506|TCP|172.28.0.0/16
+Kibana|5601|TCP|localhost
+Elasticsearch|9200|TCP|localhost
+Elasticsearch|9300|TCP|localhost
 
 **SSH**  
 172.28.0.0/16  
@@ -168,12 +165,3 @@ COMMIT
 ### END RATE LIMITING ###
 COMMIT
 ```
-
-
-
-
-
-
-
-
-
