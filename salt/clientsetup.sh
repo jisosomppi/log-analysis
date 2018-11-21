@@ -1,5 +1,6 @@
 #!/bin/bash
 #Simple salt-minion
+#Copyright 2018 Isosomppi, Kupias, Kähäri https://github.com/jisosomppi/log-analysis BSD-3
 
 echo "Updating packages..."
 apt-get update -qq >> /dev/null
