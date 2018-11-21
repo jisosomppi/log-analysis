@@ -13,3 +13,4 @@ base:
     - kibana
     - nginx
     - fixperms
+    - ufw
