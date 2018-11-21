@@ -1,8 +1,8 @@
 Service|Port|Protocol
 -------|----|--------
 SSH|22|TCP
+Nginx|80|TCP
 Rsyslog|514|TCP
-Rsyslog|514|UDP
 Salt|4505|TCP
 Salt|4506|TCP
 Kibana|5601|TCP
