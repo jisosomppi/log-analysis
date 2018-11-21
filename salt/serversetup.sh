@@ -1,5 +1,13 @@
 #!/bin/bash
 #Simple logging server
+#Copyright 2018 Isosomppi, Kupias, Kähäri https://github.com/jisosomppi/log-analysis BSD-3
+
+# Check if script has been run before
+if [ -f /tmp/setup_runonce ]; then
+    echo "This install script has already been run! It is intended to be run only once."
+    exit 0
+fi
+touch /tmp/setup_runonce
 
 # Complete basic setup
 cd ~
