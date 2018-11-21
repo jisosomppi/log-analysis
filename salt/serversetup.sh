@@ -114,4 +114,5 @@ echo "Collected client logs will be found in /var/log/client_logs"
 echo "Run 'sudo salt srv01 state.apply fixperms' when new host directories or log files are created"
 echo
 echo "Opening the logging frontend at https://logserver.local (This address also works on connected Salt minions)"
-firefox https://logserver.local
+# $SUDO_USER calls name of user who ran the script, escaping the "Can't run Firefox as root" error
+sudo -u $SUDO_USER firefox https://logserver.local
