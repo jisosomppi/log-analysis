@@ -1,3 +1,6 @@
+# SSH
+ssh_port: 22
+
 # Kibana
 # Use localhost here to avoid opening the ports to public access
 kibana_ip: localhost
