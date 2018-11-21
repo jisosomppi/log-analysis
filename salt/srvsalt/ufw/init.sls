@@ -6,7 +6,7 @@ ufw:
     - source: salt://ufw/user.rules
     - template: jinja
 
-ufw:
+ufw.service:
   service.running:
     - name: ufw
     - watch:
