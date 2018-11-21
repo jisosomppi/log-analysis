@@ -28,5 +28,5 @@ nginx.service:
     - name: nginx
     - watch:
       - file: /etc/nginx/sites-available/default
-      - file: /etc/nginx/snippets/self-signed.conf
+      - file: /etc/nginx/snippets/logserver.local.conf
       - file: /etc/nginx/snippets/ssl-params.conf
