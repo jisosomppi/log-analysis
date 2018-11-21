@@ -37,6 +37,8 @@ If a new window is opened after the script completes, you will be directed to yo
  - Fill your username and password for the readonlyREST basic authentication.  
  
  If your firefox was already running once the script completed, you can test that everything works by browsing `localhost`, `logserver.local` or your IP.
+ 
+ *To get rid of the security warning, add the certificate `~/localCA.pem` to your Firefox certificates (automation is under research).* 
 
 ![default_kibana](https://raw.githubusercontent.com/jisosomppi/log-analysis/master/images/default_kibana.png)
 
