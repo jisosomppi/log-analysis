@@ -9,3 +9,4 @@ Kibana|5601|TCP
 Elasticsearch|9200|TCP
 Elasticsearch|9300|TCP
 Logstash|10514|TCP
+Nginx|80|TCP
