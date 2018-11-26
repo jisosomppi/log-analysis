@@ -31,3 +31,6 @@ https://groups.google.com/forum/#!topic/salt-users/D1WRJPaE284
 
 **Other**  
 https://www.draw.io/ `flowcharts/data_flow_01.xml` for prototype visualization
+
+**ReadonlyREST**
+https://github.com/sscarduzio/elasticsearch-readonlyrest-plugin/issues/73 Logstash authentication
