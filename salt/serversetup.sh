@@ -32,9 +32,9 @@ echo "Collecting user information for Elasticsearch & Kibana..."
 echo "Enter username for Logging server:"
 read es_user
 echo "Enter password for Logging server:"
-stty -echo
+#stty -echo
 read es_pass
-stty echo
+#stty echo
 
 # Write details into pillar
 echo -e "\nelasticsearch_username: $es_user\nelasticsearch_password: $es_pass\n" >> log-analysis/salt/srvpillar/server.sls
@@ -53,9 +53,9 @@ systemctl restart salt-master
 
 ## OpenSSL key creation
 echo "Enter a strong password for your root CA:"
-stty -echo
+#stty -echo
 read ssl_pass
-stty echo
+#stty echo
 
 # Create OpenSSL keys for Nginx
 echo "Generating OpenSSL keys for Nginx..."
