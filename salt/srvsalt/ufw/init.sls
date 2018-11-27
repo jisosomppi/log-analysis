@@ -1,6 +1,10 @@
 ufw:
   pkg.installed
-     
+ 
+/etc/ufw/ufw.conf:
+  file.managed:
+    -source salt://ufw/ufw.conf
+
 /etc/ufw/user.rules:
   file.managed:
     - source: salt://ufw/user.rules
@@ -17,6 +21,4 @@ ufw.service:
     - name: ufw
     - watch:
       - file: /etc/ufw/user.rules
-
-'ufw enable':
-  cmd.run
+      - file: /etc/ufw/ufw.conf
