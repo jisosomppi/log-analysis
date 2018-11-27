@@ -11,7 +11,8 @@ openssl dhparam -out /etc/ssl/certs/dhparam.pem 2048 2> /dev/null
 # Create root CA key
 openssl genrsa -des3 -out localCA.key -passout pass:$ssl_pass 2048 
 # Create root CA certificate
-openssl req -x509 -new -nodes -key localCA.key -sha256 -days 1825 -out localCA.pem -out localCA.crt -passin pass:$ssl_pass -subj "/C=FI/ST=Uusimaa/L=Helsinki/O=Haaga-Helia/OU=Logserver/CN=logserver.local"
+openssl req -x509 -new -nodes -key localCA.key -sha256 -days 1825 -out localCA.pem -passin pass:$ssl_pass -subj "/C=FI/ST=Uusimaa/L=Helsinki/O=Haaga-Helia/OU=Logserver/CN=logserver.local"
+openssl x509 -in localCA.pem -inform PEM -out localCA.crt
 # Create a new key for the log server
 openssl genrsa -out logserver.local.key 2048
 # Make a certificate signature request (CSR)
