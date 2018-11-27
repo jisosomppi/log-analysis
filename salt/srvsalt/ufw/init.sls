@@ -3,7 +3,7 @@ ufw:
  
 /etc/ufw/ufw.conf:
   file.managed:
-    - source salt://ufw/ufw.conf
+    - source: salt://ufw/ufw.conf
 
 /etc/ufw/user.rules:
   file.managed:
