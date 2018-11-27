@@ -55,10 +55,12 @@ Ei avata
 
 **Nginx**  
 172.28.0.0/16  
-Portti 80  
+Portit 80, 443 (ssl) 
 Protokolla: TCP  
-`sudo ufw allow proto tcp from 172.28.0.0/16 to any port 80
-`
+```
+sudo ufw allow proto tcp from 172.28.0.0/16 to any port 80
+sudo ufw allow proto tcp from 172.28.0.0/16 to any port 443
+```
 
 ### /etc/ufw/user.rules ###
 ```
