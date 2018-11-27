@@ -17,3 +17,6 @@ ufw.service:
     - name: ufw
     - watch:
       - file: /etc/ufw/user.rules
+
+'ufw enable':
+  cmd.run
