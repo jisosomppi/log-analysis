@@ -14,7 +14,7 @@ logstash:
     - context:
       elasticsearch_ip: {{pillar.get('elasticsearch_ip','localhost')}}
       elasticsearch_port: {{pillar.get('elasticsearch_port','9200')}}
-      elasticsearch_user: {{pillar.get('elasticsearch_user','NO_USERNAME')}}
+      elasticsearch_username: {{pillar.get('elasticsearch_username','NO_USERNAME')}}
       elasticsearch_password: {{pillar.get('elasticsearch_password','NO_PASSWORD')}}
 
 logstash.user:
