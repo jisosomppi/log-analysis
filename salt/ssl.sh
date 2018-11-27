@@ -36,9 +36,9 @@ openssl x509 -req -in logserver.local.csr -CA localCA.pem -CAkey localCA.key -CA
 # openssl pkcs12 -export -out logserver.local.pfx -inkey logserver.local.key -in logserver.local.crt -certfile localCA.crt
 
 ## Copy certificates to /etc/ssl
-cp logserver.local.crt /etc/ssl/certs/
-cp logserver.local.key /etc/ssl/private/
+#cp logserver.local.crt /etc/ssl/certs/
+#cp logserver.local.key /etc/ssl/private/
 
 # Reformat key for firefox & enter into database
-openssl pkcs12 -export -out localCA.pfx -inkey localCA.key -in localCA.crt -passin $ssl_pass -passout pass:$ssl_pass
-pk12util -i localCA.pfx -d .mozilla/firefox/rbyzigek.default/ -W $ssl_pass
+#openssl pkcs12 -export -out localCA.pfx -inkey localCA.key -in localCA.crt -passin $ssl_pass -passout pass:$ssl_pass
+#pk12util -i localCA.pfx -d .mozilla/firefox/rbyzigek.default/ -W $ssl_pass
