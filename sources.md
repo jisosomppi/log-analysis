@@ -19,6 +19,8 @@ http://yallalabs.com/linux/how-to-setup-a-centralized-log-server-using-rsyslog-o
 http://serverascode.com/2016/11/11/ryslog-to-elasticsearch.html  
 https://www.rsyslog.com/tag/elasticsearch/  
 https://www.elastic.co/blog/how-to-centralize-logs-with-rsyslog-logstash-and-elasticsearch-on-ubuntu-14-04
+https://github.com/rsyslog/rsyslog-doc/issues/474
+https://selivan.github.io/2017/02/07/rsyslog-log-forward-save-filename-handle-multi-line-failover.html#rsyslog-configuration
 
 **REK Stack**  
 https://www.experts-exchange.com/questions/28408576/Setting-up-rsyslog-to-send-to-Elasticsearch-and-Kibana.html  
