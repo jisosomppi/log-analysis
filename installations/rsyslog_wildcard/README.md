@@ -9,6 +9,6 @@ These are original configurations by stackoverflow user "Rumbles", with modifica
 
 These configurations are to be edited heavile to better suit our needs.
 
-Default file tree for client logs:
+Default file tree for client logs:  
 ![default](https://raw.githubusercontent.com/jisosomppi/log-analysis/master/images/orginalformattree.png)
 
