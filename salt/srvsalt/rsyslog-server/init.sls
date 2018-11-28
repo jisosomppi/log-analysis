@@ -1,5 +1,5 @@
 rsyslog:
-  pkg.installed
+  pkg.latest
 
 /etc/rsyslog.conf:
   file.managed:
