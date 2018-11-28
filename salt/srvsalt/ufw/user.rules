@@ -1,6 +1,3 @@
-## THIS IS A CENTRALLY MANAGED FILE! ##
-##    CHANGES WILL BE OVERWRITTEN    ##
-
 *filter
 :ufw-user-input - [0:0]
 :ufw-user-output - [0:0]
