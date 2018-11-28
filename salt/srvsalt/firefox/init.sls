@@ -1,20 +1,11 @@
 firefox:
   pkg.installed
-  
-/etc/firefox/default...:
+
+~/localCA.crt:
   file.managed:
-    - source: salt://firefox/...
-    ## GLOBAL CONF TÄHÄN ##
-  
-~/.mozilla/firefox/??...??.default/prefs.js:
+    - source: salt://firefox/localCA.crt
+
+~/.mozilla/firefox/*.default/user.js:
   file.managed:
-    - source: salt://firefox/prefs.js
-    - content: 
-    ## KÄYTTÄJÄ CONF TÄHÄN ##
-    ## kotisivut: git + logserver ##
+    source: salt://firefox/user.js
     
-~/.mozilla/firefox/??...??.default/database:
-  file.managed:
-    - source: salt://firefox/database
-    - content:
-    ## MUOKATTU CERT-DB TÄHÄN ##
