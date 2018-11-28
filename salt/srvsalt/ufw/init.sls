@@ -15,6 +15,7 @@ ufw:
       kibana_port: {{pillar.get('kibana_port','5601')}}
       nginx_port: {{pillar.get('nginx_port','80')}}
       ssh_port: {{pillar.get('ssh_port','22')}}
+      ssl_port: {{pillar.get('ssl_port','443')}}
 
 ufw.service:
   service.running:
