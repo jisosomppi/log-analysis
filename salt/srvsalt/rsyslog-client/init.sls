@@ -1,5 +1,9 @@
-rsyslog:
-  pkg.latest
+rsyslog.install:
+  pkg.latest:
+    - pkgs:
+      - rsyslog
+      - rsyslog-relp
+      - librelp-dev
 
 /etc/rsyslog.conf:
   file.managed:
