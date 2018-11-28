@@ -18,16 +18,16 @@
 
 ### RULES ###
 
-### tuple ### allow tcp 22 0.0.0.0/0 any 172.28.0.0/16 in
+### tuple ### allow tcp {{ssh_port}} 0.0.0.0/0 any 172.28.0.0/16 in
 -A ufw-user-input -p tcp --dport {{ssh_port}} -s 172.28.0.0/16 -j ACCEPT
 
-### tuple ### allow tcp 80 0.0.0.0/0 any 172.28.0.0/16 in
+### tuple ### allow tcp {{nginx_port}} 0.0.0.0/0 any 172.28.0.0/16 in
 -A ufw-user-input -p tcp --dport {{nginx_port}} -s 172.28.0.0/16 -j ACCEPT
 
-### tuple ### allow tcp 443 0.0.0.0/0 any 172.28.0.0/16 in
+### tuple ### allow tcp {{ssl_port}} 0.0.0.0/0 any 172.28.0.0/16 in
 -A ufw-user-input -p tcp --dport {{ssl_port}} -s 172.28.0.0/16 -j ACCEPT
 
-### tuple ### allow tcp 514 0.0.0.0/0 any 172.28.0.0/16 in
+### tuple ### allow tcp {{rsyslog_port}} 0.0.0.0/0 any 172.28.0.0/16 in
 -A ufw-user-input -p tcp --dport {{rsyslog_port}} -s 172.28.0.0/16 -j ACCEPT
 
 ### tuple ### allow tcp 4505 0.0.0.0/0 any 172.28.0.0/16 in
@@ -36,10 +36,10 @@
 ### tuple ### allow tcp 4506 0.0.0.0/0 any 172.28.0.0/16 in
 -A ufw-user-input -p tcp --dport 4506 -s 172.28.0.0/16 -j ACCEPT
 
-### tuple ### allow tcp 5601 0.0.0.0/0 any 127.0.0.1 in
+### tuple ### allow tcp {{kibana_port}} 0.0.0.0/0 any 127.0.0.1 in
 -A ufw-user-input -p tcp --dport {{kibana_port}} -s 127.0.0.1 -j ACCEPT
 
-### tuple ### allow tcp 9200 0.0.0.0/0 any 127.0.0.1 in
+### tuple ### allow tcp {{elasticsearch_port}} 0.0.0.0/0 any 127.0.0.1 in
 -A ufw-user-input -p tcp --dport {{elasticsearch_port}} -s 127.0.0.1 -j ACCEPT
 
 ### tuple ### allow tcp 9300 0.0.0.0/0 any 127.0.0.1 in
