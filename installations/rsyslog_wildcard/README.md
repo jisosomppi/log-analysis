@@ -8,3 +8,7 @@ https://selivan.github.io/2017/02/07/rsyslog-log-forward-save-filename-handle-mu
 These are original configurations by stackoverflow user "Rumbles", with modifications on log gathering source.
 
 These configurations are to be edited heavile to better suit our needs.
+
+Default file tree for client logs:
+![default](https://raw.githubusercontent.com/jisosomppi/log-analysis/master/images/orginalformattree.png)
+
