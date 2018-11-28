@@ -7,7 +7,6 @@ base:
     - etchosts
     - rsyslog-server
     - elastic-pkg
-    - java
     - logstash
     - elasticsearch
     - kibana
