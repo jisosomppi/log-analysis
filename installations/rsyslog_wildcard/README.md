@@ -12,3 +12,18 @@ These configurations are to be edited heavile to better suit our needs.
 Default file tree for client logs:  
 ![default](https://raw.githubusercontent.com/jisosomppi/log-analysis/master/images/orginalformattree.png)
 
+What we want would look something like
+
+```
+/var/log/
+      client_logs/
+                xubuntu-1.2.3.4/
+                              apache2/
+                                    access.log
+                                    error.log
+                              apt/
+                                    history.log
+                                    term.log
+                              auth.log
+                              ..and so on...
+```                              
