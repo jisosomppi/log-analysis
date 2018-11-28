@@ -6,6 +6,7 @@ rsyslog-pkg:
     - file: /etc/apt/sources.list.d/adiscon-ubuntu-v8-stable-xenial.list
     - keyserver: keys.gnupg.net
     - keyid: AEF0CF8E
+    - gpgcheck: 1
     - require_in:
       - rsyslog-client
       - rsyslog-server
