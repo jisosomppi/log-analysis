@@ -27,3 +27,33 @@ What we want would look something like
                               auth.log
                               ..and so on...
 ```                              
+After modifying
+
+```
+template(name="FloowLogSavePath" type="list") {
+    constant(value="/srv/rsyslog/")
+    property(name="timegenerated" dateFormat="year")
+    constant(value="/")
+    property(name="hostname")
+    constant(value="/")
+    property(name="timegenerated" dateFormat="month")
+    constant(value="/")
+    property(name="timegenerated" dateFormat="day")
+    constant(value="/")
+    property(name=".logpath")
+}
+```  
+to  
+```
+template(name="FloowLogSavePath" type="list") {
+    constant(value="/srv/rsyslog/")
+    property(name="hostname")
+    constant(value="-")
+    property(name="fromhost-ip")
+    constant(value="/")
+    property(name=".logpath")
+}
+```
+I got the wanted folder format  
+![kuveke](https://raw.githubusercontent.com/jisosomppi/log-analysis/master/images/kuveke.png)  
+though this requires much more research and digging in order to be included to the final product. 
