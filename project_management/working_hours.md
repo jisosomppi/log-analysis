@@ -14,7 +14,7 @@
 |wk 45|26|16|14|Jussi created local repository for specific version of Elastic products + made it usable with Salt. Eino got tls encryption working with some dodgy file permissions. Saku started working on encrypting Nginx: used self-signed certs because the lack of dns-server. |
 |wk 46|25|10|13|Made v1.0 of Salt packages. Ready for outside user testing. First beta tests done on the Server Management course by students, some issues and bugs fixed. Improved and cleaned salt README structure, Added SSL and HTTP authentication to Salt packages. SSL authentication for Nginx completed without security warnings!|
 |wk 47|12|11|11|Automated OpenSSL certificate generation and integrated it into the server setup script. Continued work on creating dashboards. Added firewall rules as a salt module.|
-|wk 48|13|13|13|Improved firewall module, started work on RELP encoding for Rsyslog, looking for way to send all log data in /var/log/ to server in in same format using wildcard in imfile module|
+|wk 48|13|13|13|Improved firewall module, started work on RELP encoding for Rsyslog. Looking for a way to forward all log data in /var/log/ to log-server in in same format as on client(s), using wildcard in imfile module|
 |wk 49|||||
 |wk 50|||||
 |Sum  |||||
