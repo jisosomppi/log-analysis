@@ -21,13 +21,9 @@ template(name="CustomForwardFormat" type="list") {
 
 template(name="FloowLogSavePath" type="list") {
     constant(value="/srv/rsyslog/")
-    property(name="timegenerated" dateFormat="year")
-    constant(value="/")
     property(name="hostname")
-    constant(value="/")
-    property(name="timegenerated" dateFormat="month")
-    constant(value="/")
-    property(name="timegenerated" dateFormat="day")
+    constant(value="-")
+    property(name="fromhost-ip")
     constant(value="/")
     property(name=".logpath")
 }
