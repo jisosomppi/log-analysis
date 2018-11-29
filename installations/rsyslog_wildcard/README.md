@@ -27,7 +27,7 @@ What we want would look something like
                               auth.log
                               ..and so on...
 ```                              
-After modifying
+After modifying on server config
 
 ```
 template(name="FloowLogSavePath" type="list") {
