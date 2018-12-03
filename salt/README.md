@@ -26,7 +26,7 @@ The aim of this project is to create a centralized logging solution, where all w
 ## Installation
 ### Server install
 ```
-wget https://raw.githubusercontent.com/jisosomppi/log-analysis/master/salt/serversetup.sh
+wget https://raw.githubusercontent.com/jisosomppi/log-analysis/einoscript/salt/serversetup.sh
 chmod +x serversetup.sh
 sudo ./serversetup.sh
 
