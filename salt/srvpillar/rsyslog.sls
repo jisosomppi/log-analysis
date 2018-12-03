@@ -1,1 +1,1 @@
-rsyslog_port: 25014
+rsyslog_port: 514
