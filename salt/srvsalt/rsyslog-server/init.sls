@@ -1,3 +1,9 @@
+rsyslog-relp:
+  pkg.latest
+  
+librelp-dev:
+  pkg.latest
+
 rsyslog:
   pkg.latest
 
