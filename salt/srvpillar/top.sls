@@ -1,6 +1,6 @@
 base:
   '*':
     - rsyslog
-    - ufw
   'srv*':
     - server
+    - ufw
