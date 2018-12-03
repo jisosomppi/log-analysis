@@ -1,4 +1,4 @@
-rsyslog-relp
+rsyslog-relp:
   pkg.latest
 
 librelp-dev:
