@@ -16,6 +16,7 @@ ufw:
       nginx_port: {{pillar.get('nginx_port','80')}}
       ssh_port: {{pillar.get('ssh_port','22')}}
       ssl_port: {{pillar.get('ssl_port','443')}}
+      relp_port: {{pillar.get('relp_port','10514')}}
 
 ufw.service:
   service.running:
