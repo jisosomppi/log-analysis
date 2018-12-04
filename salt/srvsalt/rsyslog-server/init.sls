@@ -1,12 +1,16 @@
-rsyslog:
-  pkg.latest
+rsyslog.install:
+  pkg.latest:
+    - pkgs:
+      - rsyslog
+      - rsyslog-relp
+      - librelp-dev
 
 /etc/rsyslog.conf:
   file.managed:
     - source: salt://rsyslog-server/rsyslog.conf
     - template: jinja
     - context:
-      rsyslog_port: {{pillar.get('rsyslog_port','514')}}
+      relp_port: {{pillar.get('relp_port','10514')}}
 
 syslog.user:
   user.present:

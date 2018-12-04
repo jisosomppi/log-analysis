@@ -44,6 +44,9 @@
 ### tuple ### allow tcp 9300 0.0.0.0/0 any 127.0.0.1 in
 -A ufw-user-input -p tcp --dport 9300 -s 127.0.0.1 -j ACCEPT
 
+### tuple ### allow tcp {{relp_port}} 0.0.0.0/0 any 172.28.0.0/16 in
+-A ufw-user-input -p tcp --dport {{relp_port}} -s 172.28.0.0/16 -j ACCEPT
+
 ### END RULES ###
 
 ### LOGGING ###

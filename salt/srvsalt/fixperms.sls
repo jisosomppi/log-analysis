@@ -12,3 +12,8 @@
       - user
       - group
       - mode
+
+sched_perms:
+  schedule.present:
+    - function: fixperms.sls
+    - seconds: 60

@@ -1,5 +1,9 @@
-rsyslog:
-  pkg.latest
+rsyslog.install:
+  pkg.latest:
+    - pkgs:
+      - rsyslog
+      - rsyslog-relp
+      - librelp-dev
 
 /etc/rsyslog.conf:
   file.managed:
@@ -7,7 +11,19 @@ rsyslog:
     - template: jinja
     - context:
       rsyslog_ip: {{salt['grains.get']('master')}}
-      rsyslog_port: {{pillar.get('rsyslog_port', '514')}}
+      relp_port: {{pillar.get('relp_port', '10514')}}
+      
+/etc/ssl/localCA.pem:
+  file.managed:
+    - source: salt://rsyslog-client/localCA.pem
+
+/etc/ssl/logclient.local.key:
+  file.managed:
+    - source: salt://rsyslog-client/logclient.local.key
+    
+/etc/ssl/logclient.local.crt:
+  file.managed:
+    - source: salt://rsyslog-client/logclient.local.crt
 
 rsyslog.service:
   service.running:
