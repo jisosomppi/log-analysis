@@ -87,6 +87,8 @@ openssl x509 -req -in logserver.local.csr -CA localCA.pem -CAkey localCA.key -CA
 cp localCA.pem /etc/ssl
 cp logserver.local.crt /etc/ssl
 cp logserver.local.key /etc/ssl
+cp logserver.local.crt /etc/ssl/certs/
+cp logserver.local.key /etc/ssl/private/
 
 ## Create client certificate, just like above
 openssl genrsa -out logclient.local.key 2048
