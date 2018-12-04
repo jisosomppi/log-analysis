@@ -214,3 +214,5 @@ To avoid spending too much time on the permissions, we will just bruteforce the 
 We started building the Salt structure for managing the network. Each separate component of the system gets its own Salt state. Client setup for Salt is handled with a simple installation script, that asks user for input, writes it in the `/etc/salt/minion` file and restarts the daemon.
 
 We're using plugins for Elasticsearch that haven't yet been updated to work with the newest version, so we had to come up with a way to use an older version of the components. Our solution for this is to create a local repository with the 6.4.2 versions of all the Elastic components. Salt can then be used to target these packages for installation, removing the chance of conflicts.
+
+### Additional documentation can be found in [the Salt directory](https://github.com/jisosomppi/log-analysis/tree/master/salt)
