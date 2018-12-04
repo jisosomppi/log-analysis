@@ -11,7 +11,7 @@ rsyslog.install:
     - template: jinja
     - context:
       rsyslog_ip: {{salt['grains.get']('master')}}
-      rsyslog_port: {{pillar.get('rsyslog_port', '514')}}
+      relp_port: {{pillar.get('relp_port', '10514')}}
 
 rsyslog.service:
   service.running:
