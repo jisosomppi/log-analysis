@@ -1,5 +1,5 @@
 #!/bin/bash
-#Simple logging server
+#"Simple" logging server setup
 #Copyright 2018 Isosomppi, Kupias, Kähäri https://github.com/jisosomppi/log-analysis BSD-3
 
 # Check if script has been run before
@@ -18,7 +18,6 @@ apt-get update -qq >> /dev/null
 echo "Installing git and salt..."
 apt-get install firefox openssl git salt-master salt-minion libnss3-tools -y -qq >> /dev/null
 echo "Cloning repository..."
-## Cloning single branch: ca-test
 git clone https://github.com/jisosomppi/log-analysis/
 
 # Create directories
