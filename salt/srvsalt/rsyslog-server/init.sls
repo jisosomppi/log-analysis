@@ -10,7 +10,7 @@ rsyslog.install:
     - source: salt://rsyslog-server/rsyslog.conf
     - template: jinja
     - context:
-      rsyslog_port: {{pillar.get('relp_port','10514')}}
+      relp_port: {{pillar.get('relp_port','10514')}}
 
 syslog.user:
   user.present:
