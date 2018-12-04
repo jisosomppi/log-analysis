@@ -83,13 +83,24 @@ DNS.3 = https://logserver.local" >> logserver.local.ext
 # Sign the CSR
 openssl x509 -req -in logserver.local.csr -CA localCA.pem -CAkey localCA.key -CAcreateserial -out logserver.local.crt -days 1825 -sha256 -extfile logserver.local.ext -passin pass:$ssl_pass
 
+## Copy certificates to /etc/ssl
+cp localCA.pem /etc/ssl
+cp logserver.local.crt /etc/ssl
+cp logserver.local.key /etc/ssl
+
+## Create client certificate, just like above
+openssl genrsa -out logclient.local.key 2048
+openssl req -new -key logclient.local.key -out logclient.local.csr -subj "/C=FI/ST=Uusimaa/L=Helsinki/O=Haaga-Helia/OU=Logserver/CN=logclient.local"
+openssl x509 -req -in logclient.local.csr -CA localCA.pem -CAkey localCA.key -CAcreateserial -out logclient.local.crt -days 1825 -sha256 -passin pass:$ssl_pass
+
+## Copy client keys for salt distribution
+cp localCA.pem /srv/salt/rsyslog-client/
+cp logclient.local.crt /srv/salt/rsyslog-client/
+cp logclient.local.key /srv/salt/rsyslog-client/
+
 # Convert certificate into PKCS12 for Firefox import
 # CURRENTLY BROKEN
 # openssl pkcs12 -export -out logserver.local.pfx -inkey logserver.local.key -in logserver.local.crt -certfile localCA.crt
-
-## Copy certificates to /etc/ssl
-cp logserver.local.crt /etc/ssl/certs/
-cp logserver.local.key /etc/ssl/private/
 
 ## Import root CA to Firefox
 # Need to find the random-generated alphanumeric 
