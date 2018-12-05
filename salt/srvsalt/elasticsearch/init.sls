@@ -3,7 +3,7 @@ include:
 
 elasticsearch-oss:
   pkg.installed:
-    - version: '6.4.2'
+    - skip_verify: True
     - require:
       - sls: java
 
