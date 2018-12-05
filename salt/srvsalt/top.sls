@@ -9,7 +9,6 @@ base:
 
   'srv*':
     - rsyslog-server
-    - elastic-pkg
     - logstash
     - elasticsearch
     - kibana
