@@ -18,7 +18,7 @@ apt-get update -qq >> /dev/null
 echo "Installing git and salt..."
 apt-get install firefox openssl git salt-master salt-minion libnss3-tools dpkg-dev -y -qq >> /dev/null
 echo "Cloning repository..."
-git clone https://github.com/jisosomppi/log-analysis/
+git clone -b localrepo https://github.com/jisosomppi/log-analysis/
 
 # Create directories
 if [ ! -d "/srv/" ]; then
