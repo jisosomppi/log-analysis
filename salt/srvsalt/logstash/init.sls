@@ -1,9 +1,9 @@
 include:
   - java
 
-logstash:
+logstash-oss:
   pkg.installed:
-    - version: '1:6.4.2-1'
+    - skip_verify: True
     - require:
       - sls: java
 
