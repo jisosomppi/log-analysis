@@ -1,12 +1,13 @@
 base:
-  'ws*':
+  '*':
     - rsyslog-pkg
-    - rsyslog-client
     - etchosts
+    
+  'ws*':
+    - rsyslog-client
+    - logtest
 
   'srv*':
-    - etchosts
-    - rsyslog-pkg
     - rsyslog-server
     - elastic-pkg
     - logstash
