@@ -16,14 +16,14 @@ setxkbmap fi
 echo "Updating packages..."
 apt-get update -qq >> /dev/null
 echo "Installing git and salt..."
-apt-get install firefox openssl git salt-master salt-minion libnss3-tools -y -qq >> /dev/null
+apt-get install firefox openssl git salt-master salt-minion libnss3-tools dpkg-dev -y -qq >> /dev/null
 echo "Cloning repository..."
 git clone https://github.com/jisosomppi/log-analysis/
 
 # Create directories
 if [ ! -d "/srv/" ]; then
 mkdir /srv/
-fi 
+fi
 
 # Collect user details
 echo
@@ -98,6 +98,19 @@ openssl x509 -req -in logclient.local.csr -CA localCA.pem -CAkey localCA.key -CA
 cp localCA.pem /srv/salt/rsyslog-client/
 cp logclient.local.crt /srv/salt/rsyslog-client/
 cp logclient.local.key /srv/salt/rsyslog-client/
+
+# Make folder for local repository
+mkdir /srv/local-repo
+cd /srv/local-repo
+
+# Download packages (6.4.2 for plugin compatibility)
+wget https://artifacts.elastic.co/downloads/kibana/kibana-oss-6.4.2-amd64.deb
+wget https://artifacts.elastic.co/downloads/logstash/logstash-oss-6.4.2.deb
+wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-oss-6.4.2.deb
+
+# Create repo
+dpkg-scanpackages . /dev/null | gzip -9c > Packages.gz
+echo "deb file:/srv/local-repo ./" | tee -a /etc/apt/sources.list
 
 # Run salt state for master (forcing id because local salt key is not signed yet)
 echo "Applying salt state for server install... (This will take a while)"
