@@ -99,19 +99,6 @@ cp localCA.pem /srv/salt/rsyslog-client/
 cp logclient.local.crt /srv/salt/rsyslog-client/
 cp logclient.local.key /srv/salt/rsyslog-client/
 
-# Convert certificate into PKCS12 for Firefox import
-# CURRENTLY BROKEN
-# openssl pkcs12 -export -out logserver.local.pfx -inkey logserver.local.key -in logserver.local.crt -certfile localCA.crt
-
-## Import root CA to Firefox
-# Need to find the random-generated alphanumeric 
-# Insert new root CA key to existing profiles cert database, maybe like this: 
-# certutil -A -n "keynickname" -t "u,u,u" -i localCA.pem -d ~/.mozilla/firefox/**code**.default/
-# Copy cert database into /etc/firefox/default, something like:
-# cp ~/.mozilla/firefox/**code**.default/cert3.db /etc/firefox/default/
-# Delete existing Firefox user to force create new with the modified database?
-# Or find the profile name -> replace existing db
-
 # Run salt state for master (forcing id because local salt key is not signed yet)
 echo "Applying salt state for server install... (This will take a while)"
 salt-call --local --id srv01 state.highstate --state-output terse -l quiet
