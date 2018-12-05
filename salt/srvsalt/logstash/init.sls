@@ -3,7 +3,7 @@ include:
 
 logstash:
   pkg.installed:
-    - version: '1:6.4.2-1'
+    - version: '1:6.5.1-1'
     - require:
       - sls: java
 
