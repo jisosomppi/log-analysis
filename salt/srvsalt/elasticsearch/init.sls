@@ -16,7 +16,7 @@ elasticsearch-oss:
       elasticsearch_ip: {{pillar.get('elasticsearch_ip','localhost')}}
 
 {%- if not salt['file.directory_exists']('/usr/share/elasticsearch/plugins/readonlyrest') %}
-sudo /usr/share/elasticsearch/bin/elasticsearch-plugin install file:///tmp/readonlyrest-1.16.28_es6.4.2.zip -b -s:
+sudo /usr/share/elasticsearch/bin/elasticsearch-plugin install file:///tmp/v1.16.30_es6.5.1.zip -b -s:
   cmd.run
 {%- endif %}
 
