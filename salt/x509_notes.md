@@ -74,3 +74,17 @@ Changing the server name in the `sites-available/default` file into `logserver.l
 ## Automating Firefox certificate addition
 Looks like the best way to add certs (from the command line) is to use certutil. Certutil is an official Mozilla tool, and is contained in the `libnss3-tools` apt-package. The program has a pretty nice manual file, which should help in adding the certificate.
 
+```
+# Convert certificate into PKCS12 for Firefox import
+# CURRENTLY BROKEN
+# openssl pkcs12 -export -out logserver.local.pfx -inkey logserver.local.key -in logserver.local.crt -certfile localCA.crt
+
+## Import root CA to Firefox
+# Need to find the random-generated alphanumeric 
+# Insert new root CA key to existing profiles cert database, maybe like this: 
+# certutil -A -n "keynickname" -t "u,u,u" -i localCA.pem -d ~/.mozilla/firefox/**code**.default/
+# Copy cert database into /etc/firefox/default, something like:
+# cp ~/.mozilla/firefox/**code**.default/cert3.db /etc/firefox/default/
+# Delete existing Firefox user to force create new with the modified database?
+# Or find the profile name -> replace existing db
+```
