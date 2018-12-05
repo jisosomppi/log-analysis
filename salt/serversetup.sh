@@ -43,7 +43,8 @@ mkdir /srv/salt /srv/pillar
 cp -R log-analysis/salt/srvsalt/* /srv/salt
 cp -R log-analysis/salt/srvpillar/* /srv/pillar
 cp log-analysis/salt/saltmaster /etc/salt/minion
-sudo mv log-analysis/downloads/readonlyrest-1.16.28_es6.4.2.zip /tmp/
+wget https://github.com/sscarduzio/elasticsearch-readonlyrest-plugin/archive/v1.16.30_es6.5.1.zip
+sudo mv v1.16.30_es6.5.1.zip /tmp/
 
 # Get rid of annoying warning & restart services
 echo -e "\nfile_ignore_glob: []\n" >> /etc/salt/master
