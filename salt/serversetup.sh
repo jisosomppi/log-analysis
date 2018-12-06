@@ -43,8 +43,8 @@ mkdir /srv/salt /srv/pillar
 cp -R log-analysis/salt/srvsalt/* /srv/salt
 cp -R log-analysis/salt/srvpillar/* /srv/pillar
 cp log-analysis/salt/saltmaster /etc/salt/minion
-mv log-analysis/downloads/v1.16.30_es6.5.1.zip
-mv v1.16.30_es6.5.1.zip /tmp/
+mv log-analysis/downloads/readonlyrest-1.16.30_es6.5.1.zip
+mv readonlyrest-1.16.30_es6.5.1.zip /tmp/
 
 # Get rid of annoying warning & restart services
 echo -e "\nfile_ignore_glob: []\n" >> /etc/salt/master
