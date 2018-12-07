@@ -1,4 +1,4 @@
-### Next up, we're setting up reverse proxy for Kibana with Nginx ###  
+### Following readonlyREST, we're setting up reverse proxy for Kibana with Nginx ###  
 
 I found these pages to get me started:  
 https://mpolinowski.github.io/nginx-node-security  
