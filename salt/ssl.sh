@@ -1,3 +1,5 @@
+#Copyright 2018 Isosomppi, Kupias, Kähäri https://github.com/jisosomppi/log-analysis BSD-3
+
 ## OpenSSL key creation
 echo "Enter a strong password for your root CA:"
 #stty -echo
