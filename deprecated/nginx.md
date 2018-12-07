@@ -65,7 +65,7 @@ https://docs.nginx.com/nginx/admin-guide/installing-nginx/installing-nginx-open-
 https://linuxconfig.org/how-to-install-gcc-the-c-compiler-on-ubuntu-18-04-bionic-beaver-linux  
 
 
-# Creating Nginx server blocks and self-signing ssl certificate #  
+# Creating Nginx server blocks ~~and self-signing ssl certificate~~ #  
 
 By default, Nginx on Ubuntu 16.04 has one server block enabled by default. It is configured to serve documents out of a directory at /var/www/html.
 
