@@ -17,3 +17,7 @@ nginx_port: 80
 ssl_port: 443
 
 # Elasticsearch username & password:
+
+elasticsearch_username: jussi
+elasticsearch_password: 12345
+
