@@ -1,6 +1,6 @@
 ## Creating self signed certificates for Nginx ##
 
-**Next, I'd suggest anyone reading this to consult this [guide](https://www.digitalocean.com/community/tutorials/how-to-create-a-self-signed-ssl-certificate-for-nginx-in-ubuntu-16-04) for better understanding about self-signing certs.**
+**Next, I'd suggest anyone reading this, to consult this [guide](https://www.digitalocean.com/community/tutorials/how-to-create-a-self-signed-ssl-certificate-for-nginx-in-ubuntu-16-04) for better understanding about self-signing certs.**
 
 As mentioned, my knowledge about certs is severely lacking, so I will just follow the steps provided by the source I linked.
 
