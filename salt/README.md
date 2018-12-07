@@ -8,7 +8,12 @@
 The aim of this project is to create a centralized logging solution, where all workstations on a network send their log data to a central logging server. Our solution consists of fully open source components (and the Apache 2.0 -licensed versions of Elastic Co.'s products), and uses the popular and often preinstalled Rsyslog for log reporting. By doing this, we can keep the resource draw from logging very low on client systems.
 
 *Updated on 14/11/18: Added SSL certificate generation to Nginx and HTTP authentication to Kibana/Elasticsearch*
+
 *Updated on 21/11/18: The SSL certificate generation is automated, just needs manual adding of CA cert to Firefox*
+
+*Updated on 28/11/18: RELP encryption for Rsyslog added*
+
+*Updated on 04/12/18: RELP Encryption for Rsyslog (single host) fully automated*
 
 ## Table of Contents
 
