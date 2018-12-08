@@ -24,3 +24,14 @@ Saku Kähäri|Team member
 * Better notekeeping, all in-progress notes as well as personal notes in the same repository
 * Share all in-progress tasks with other group members
 * Research ways to make connections more secure
+
+## Progress review, 05.12.18
+*Present: everyone*
+
+**Showed a short demo of the system to our supervisor:**
+* Salt state used to configure almost all parts of the system
+* Encryption between clients and server implemented using CA certificates with two-way trust
+
+**Agreed next steps:**
+* Freezing the project
+* Working on documentation
