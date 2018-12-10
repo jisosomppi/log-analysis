@@ -4,7 +4,7 @@
 *[Jussi Isosomppi](https://github.com/jisosomppi), [Eino Kupias](https://github.com/einokupias), [Saku Kähäri](https://github.com/nauskis)*
 
 ## Project description
-Our aim with this project is to create a centralized logging solution, created with ease of use and data security in mind. Our solution relies on Saltstack for centralized management, and on encryption and SSL certificates for data security. We wrote scripts to help make the setup easy and consistent, so that each installation would lead to the same end result.
+Our aim with this project is to create a centralized logging solution, created with ease of use and data security in mind. Our solution relies on Saltstack for centralized management, and on encryption and SSL certificates for data security. We wrote scripts to make the setup process easy and consistent, so that each installation would lead to the same end result.
 
 ## Installation/setup instructions
 For our testing, we used Xubuntu 16.04 as our base operating system. The setup works with a live USB as well as on an installed OS. For the client, we verified VM functionality with Vagrant/Virtualbox and the `bento/ubuntu-16.04` box.
