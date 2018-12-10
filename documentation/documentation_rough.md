@@ -1,6 +1,6 @@
 # Log-analysis final documentation
 
-## File: Usage documentation
+## `File: Usage documentation`
 ### Project description
 Our aim with this project is to create a centralized logging solution, created with ease of use and data security in mind. Our solution relies on Saltstack for centralized management, and on encryption and SSL certificates for data security. We wrote scripts to help make the setup easy and consistent, so that each installation would lead to the same end result.
 
@@ -67,11 +67,11 @@ Once the script is completed, run the command `sudo salt-key -A -y && sudo salt 
     * The forwarded logs can be configured via the /etc/rsyslog.conf file
   * Configures /etc/hosts to redirect https://logserver.local to the logging server
 
-## Project diary
+## `File: Project diary`
 * Initial assignment
 * Plans for the project
 * Weekly reports
 
-## Reference materials
+## `File: Reference materials`
 * Divided into files by component
 * Master source list
