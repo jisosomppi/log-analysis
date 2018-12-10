@@ -1,13 +1,13 @@
 # Logging and analysis of security data in a network
-
-**Jussi Isosomppi, Eino Kupias, Saku Kähäri**  
-**Multidisciplinary Software Project, fall 2018**  
+***ICT Infrastructure Project, fall 2018***  
+***Haaga-Helia University of Applied Sciences***  
+*[Jussi Isosomppi](https://github.com/jisosomppi), [Eino Kupias](https://github.com/einokupias), [Saku Kähäri](https://github.com/nauskis)*
 
 ### Project background
 
-The subject of our multidisciplinary software project is the collection and analysis of log data in a local network. The goal is to automate and centralize control, and to create a comprehensive view of security for the uninitiated users. We believe the project supports our other courses and the ICT-infrastructure oriented studies. Our team is also interested in cyber security, so the project has a direct link to working life and future employment.
+The subject of our ICT infrastructure project is the collection and analysis of log data in a local network. The goal is to automate and centralize control, and to create a comprehensive view of security for basic-level users. We believe the project supports our other courses, and especially our ICT-infrastructure studies. Our team is also interested in cyber security, so the security component of the project has a direct link to working life and future employment.
 
-Our purpose is to create a complete product, that utilizes the Elastic -software stack, for the small and medium sized companies. Additionally, the installation and usage of said package is to be  easy and effortless. Our additional milestone is to replace some heavy components of the stack with lighter counterparts. There is also the potential benefit of creating a package to be sold to companies.
+Our purpose is to create a complete product, that utilizes the Elastic software stack, aimed in its free form at small and medium sized companies. Additionally, the installation and usage of our solution should be easy and effortless. Our main additional milestone is to replace heavy components of the stack with lighter alternatives. There is also the potential benefit of creating a package to be sold to companies.
 
 ### Project goals 
 
@@ -19,7 +19,7 @@ Our purpose is to create a complete product, that utilizes the Elastic -software
 ### Project steps and milestones
 
 The first step of our project is the installation of ELK-stack and processing of log data on a single computer.  
-The following milestones are:  
+Our milestones are:  
 1) Centralized control of multiple computers' log data.  
 2) Automated setup of client computers via SALT.  
 3) Replacing components that are either non-open source (Beats) or use large quantities of recources (such as Logstash).  
@@ -56,10 +56,9 @@ Requirements: Access to Servula hardware, scheduling, communication between grou
 Risks: Unforeseen technical difficulties, members falling sick, too ambitious goals.  
 
 ### Work plan  
-
-Look schedule in github.com/jisosomppi/log-analysis/blob/master/schedule.md
+Our initial schedule can be found at github.com/jisosomppi/log-analysis/blob/master/project_management/schedule.md
 
 ### Communication
-We'll be mostly using ye olde good MtE-system (mouth to ear). To comply this we've a WhatsApp group to agree on meetings and inform of possible delays or absence from meetings.
+We'll be mostly communicating verbally, since we're working on the project 3-4 days a week. To complement this we've got a WhatsApp group to agree on meetings and inform others of possible delays or absence from meetings. We're doing all our work on Github, including tracking working hours and taking meeting notes.
 
 Documentation can be found on https://github.com/jisosomppi/log-analysis.
