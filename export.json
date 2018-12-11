@@ -1,0 +1,27 @@
+[
+  {
+    "_id": "71e7b7f0-fd5c-11e8-b066-99b7c02e703b",
+    "_type": "dashboard",
+    "_source": {
+      "title": "DankestOfDashboards",
+      "hits": 0,
+      "description": "",
+      "panelsJSON": "[{\"embeddableConfig\":{},\"gridData\":{\"x\":0,\"y\":14,\"w\":22,\"h\":7,\"i\":\"1\"},\"id\":\"0f91ebc0-fd5c-11e8-b066-99b7c02e703b\",\"panelIndex\":\"1\",\"type\":\"visualization\",\"version\":\"6.5.1\"},{\"embeddableConfig\":{},\"gridData\":{\"x\":0,\"y\":0,\"w\":22,\"h\":14,\"i\":\"2\"},\"id\":\"b23f0320-fd5d-11e8-b066-99b7c02e703b\",\"panelIndex\":\"2\",\"type\":\"visualization\",\"version\":\"6.5.1\"},{\"embeddableConfig\":{},\"gridData\":{\"x\":0,\"y\":21,\"w\":22,\"h\":8,\"i\":\"3\"},\"id\":\"0e2275e0-fd5f-11e8-b066-99b7c02e703b\",\"panelIndex\":\"3\",\"type\":\"visualization\",\"version\":\"6.5.1\"},{\"embeddableConfig\":{},\"gridData\":{\"x\":22,\"y\":0,\"w\":26,\"h\":29,\"i\":\"4\"},\"id\":\"df6f8880-fd5b-11e8-b066-99b7c02e703b\",\"panelIndex\":\"4\",\"type\":\"search\",\"version\":\"6.5.1\"}]",
+      "optionsJSON": "{\"darkTheme\":false,\"hidePanelTitles\":false,\"useMargins\":true}",
+      "version": 1,
+      "timeRestore": true,
+      "timeTo": "now/d",
+      "timeFrom": "now/d",
+      "refreshInterval": {
+        "pause": false,
+        "value": 5000
+      },
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"language\":\"lucene\",\"query\":\"\"},\"filter\":[]}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    }
+  }
+]
