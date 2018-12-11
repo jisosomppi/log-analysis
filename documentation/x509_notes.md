@@ -6,7 +6,7 @@ Reference:
 * https://www.rsyslog.com/doc/v8-stable/tutorials/tls.html
 * http://virtuallyhyper.com/2013/04/setup-your-own-certificate-authority-ca-on-linux-and-use-it-in-a-windows-environment/
 * https://deliciousbrains.com/ssl-certificate-authority-for-local-https-development/
-* Also referencing [Eino's research notes](https://github.com/jisosomppi/log-analysis/blob/master/installations/tls/working-conf-with-certs.md) for the actual setup
+* Also referencing [Eino's research notes](https://github.com/jisosomppi/log-analysis/blob/master/documentation/tls/working-conf-with-certs.md) for the actual setup
 * Adding root CA to Firefox
   * ~~https://mike.kaply.com/2012/03/30/customizing-firefox-default-profiles/~~ *deprecated in Firefox 46.0*
   * https://wiki.mozilla.org/CA:AddRootToFirefox
