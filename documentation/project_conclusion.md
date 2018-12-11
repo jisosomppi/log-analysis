@@ -1,4 +1,4 @@
-### Project conclusion ###  
+## Project conclusion ##  
 
 **What we set out to do**  
 Our aim with this project was to create a centralized logging solution, with ease of use and data security in mind. Our solution was to rely on Saltstack for centralized management, and on encryption and SSL/TLS certificates for data security. We also aimed to write scripts to make the setup process easy and consistent, so that each installation would lead to the same end result.
@@ -13,3 +13,5 @@ The project outcome was an automated setup script for log server and clients, ut
 - We made installation and setup scripts for automating the whole process with very little user input required.
 - Most of the configuration is managed using Salt states.
   - Salt is used to achieve idempotency. This means that the same end result is always achieved, when the setup is ran.
+
+### Thoughts ###  
