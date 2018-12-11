@@ -16,8 +16,8 @@ elasticsearch_port: 9200
 nginx_port: 80
 ssl_port: 443
 
+# Network
+client_interface: eno1
+permitted_network: 172.28.0.0/16
+
 # Elasticsearch username & password:
-
-elasticsearch_username: jussi
-elasticsearch_password: 12345
-
