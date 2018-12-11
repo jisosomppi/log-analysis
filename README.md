@@ -61,10 +61,16 @@ Once the script is completed, run the command `sudo salt-key -A -y && sudo salt 
   * Sets the correct file permissions for the client logs, and schedules a task to update the permissions for new logs every minute
   * Configures /etc/hosts to redirect https://logserver.local to the logging server
 * **Sets up the client**
+  * Adds the required package repositories
+    * Adiscon repository for Rsyslog
   * Installs the required components
     * Rsyslog
-      * Pulls the latest version from the Adiscon repository to enable latest security features
+    * (`logtest`, a script for testing logging functionality is also added)
   * Configures Rsyslog to forward log entries to the server 
     * Certificates created during server setup are used here, providing encryption and two-way authenticaton (thanks to using a Certificate Authority to sign both certificates)
-    * The forwarded logs can be configured via the /etc/rsyslog.conf file
+    * The /etc/rsyslog.conf file can be modified to change which logs are forwarded
   * Configures /etc/hosts to redirect https://logserver.local to the logging server
+
+### Known issues
+* The current setup only works with a single client, as the client certificate is created during server setup
+* The server network interface that is needed for Nginx is currently set to `eno1`. This will lead to errors on some setups, but can be changed by editing the file `/salt/srvsalt/nginx/init.sls`.
