@@ -103,7 +103,7 @@ We've tried to build the Salt states in a way that allows for easy customization
 * The server network interface that is needed for Nginx is currently set to `eno1`. This will lead to errors on some setups, but can be changed by editing the file `/salt/srvsalt/nginx/init.sls`.
 
 ## Additional documentation
-### Research documentation
+### Research documents
 Over the course of the project, we did countless hours of research on logging solutions and topics related to our project. These files can be found in [their own folder](https://github.com/jisosomppi/log-analysis/tree/master/documentation).
 
 ### Old builds
