@@ -6,6 +6,23 @@
 ## Project description
 Our aim with this project is to create a centralized logging solution, created with ease of use and data security in mind. Our solution relies on Saltstack for centralized management, and on encryption and SSL certificates for data security. We wrote scripts to make the setup process easy and consistent, so that each installation would lead to the same end result.
 
+## Table of Contents
+* [Project Description](#project-description)
+* [Installation/setup instructions](#installationsetup-instructions)
+  * [Server install](#server-install)
+  * [Client install](#client-install)
+  * [Testing](#testing)
+  * [Customization](#customization)
+* [Script/module descriptions](#scriptmodule-descriptions)
+  * [serversetup.sh](#serversetupsh)
+  * [clientsetup.sh](#clientsetupsh)
+  * [Salt highstate](#salt-highstate)
+* [Known issues](#known-issues)
+* [Additional documentation](#additional-documentation)
+  * [Research documents](#research-documents)
+  * [Old builds](#old-builds)
+  * [Project management](#project-management)
+
 ## Installation/setup instructions
 For our testing, we used Xubuntu 16.04 as our base operating system. The setup works with a live USB as well as on an installed OS. For the client, we verified VM functionality with Vagrant/Virtualbox and the `bento/ubuntu-16.04` box.
 
@@ -82,6 +99,16 @@ We've tried to build the Salt states in a way that allows for easy customization
     * The /etc/rsyslog.conf file can be modified to change which logs are forwarded
   * Configures /etc/hosts to redirect https://logserver.local to the logging server
 
-### Known issues
+## Known issues
 * The current setup only works with a single client, as the client certificate is created during server setup
 * The server network interface that is needed for Nginx is currently set to `eno1`. This will lead to errors on some setups, but can be changed by editing the file `/salt/srvsalt/nginx/init.sls`.
+
+## Additional documentation
+### Research documentation
+Over the course of the project, we did countless hours of research on logging solutions and topics related to our project. These files can be found in [their own folder](https://github.com/jisosomppi/log-analysis/tree/master/documentation).
+
+### Old builds
+We also built several versions of our logging system, using varying component setups and configurations, as well as wrote installation instructions for them. The old builds can be found [here](https://github.com/jisosomppi/log-analysis/tree/master/deprecated/builds).
+
+### Project management
+We kept a somewhat detailed project diary, working hour list, and some other documents required for the school course. These files can be found [here](https://github.com/jisosomppi/log-analysis/tree/master/project_management).
