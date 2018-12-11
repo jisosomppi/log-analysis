@@ -16,16 +16,24 @@ chmod +x serversetup.sh
 sudo ./serversetup.sh
 
 ```
-Once the server setup script has completed its task, it will open a new firefox window (or tab) showing the Kibana dashboard at https://logserver.local. To make the page display without errors, add the `~/localCA.pem` file to the authorized certificates. 
+Once the server setup script has completed its task, it will open a new firefox window (or tab) showing the Kibana dashboard at https://logserver.local. To make the page display without errors, add the `~/localCA.pem` file to the authorized certificates (On Firefox: Preferences -> Privacy and Security -> View Certificates -> Import...). 
 
 ### Client install
+*If you want to use Vagrant as your test client, you can use [this script](https://raw.githubusercontent.com/jisosomppi/log-analysis/master/salt/vagrantup.sh) to set up your client.*  
 ```
 wget https://raw.githubusercontent.com/jisosomppi/log-analysis/master/salt/clientsetup.sh
 chmod +x clientsetup.sh
 sudo ./clientsetup.sh
 
 ```
-Once the script is completed, run the command `sudo salt-key -A -y && sudo salt '*' state.highstate` on your server. This makes sure that all (both) of the clients are in the correct state. After this you can run the command `logtest` on the client to generate test entries in the system log. These entries should be visible
+Enter your master's IP address (displayed at the end of the master setup script) and choose a name for your minion. 
+
+### Testing
+After both the minion and master are set up properly, run the command `sudo salt-key -A -y && sudo salt '*' state.highstate` on your master. This makes sure that all of the salt minions (including the server) are in the correct state. 
+
+To generate log data for Kibana to display, run the command `logtest` on the minion. You can leave the script running and access Kibana with the username and password you chose during the server setup. 
+
+To view all collected log data, enter `*` as your index pattern, click next and choose `@timestamp` as the Time Filter. After this your data will be visible in the Discover tab.
 
 ## Script/module descriptions
 ### serversetup.sh
