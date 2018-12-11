@@ -6,6 +6,7 @@ base:
   'ws*':
     - rsyslog-client
     - logtest
+    - root-ca
 
   'srv*':
     - rsyslog-server
