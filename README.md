@@ -19,7 +19,7 @@ sudo ./serversetup.sh
 Once the server setup script has completed its task, it will open a new firefox window (or tab) showing the Kibana dashboard at https://logserver.local. To make the page display without errors, add the `~/localCA.pem` file to the authorized certificates (On Firefox: Preferences -> Privacy and Security -> View Certificates -> Import...). 
 
 ### Client install
-*If you want to use Vagrant as your test client, you can use [this script](https://raw.githubusercontent.com/jisosomppi/log-analysis/master/salt/vagrantup.sh) to set up your client.*  
+*If you want to use Vagrant as your test client, you can use [this script](https://raw.githubusercontent.com/jisosomppi/log-analysis/master/salt/vagrantup.sh) to set up your client, then run the commands below.*  
 ```
 wget https://raw.githubusercontent.com/jisosomppi/log-analysis/master/salt/clientsetup.sh
 chmod +x clientsetup.sh
