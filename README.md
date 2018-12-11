@@ -1,7 +1,8 @@
-# Logging and analysis of security data in a network
+# Logging and analysis of security data in a network  
+*[Jussi Isosomppi](https://github.com/jisosomppi), [Eino Kupias](https://github.com/einokupias), [Saku Kähäri](https://github.com/nauskis)*  
 ***ICT Infrastructure Project, fall 2018***  
 ***Haaga-Helia University of Applied Sciences***  
-*[Jussi Isosomppi](https://github.com/jisosomppi), [Eino Kupias](https://github.com/einokupias), [Saku Kähäri](https://github.com/nauskis)*
+***Course details: [terokarvinen.com](http://terokarvinen.com/2018/aikataulu--monialaprojekti-infra-pro4tn004-3001--syksy-2018--10-op)***
 
 ## Project description
 Our aim with this project is to create a centralized logging solution, created with ease of use and data security in mind. Our solution relies on Saltstack for centralized management, and on encryption and SSL certificates for data security. We wrote scripts to make the setup process easy and consistent, so that each installation would lead to the same end result.
