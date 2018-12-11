@@ -9,8 +9,8 @@ sudo apt-get install -y git tree htop curl salt-master salt-minion docker-compos
 cd
 
 # Setup Git and clone this repository
-git config --global user.name "Jussi Isosomppi"
-git config --global user.email "jussi.isosomppi@gmail.com"
+git config --global user.name ""
+git config --global user.email ""
 git config --global credential.helper "cache --timeout=3600"
 git config --global push.default simple
 
