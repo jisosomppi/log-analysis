@@ -14,4 +14,5 @@ The project outcome was an automated setup script for log server and clients, ut
 - Most of the configuration is managed using Salt states.
   - Salt is used to achieve idempotency. This means that the same end result is always achieved, when the setup is ran.
 
+### Room to improve ###  
 ### Thoughts ###  
