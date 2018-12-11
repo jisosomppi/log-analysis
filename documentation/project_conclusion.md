@@ -13,9 +13,6 @@ The project outcome was an automated setup script for log server and clients, ut
 - We made installation and setup scripts for automating the whole process with very little user input required.
 - Most of the configuration is managed using Salt states.
   - Salt is used to achieve idempotency. This means that the same end result is always achieved, when the setup is ran.
-- Choosing and getting a working solutions with OS parts of the ELK-stack. This included Logstash, Elasticsearch and Kibana.
-  - We left out beats and x-pack due to not being OS.  
-tai  
 - We used the open source version of the ELK stack, and replaced several parts that weren't open source.
   - Replaced parts include: X-pack (ElasticSearch module) and Beats (Data shippers) 
 
@@ -25,6 +22,7 @@ The project version was frozen on week 15. We had few more things under construc
 - Importing dashboards to Kibana automatically. Currently, when you load the Kibana main page, you have no dashboards to show until you make some.
 - Generating keypairs for more than 1 client trough salt module.
 - Automated identification for new log files to forward. Only those log files specified on salt rsyslog conf are forwarded, and to add more log gathering locations, one would have to add them to salt rsyslog configuration (imfile action).
+
 
 ### Thoughts ###  
 Centralized management with salt ate a lot of working hours at the end of this project. Only Jussi was adept with it and and sometimes it also required other group members to go trough together how aspects of the project worked in order to automate them.
