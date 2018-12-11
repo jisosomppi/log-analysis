@@ -208,7 +208,7 @@ One possible way to fix this situation is to set up access control lists for the
 
 **At this point, we can confidently say the problem lies in the permissions.**
 
-### Week 10
+### Week 11 - 15  
 #### Log permissions
 To avoid spending too much time on the permissions, we will just bruteforce the permissions for now. Rsyslog touches the permissions only when creating new files and directories, so there should be no further issues after changing the permissions once. We're going to use Salt for managing the system, so forcing the permissions on each run is a valid option. Logstash reads and forwards all the new information it finds in files, so only newly created log files should be unindexed, and only until the next Salt run. Forcing Salt to run more frequently lowers the amount of missing log data.
 
@@ -218,3 +218,6 @@ We started building the Salt structure for managing the network. Each separate c
 We're using plugins for Elasticsearch that haven't yet been updated to work with the newest version, so we had to come up with a way to use an older version of the components. Our solution for this is to create a local repository with the 6.4.2 versions of all the Elastic components. Salt can then be used to target these packages for installation, removing the chance of conflicts.
 
 ### Additional documentation can be found in [the Salt directory](https://github.com/jisosomppi/log-analysis/tree/master/salt)
+
+### Week 16
+Freezing the project and polishing our documentations.
