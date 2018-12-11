@@ -23,3 +23,5 @@ The project version was frozen on week 15. We had few more things under construc
 
 ### Thoughts ###  
 Centralized management with salt ate a lot of working hours at the end of this project. Only Jussi was adept with it and and sometimes it also required other group members to go trough together how aspects of the project worked in order to automate them.
+
+Using Salt was time consuming, but it also saved us a ton of effort once it was working to a certain degree. It was also a good learning opportunity for the rest of our group (As Jussi was the only one of us, who had prior experience), since we had only used Puppet before this project. 
