@@ -16,3 +16,4 @@ base:
     - nginx
     - fixperms
     - ufw
+    - dashboard
