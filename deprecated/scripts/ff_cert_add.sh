@@ -1,3 +1,4 @@
+# Non-functional
 # https://stackoverflow.com/questions/1435000/
 
 for certDB in $(find  ~/.mozilla* -name "cert8.db")
