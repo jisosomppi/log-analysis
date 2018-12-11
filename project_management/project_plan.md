@@ -56,7 +56,7 @@ Requirements: Access to Servula hardware, scheduling, communication between grou
 Risks: Unforeseen technical difficulties, members falling sick, too ambitious goals.  
 
 ### Work plan  
-Our initial schedule can be found at github.com/jisosomppi/log-analysis/blob/master/project_management/schedule.md
+Our initial schedule can be found at httpS://github.com/jisosomppi/log-analysis/blob/master/project_management/schedule.md
 
 ### Communication
 We'll be mostly communicating verbally, since we're working on the project 3-4 days a week. To complement this we've got a WhatsApp group to agree on meetings and inform others of possible delays or absence from meetings. We're doing all our work on Github, including tracking working hours and taking meeting notes.
