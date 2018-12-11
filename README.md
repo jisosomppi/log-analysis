@@ -35,6 +35,9 @@ To generate log data for Kibana to display, run the command `logtest` on the min
 
 To view all collected log data, enter `*` as your index pattern, click next and choose `@timestamp` as the Time Filter. After this your data will be visible in the Discover tab.
 
+## Customization
+We've tried to build the Salt states in a way that allows for easy customization. In practice, this means that many settings such as port numbers, IP addresses and network information is gathered from the Salt pillar. To customize the setup, look at the files under `salt/srvpillar`. 
+
 ## Script/module descriptions
 ### serversetup.sh
 * Installs all necessary programs (Git, OpenSSL, Salt master & minion)
