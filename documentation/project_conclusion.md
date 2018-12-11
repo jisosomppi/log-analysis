@@ -13,6 +13,8 @@ The project outcome was an automated setup script for log server and clients, ut
 - We made installation and setup scripts for automating the whole process with very little user input required.
 - Most of the configuration is managed using Salt states.
   - Salt is used to achieve idempotency. This means that the same end result is always achieved, when the setup is ran.
+- Choosing and getting a working solutions with OS parts of the ELK-stack. This included Logstash, Elasticsearch and Kibana.
+  - We left out beats and x-pack due to not being OS.
 
 ### Room to improve ###  
 The project version was frozen on week 15. We had few more things under construction, that unfortunately did not make it into our latest version. These features include:  
