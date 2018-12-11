@@ -9,7 +9,7 @@ nginx:
     - source: salt://nginx/default
     - template: jinja
     - context:
-      server_ip: {{ salt['grains.get']('ip4_interfaces:eno1')[0] }}
+      server_ip: {{ salt['grains.get']('ip4_interfaces:{{pillar.get('client_interface','eno1')}}')[0] }}
       nginx_port: {{pillar.get('nginx_port','80')}}
       kibana_ip: {{pillar.get('kibana_ip','localhost')}}
       kibana_port: {{pillar.get('kibana_port','5601')}}
