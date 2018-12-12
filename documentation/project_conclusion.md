@@ -29,6 +29,7 @@ Centralized management with salt ate a lot of working hours at the end of this p
 
 Using Salt was time consuming, but it also saved us a ton of effort once it was working to a certain degree. It was also a good learning opportunity for the rest of our group (As Jussi was the only one of us, who had prior experience), since we had only used Puppet before this project. 
 
+We are very content with our end results. We missed some of our early goals, but came up with additional features, that we never thought about earlier.
 
 
 ### Merits ###
