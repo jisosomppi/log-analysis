@@ -35,7 +35,7 @@ Using Salt was time consuming, but it also saved us a ton of effort once it was 
 - Our project was tested by around 20 outside users
 - We put in a lot of effort to ensure, that our whole project was built on open source components. This lead us to abandon and ignore some solutions, that would've made our work significantly faster and easier.
   - In the start of the project, we read that Beats (ElasticSearch plugins) are under Elastic Licence and could not be used. This meant that we had to start working on Rsyslog. On the same week that the project was frozen, we found out there has been an open source version of different Beats.
-- We traded some planned goals for additional security
+- We traded some planned goals for additional security (basic HTTP authentication, HTTPS)
 
 
 
