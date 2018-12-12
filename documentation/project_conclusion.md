@@ -34,7 +34,8 @@ We are very content with our end results. We missed some of our early goals, but
 Our process during the course seemed very natural, as we kept working partly independently on our own topics, but also tightly as a group while working on more complex parts of the overall solution.
 
 ### Merits ###
-- Our project was tested by around 20 outside users
+- Our project was tested by around 20 outside users during a class excercise
+  - During the excercise we provided live support, as well as modified the project based on user feedback.
 - We put in a lot of effort to ensure, that our whole project was built on open source components. This lead us to abandon and ignore some solutions, that would've made our work significantly faster and easier.
   - In the start of the project, we read that Beats (ElasticSearch plugins) are under Elastic Licence and could not be used. This meant that we had to start working on Rsyslog. On the same week that the project was frozen, we found out there has been an open source version of different Beats.
 - We traded some planned goals for additional security (basic HTTP authentication, HTTPS)
