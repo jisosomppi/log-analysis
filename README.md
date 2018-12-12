@@ -4,6 +4,8 @@
 ***Haaga-Helia University of Applied Sciences***  
 ***Course details: [terokarvinen.com](http://terokarvinen.com/2018/aikataulu--monialaprojekti-infra-pro4tn004-3001--syksy-2018--10-op)***
 
+![Dashboard](https://github.com/jisosomppi/log-analysis/blob/master/images/dashboard.png)
+
 ## Project description
 Our aim with this project is to create a centralized logging solution, created with ease of use and data security in mind. Our solution relies on Saltstack for centralized management, and on encryption and SSL certificates for data security. We wrote scripts to make the setup process easy and consistent, so that each installation would lead to the same end result.
 
@@ -12,16 +14,7 @@ Our aim with this project is to create a centralized logging solution, created w
   * [Server install](#server-install)
   * [Client install](#client-install)
   * [Testing](#testing)
-  * [Customization](#customization)
-* [Script/module descriptions](#scriptmodule-descriptions)
-  * [serversetup.sh](#serversetupsh)
-  * [clientsetup.sh](#clientsetupsh)
-  * [Salt highstate](#salt-highstate)
-* [Known issues](#known-issues)
-* [Additional documentation](#additional-documentation)
-  * [Research documents](#research-documents)
-  * [Old builds](#old-builds)
-  * [Project management](#project-management)
+* [Further reading](#further-reading)
 
 ## Installation/setup instructions
 For our testing, we used Xubuntu 16.04 as our base operating system. The setup works with a live USB as well as on an installed OS. For the client, we verified VM functionality with Vagrant/Virtualbox and the `bento/ubuntu-16.04` box.
