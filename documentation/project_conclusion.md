@@ -29,10 +29,13 @@ Centralized management with salt ate a lot of working hours at the end of this p
 
 Using Salt was time consuming, but it also saved us a ton of effort once it was working to a certain degree. It was also a good learning opportunity for the rest of our group (As Jussi was the only one of us, who had prior experience), since we had only used Puppet before this project. 
 
-### Next steps ###
-- link conclusion to Harto..
-- Write up our merits (20+ testers and then some..)
-- Answer evaluation questions and link to documents
+
+
+### Merits ###
+- Our project was tested by around 20 outside users
+- We put in a lot of effort to ensure, that our whole project was built on open source components. This lead us to abandon and ignore some solutions, that would've made our work significantly faster and easier.
+  - In the start of the project, we read that Beats (ElasticSearch plugins) are under Elastic Licence and could not be used. This meant that we had to start working on Rsyslog. On the same week that the project was frozen, we found out there has been a open source version of different Beats.
+- We traded some planned goals for additional security
 
 
 
