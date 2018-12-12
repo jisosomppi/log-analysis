@@ -43,9 +43,9 @@ After both the minion and master are set up properly, run the following command 
 `sudo salt-key -A -y && sleep 5 && sudo salt '*' state.highstate --state-output terse`  
 This makes sure that all of the salt minions (including the server) are in the correct state. 
 
-To generate log data for Kibana to display, run the command `logtest` on the minion. You can leave the script running and access Kibana with the username and password you chose during the server setup. 
+To generate log data for Kibana to display, run the command `logtest` on the minion. You can leave the script running and access Kibana with the username and password you chose during the server setup. The log file permissions are updated every minute on the server, but if you want to view your results quicker you can just run the Salt state `fixperms` again (`sudo salt 'srv*' state.apply fixperms`).
 
-To view all collected log data, enter `*` as your index pattern, click next and choose `@timestamp` as the Time Filter. After this your data will be visible in the Discover tab.
+You can add our premade dashboard by going to `Management -> Saved Objects -> Import` in Kibana. The dashboard can be found at `/tmp/default_dashboard.json`.
 
 ## Further reading
 Check out our [additional documentation](https://github.com/jisosomppi/log-analysis/blob/master/documentation/additional.md) for more information on module contents, customization, research documentation and more!
