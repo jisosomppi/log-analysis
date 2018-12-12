@@ -46,7 +46,9 @@ sudo ./clientsetup.sh
 Enter your master's IP address (displayed at the end of the master setup script) and choose a name for your minion. 
 
 ### Testing
-After both the minion and master are set up properly, run the command `sudo salt-key -A -y && sleep 5 && sudo salt '*' state.highstate --state-output terse` on your master. This makes sure that all of the salt minions (including the server) are in the correct state. 
+After both the minion and master are set up properly, run the following command on your master:  
+`sudo salt-key -A -y && sleep 5 && sudo salt '*' state.highstate --state-output terse`  
+This makes sure that all of the salt minions (including the server) are in the correct state. 
 
 To generate log data for Kibana to display, run the command `logtest` on the minion. You can leave the script running and access Kibana with the username and password you chose during the server setup. 
 
