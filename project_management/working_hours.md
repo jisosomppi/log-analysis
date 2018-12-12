@@ -16,5 +16,5 @@
 |wk 47|12|11|11|Automated OpenSSL certificate generation and integrated it into the server setup script. Continued work on creating dashboards. Added firewall rules as a salt module.|
 |wk 48|13|13|13|Improved firewall module, started work on RELP encoding for Rsyslog. Looking for a way to forward all log data in /var/log/ to log-server in in same format as on client(s), using wildcard in imfile module|
 |wk 49|16|16|16|Worked on alternative message sorting, and recursive log forwarding for all log files from a client. RELP encoding is now functional, certificate generation and serving is automated via setup script & salt states.|
-|wk 50|11|11|11|Final documentation, reorganizing of Github repository, spell check etc.|
+|wk 50|18|18|18|Final documentation, reorganizing of Github repository, spell check etc. Creating, storing and importing default dashboard for Kibana. Final presentations of course projects.|
 |Sum  |||||
