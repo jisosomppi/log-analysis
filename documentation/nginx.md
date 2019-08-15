@@ -55,7 +55,7 @@ server {
 }
 ```
 After this I restarted Nginx and checked my "home page".  
-`ifconfig`
+`ifconfig`  
 My computer's IP address is 172.28.171.32.  ---> http://172.28.171.32
 
 ![kibanaception](https://i.imgur.com/Gfnfn7o.png)  
